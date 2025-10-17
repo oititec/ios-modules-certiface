@@ -1,12 +1,10 @@
 //
 //  CustomIProovInstructionView.swift
-//  OILivenessIProovExample
-//
-//  Created by Vitor Souza on 10/04/25.
+//  Example
 //
 
+import CertifaceSDK
 import UIKit
-import OitiSDK
 
 final class CustomInstructionView: UIView, LivenessCustomInstructionView {
     @IBOutlet weak var view: UIView!
@@ -44,7 +42,7 @@ final class CustomInstructionView: UIView, LivenessCustomInstructionView {
         addSubview(view)
     }
     
-    func changeLoadingVisibility(to visibility: OitiSDK.Visibility) {
+    func changeLoadingVisibility(to visibility: CertifaceSDK.Visibility) {
         switch visibility {
         case .displayed:
             activityIndicator.isHidden = false

@@ -1,40 +1,28 @@
 PODS:
-  - iProov (12.3.1)
-  - OICommons (2.1.1)
-  - OIComponents (1.9.0)
-  - OINetwork (2.1.2):
-    - OICommons (~> 2.1.0)
-  - OISecurity (4.2.0):
-    - OICommons (~> 2.1.1)
-    - OINetwork (~> 2.1.2)
-  - OitiSDK (0.5.0):
+  - CertifaceSDK (1.0.0):
     - iProov (= 12.3.1)
-    - OICommons (~> 2.1.1)
-    - OIComponents (~> 1.9)
-    - OINetwork (~> 2.1.2)
-    - OISecurity (~> 4.2)
+    - OILiveness3D_FT (= 9.7.84)
+  - iProov (12.3.1)
+  - OILiveness3D_FT (9.7.84)
 
 DEPENDENCIES:
-  - OitiSDK (= 0.5.0)
+  - CertifaceSDK (from `../`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - iProov
   https://github.com/oititec/ios-artifactory:
-    - OICommons
-    - OIComponents
-    - OINetwork
-    - OISecurity
-    - OitiSDK
+    - OILiveness3D_FT
+  trunk:
+    - iProov
+
+EXTERNAL SOURCES:
+  CertifaceSDK:
+    :path: "../"
 
 SPEC CHECKSUMS:
+  CertifaceSDK: 3f3d0601d3c7512fe813e2a36dcdf4238215adf8
   iProov: 66056edf9be1ff5e16b61b9a067c8c8351796469
-  OICommons: dc969756259ef36a230a44db3f39c3277558fd4d
-  OIComponents: 2c780cf65b5c125d9bd72397866613d42ba36da0
-  OINetwork: 026528034592540763350410d1ce7c0ddb1349f5
-  OISecurity: c8074823189df9c4bc4196e1be362064f9e75c80
-  OitiSDK: 482023844971d5b9c4c958cd3c7fcde602a84d8e
+  OILiveness3D_FT: cd3fd7f44e03d745c138a6c7add1bdde27e73a9a
 
-PODFILE CHECKSUM: d843d08f982c8c608191cc592202dfa0f03c79b0
+PODFILE CHECKSUM: 41b30c137e1dd3265111c8552a4cc0d8e25be2fe
 
 COCOAPODS: 1.16.2

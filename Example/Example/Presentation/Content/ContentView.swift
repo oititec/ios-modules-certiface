@@ -8,9 +8,17 @@ import UIKit
 final class ContentView: UIView {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "OitiSDK"
+        label.text = "CertifaceSDK"
         label.textColor = .black
         label.font = .systemFont(ofSize: 40, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    lazy var providerLabel: UILabel = {
+        let label = UILabel()
+        label.text = ""
+        label.textColor = .black
+        label.font = .systemFont(ofSize: 24, weight: .medium)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -22,6 +30,7 @@ final class ContentView: UIView {
         super.init(frame: frame)
 
         addSubview(titleLabel)
+        addSubview(providerLabel)
         addSubview(defaultButton)
         addSubview(customAppearanceButton)
         addSubview(customViewsButton)
@@ -40,9 +49,13 @@ final class ContentView: UIView {
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
 
-            defaultButton.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            defaultButton.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-            defaultButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
+            providerLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            providerLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+            providerLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
+
+            defaultButton.leadingAnchor.constraint(equalTo: providerLabel.leadingAnchor),
+            defaultButton.trailingAnchor.constraint(equalTo: providerLabel.trailingAnchor),
+            defaultButton.topAnchor.constraint(equalTo: providerLabel.bottomAnchor, constant: 16),
             defaultButton.heightAnchor.constraint(equalToConstant: 60),
 
             customAppearanceButton.leadingAnchor.constraint(equalTo: defaultButton.leadingAnchor),

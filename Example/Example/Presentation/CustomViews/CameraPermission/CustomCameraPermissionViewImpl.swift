@@ -1,12 +1,10 @@
 //
 //  CustomCameraPermissionViewImpl.swift
-//  OILivenessIProovExample
-//
-//  Created by Vitor Souza on 10/04/25.
+//  Example
 //
 
+import CertifaceSDK
 import UIKit
-import OitiSDK
 
 final class CustomCameraPermissionViewImpl: UIView, CustomCameraPermissionView {
     @IBOutlet weak var view: UIView!
@@ -44,7 +42,7 @@ final class CustomCameraPermissionViewImpl: UIView, CustomCameraPermissionView {
         addSubview(view)
     }
     
-    func showBottomSheet(visibility: OitiSDK.Visibility) {
+    func showBottomSheet(visibility: CertifaceSDK.Visibility) {
         switch visibility {
         case .displayed:
             hiddenBottomSheetButtons(false)
