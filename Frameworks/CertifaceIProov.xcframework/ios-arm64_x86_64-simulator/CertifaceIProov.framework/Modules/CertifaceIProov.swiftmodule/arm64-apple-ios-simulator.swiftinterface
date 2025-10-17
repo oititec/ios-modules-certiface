@@ -1,0 +1,223 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-bare-slash-regex -module-name CertifaceIProov
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import CertifaceComponents
+import CertifaceNetwork
+import CertifaceSecurity
+import CertifaceUtils
+import DeveloperToolsSupport
+import Foundation
+import Swift
+import SwiftUI
+import UIKit.UIImage
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import iProov
+public typealias IProovCustomLoadingView = UIKit.UIView
+public protocol IProovCallback : AnyObject {
+  func onSuccess(_ result: CertifaceIProov.IProovResult)
+  func onError(_ error: CertifaceIProov.IProovError)
+}
+public enum IProovResultLayoutType {
+  case success
+  case error
+  case retry
+  public static func == (a: CertifaceIProov.IProovResultLayoutType, b: CertifaceIProov.IProovResultLayoutType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol IProovCustomResultView : UIKit.UIView {
+  var retryButton: UIKit.UIButton! { get }
+  func display(for resultType: CertifaceIProov.IProovResultLayoutType, retryReason: Swift.String?)
+  func changeLoadingVisibility(to visibility: CertifaceComponents.Visibility)
+}
+public enum IProovError : Swift.Int, Swift.Error {
+  case invalidAppKey
+  case noCameraPermission
+  case noInternetConnection
+  case livenessNotCompleted
+  case livenessNotInitialized
+  case transactionNotCompleted
+  case invalidCustomization
+  case genericException
+  public var code: Swift.Int {
+    get
+  }
+  public var message: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum FilterStyle {
+  public enum LineDrawingStyle {
+    case classic
+    case shaded
+    case vibrant
+    public static func == (a: CertifaceIProov.FilterStyle.LineDrawingStyle, b: CertifaceIProov.FilterStyle.LineDrawingStyle) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum NaturalStyle {
+    case clear
+    case blur
+    public static func == (a: CertifaceIProov.FilterStyle.NaturalStyle, b: CertifaceIProov.FilterStyle.NaturalStyle) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  case lineDrawing(CertifaceIProov.FilterStyle.LineDrawingStyle)
+  case natural(CertifaceIProov.FilterStyle.NaturalStyle)
+}
+public struct IProovLivenessCustomization {
+  public static func builder() -> CertifaceIProov.IProovLivenessCustomizationBuilder
+}
+@_hasMissingDesignatedInitializers final public class IProovLivenessCustomizationBuilder {
+  @discardableResult
+  final public func setTitle(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setTitleTextColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setTitleBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setFont(withName fontName: Swift.String) -> Self
+  @discardableResult
+  final public func setPromptTextColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setPromptBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setPromptRoundedCornersEnabled(_ enabled: Swift.Bool) -> Self
+  @discardableResult
+  final public func setCloseButtonImage(_ image: UIKit.UIImage) -> Self
+  @discardableResult
+  final public func setCloseButtonImageColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setLogoImage(_ image: UIKit.UIImage) -> Self
+  @discardableResult
+  final public func setBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setLAOvalStrokeCapturingColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setLAOvalStrokeCompletedColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setGPAOvalStrokeNotReadyColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setGPAOvalStrokeReadyColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setFilterStyle(_ style: CertifaceIProov.FilterStyle) -> Self
+  @discardableResult
+  final public func setFilterLineDrawingForegroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setFilterLineDrawingBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setTimeout(_ timeout: Foundation.TimeInterval) -> Self
+  @objc deinit
+}
+public struct IProovLoadingCustomization {
+  public static func builder() -> CertifaceIProov.IProovLoadingCustomizationBuilder
+}
+@_hasMissingDesignatedInitializers final public class IProovLoadingCustomizationBuilder {
+  @discardableResult
+  final public func setBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setSpinnerColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setSpinnerWidth(_ width: CoreFoundation.CGFloat) -> Self
+  @discardableResult
+  final public func setSpinnerScaleFactor(_ scaleFactor: Swift.Int) -> Self
+  @objc deinit
+}
+public struct IProovResult {
+  public var valid: Swift.Bool
+  public var codId: Swift.Double
+  public var cause: Swift.String?
+  public var `protocol`: Swift.String
+  public var scanResultBlob: Swift.String?
+}
+public struct IProovResultCustomization {
+  public static func builder() -> CertifaceIProov.IProovResultCustomizationBuilder
+}
+@_hasMissingDesignatedInitializers final public class IProovResultCustomizationBuilder {
+  @discardableResult
+  final public func setSuccessBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setErrorBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setRetryBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setSuccessImage(_ image: UIKit.UIImage?) -> Self
+  @discardableResult
+  final public func setErrorImage(_ image: UIKit.UIImage?) -> Self
+  @discardableResult
+  final public func setRetryImage(_ image: UIKit.UIImage?) -> Self
+  @discardableResult
+  final public func setMessageFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setSuccessMessage(_ message: Swift.String) -> Self
+  @discardableResult
+  final public func setErrorMessage(_ message: Swift.String) -> Self
+  @discardableResult
+  final public func setSuccessMessageColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setErrorMessageColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setRetryMessageColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setRetryButtonText(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setRetryButtonTextFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setRetryButtonTextColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setRetryButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setRetryButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class IProovStarter {
+  public static func start(at rootViewController: UIKit.UINavigationController, with starterData: CertifaceIProov.IProovStarterData)
+  @objc deinit
+}
+extension CertifaceIProov.IProovStarter {
+  @objc final public func present(iProovViewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+  @objc final public func dismiss(iProovViewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+}
+public struct IProovStarterData {
+}
+extension CertifaceIProov.IProovStarterData {
+  public static func builder(withAppKey appKey: Swift.String, environment: CertifaceNetwork.Environment, url sessionUrl: Swift.String, token sessionToken: Swift.String, livenessType: Swift.String) -> CertifaceIProov.IProovStarterData.Builder
+  @_hasMissingDesignatedInitializers final public class Builder {
+    final public func setTicket(_ ticket: Swift.String) -> Self
+    final public func setTotp(_ totp: Swift.String?) -> Self
+    final public func setCallback(_ callback: (any CertifaceIProov.IProovCallback)?) -> Self
+    final public func setTracker(_ tracker: CertifaceSecurity.SecurityManager?) -> Self
+    final public func setLivenessCustomization(_ customization: CertifaceIProov.IProovLivenessCustomizationBuilder) -> Self
+    final public func setLoadingCustomization(_ customization: CertifaceIProov.IProovLoadingCustomizationBuilder) -> Self
+    final public func setResultCustomization(_ customization: CertifaceIProov.IProovResultCustomizationBuilder) -> Self
+    final public func setLoadingView(_ customView: CertifaceIProov.IProovCustomLoadingView?) -> Self
+    final public func setResultView(_ customView: (any CertifaceIProov.IProovCustomResultView)?) -> Self
+    final public func build() -> CertifaceIProov.IProovStarterData
+    @objc deinit
+  }
+}
+extension CertifaceIProov.IProovResultLayoutType : Swift.Equatable {}
+extension CertifaceIProov.IProovResultLayoutType : Swift.Hashable {}
+extension CertifaceIProov.IProovError : Swift.Equatable {}
+extension CertifaceIProov.IProovError : Swift.Hashable {}
+extension CertifaceIProov.IProovError : Swift.RawRepresentable {}
+extension CertifaceIProov.FilterStyle.LineDrawingStyle : Swift.Equatable {}
+extension CertifaceIProov.FilterStyle.LineDrawingStyle : Swift.Hashable {}
+extension CertifaceIProov.FilterStyle.NaturalStyle : Swift.Equatable {}
+extension CertifaceIProov.FilterStyle.NaturalStyle : Swift.Hashable {}
+extension CertifaceIProov.IProovStarter : iProov.IProovPresentationDelegate {}

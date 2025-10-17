@@ -1,4 +1,0 @@
-framework module OitiLivenessFacetec {
-  header "OitiLivenessFacetec-Swift.h"
-  requires objc
-}

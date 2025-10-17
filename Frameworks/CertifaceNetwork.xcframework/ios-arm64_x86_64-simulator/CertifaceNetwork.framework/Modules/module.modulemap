@@ -1,0 +1,4 @@
+framework module CertifaceNetwork {
+  header "CertifaceNetwork-Swift.h"
+  requires objc
+}

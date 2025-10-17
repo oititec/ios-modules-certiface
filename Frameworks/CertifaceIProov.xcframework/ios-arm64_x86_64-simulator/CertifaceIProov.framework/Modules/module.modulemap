@@ -1,0 +1,4 @@
+framework module CertifaceIProov {
+  header "CertifaceIProov-Swift.h"
+  requires objc
+}

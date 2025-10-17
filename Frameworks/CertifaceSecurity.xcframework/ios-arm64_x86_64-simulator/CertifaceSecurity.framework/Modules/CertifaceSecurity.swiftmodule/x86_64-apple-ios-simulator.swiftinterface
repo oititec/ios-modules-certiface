@@ -1,0 +1,90 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-bare-slash-regex -module-name CertifaceSecurity
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import CertifaceNetwork
+import CertifaceUtils
+import CommonCrypto
+import CoreLocation
+import Foundation
+import MetricKit
+import Network
+import Security
+import Swift
+import SystemConfiguration
+import UIKit.UIDevice
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct CryptoManager {
+  public static func encrypt(_ value: Foundation.NSData, withKey secretKey: Swift.String) -> Swift.String?
+  public static func decrypt(_ value: Swift.String, withKey secretKey: Swift.String) -> Foundation.Data?
+}
+@_hasMissingDesignatedInitializers public class DLCoordinate {
+  final public let latitude: Swift.Double
+  final public let longitude: Swift.Double
+  @objc deinit
+}
+public protocol DebugLoggerProtocol {
+  func logData(forStep step: Swift.String, totp: Swift.String?, provider: Swift.String)
+  func logData(forStep step: Swift.String, totp: Swift.String?, errorDetail: CertifaceNetwork.ErrorDetail, provider: Swift.String)
+}
+@_hasMissingDesignatedInitializers final public class ExceptionHandler {
+  public static let shared: CertifaceSecurity.ExceptionHandler
+  final public func configure(withTicket ticket: Swift.String? = nil, appKey: Swift.String, environment: CertifaceNetwork.Environment, debugMode debugModeEnabled: Swift.Bool = false)
+  final public func updateProvider(_ provider: Swift.String)
+  @objc deinit
+}
+public struct ExceptionPayload : Swift.Error {
+}
+@_hasMissingDesignatedInitializers final public class FaceCaptchaDebugLogger : CertifaceSecurity.DebugLoggerProtocol {
+  convenience public init(appKey: Swift.String, environment: CertifaceNetwork.Environment)
+  final public func logData(forStep step: Swift.String, totp: Swift.String?, provider: Swift.String)
+  final public func logData(forStep step: Swift.String, totp: Swift.String?, errorDetail: CertifaceNetwork.ErrorDetail, provider: Swift.String)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class LegacyExceptionHandler {
+  public static var exceptionCallback: ((CertifaceSecurity.ExceptionPayload) -> Swift.Void)?
+  public static func start()
+  @objc deinit
+}
+public enum PersistenceOption : Swift.String {
+  case index
+  case collectionID
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol RequestHelper {
+  func generateUserAgent(with bundleIdentifier: Swift.String) -> Swift.String
+}
+@_hasMissingDesignatedInitializers final public class DefaultRequestHelper : CertifaceSecurity.RequestHelper {
+  convenience public init()
+  final public func generateUserAgent(with bundleIdentifier: Swift.String) -> Swift.String
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class SecurityManager {
+  @objc deinit
+  public static func session(for sessionIdentifier: Swift.String, environment: CertifaceNetwork.Environment) -> CertifaceSecurity.SecurityManager
+  final public func requestLocation()
+  final public func trackEvent(forScreen screen: Swift.String, step: Swift.String, action: Swift.String)
+  final public func uploadDeviceInfoAndLocation(appKey: Swift.String, autoClose: Swift.Bool = true, provider: Swift.String, options: [CertifaceSecurity.PersistenceOption : Swift.String] = [:], completion: ((Swift.String?) -> Swift.Void)? = nil)
+  final public func uploadDeviceBehavior(with appKey: Swift.String, autoClose: Swift.Bool = true, provider: Swift.String, options: [CertifaceSecurity.PersistenceOption : Swift.String] = [:], completion: ((Swift.String?) -> Swift.Void)? = nil)
+}
+extension CertifaceSecurity.SecurityManager : Swift.Hashable {
+  public static func == (lhs: CertifaceSecurity.SecurityManager, rhs: CertifaceSecurity.SecurityManager) -> Swift.Bool
+  final public func hash(into hasher: inout Swift.Hasher)
+  final public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct SecurityPayload {
+}
+public struct SecurityEvent {
+}
+extension CertifaceSecurity.PersistenceOption : Swift.Equatable {}
+extension CertifaceSecurity.PersistenceOption : Swift.Hashable {}
+extension CertifaceSecurity.PersistenceOption : Swift.RawRepresentable {}

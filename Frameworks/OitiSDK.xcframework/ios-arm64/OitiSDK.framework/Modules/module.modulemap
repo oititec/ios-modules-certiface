@@ -1,4 +1,0 @@
-framework module OitiSDK {
-  header "OitiSDK-Swift.h"
-  requires objc
-}

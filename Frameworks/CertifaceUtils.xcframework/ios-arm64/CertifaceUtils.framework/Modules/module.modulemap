@@ -1,0 +1,4 @@
+framework module CertifaceUtils {
+  header "CertifaceUtils-Swift.h"
+  requires objc
+}

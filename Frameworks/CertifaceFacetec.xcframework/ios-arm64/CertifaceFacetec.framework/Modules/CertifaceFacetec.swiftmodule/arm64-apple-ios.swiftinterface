@@ -1,0 +1,367 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name CertifaceFacetec
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import AVFoundation
+import CertifaceComponents
+import CertifaceNetwork
+import CertifaceSecurity
+import CertifaceUtils
+import DeveloperToolsSupport
+import Foundation
+import Swift
+import SwiftUI
+import UIKit.UIButton
+import UIKit.UIImage
+import UIKit
+import UIKit.UIView
+import UIKit.UIViewController
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public typealias Environment = CertifaceNetwork.Environment
+public typealias Visibility = CertifaceComponents.Visibility
+public typealias Liveness3DSuccess = CertifaceNetwork.Liveness3DSuccess
+public protocol CustomCameraPermissionView : CertifaceComponents.CustomCameraPermissionView {
+  override func showBottomSheet(visibility: CertifaceFacetec.Visibility)
+}
+public struct BlobAnimationAppearance {
+  public init(blobColor: UIKit.UIColor, checkmarkForegroundColor: UIKit.UIColor, checkmarkBackgroundColor: UIKit.UIColor)
+}
+public protocol CustomResultAnimationDelegate {
+  func createActivityIndicatorView() -> UIKit.UIView?
+  func createSuccessAnimationView() -> UIKit.UIView?
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class HybridLiveness3DViewController : CertifaceFacetec.Liveness3DViewController {
+  @_Concurrency.MainActor @preconcurrency public init(liveness3DUser: CertifaceFacetec.Liveness3DUser, delegate: any CertifaceFacetec.Liveness3DDelegate, customAppearance: CertifaceComponents.HybridViewAppearance?)
+  @objc deinit
+}
+public struct ImageAnimationAppearance {
+  public init(image: UIKit.UIImage?, rotationInterval: Swift.Int32, checkmarkForegroundColor: UIKit.UIColor, checkmarkBackgroundColor: UIKit.UIColor)
+}
+public protocol Liveness3DCustomInstructionView : UIKit.UIView {
+  var backButton: UIKit.UIButton! { get }
+  var continueButton: UIKit.UIButton! { get }
+  func changeLoadingVisibility(to visibility: CertifaceFacetec.Visibility)
+}
+public protocol Liveness3DDelegate : AnyObject {
+  func handleLiveness3DValidation(validateModel: CertifaceFacetec.Liveness3DSuccess)
+  func handleLiveness3DError(error: CertifaceFacetec.Liveness3DError)
+}
+public struct Liveness3DError {
+  public let code: Swift.Int
+  public let type: CertifaceFacetec.Liveness3DErrorCode
+  public let message: Swift.String
+}
+public enum Liveness3DErrorCode : Swift.Int, Swift.Error {
+  case invalidAppKey
+  case noCameraPermission
+  case noInternetConnection
+  case livenessNotCompleted
+  case livenessNotInitialized
+  case transactionNotCompleted
+  case genericException
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct Liveness3DLoadingCustomization {
+  public var backgroundColor: UIKit.UIColor
+  public var spinnerColor: UIKit.UIColor
+  public var spinnerWidth: CoreFoundation.CGFloat
+  public var spinnerScaleFactor: Swift.Int
+  public init()
+}
+public struct Liveness3DShadow {
+  public init(color: UIKit.UIColor, opacity: Swift.Float, radius: Swift.Float, offset: CoreFoundation.CGSize, insets: UIKit.UIEdgeInsets)
+}
+public enum Liveness3DStarter {
+  public static func start(at rootViewController: UIKit.UIViewController, with starterData: CertifaceFacetec.Liveness3DStarterData)
+}
+public struct Liveness3DStarterData {
+}
+extension CertifaceFacetec.Liveness3DStarterData {
+  public static func builder(withAppKey appKey: Swift.String, token sessionToken: Swift.String, environment: CertifaceFacetec.Environment, delegate: any CertifaceFacetec.Liveness3DDelegate) -> CertifaceFacetec.Liveness3DStarterData.Builder
+  @_hasMissingDesignatedInitializers final public class Builder {
+    final public func setTicket(_ ticket: Swift.String) -> Self
+    final public func setTotp(_ totp: Swift.String?) -> Self
+    final public func setLoadingCustomization(_ customization: CertifaceFacetec.Liveness3DLoadingCustomization) -> Self
+    final public func setDefaultTheme(_ theme: CertifaceFacetec.Liveness3DTheme?) -> Self
+    final public func setLowLightTheme(_ theme: CertifaceFacetec.Liveness3DTheme?) -> Self
+    final public func setTexts(_ texts: [CertifaceFacetec.Liveness3DTextKey : Swift.String]?) -> Self
+    final public func setText(_ text: Swift.String, forKey key: CertifaceFacetec.Liveness3DTextKey) -> Self
+    final public func setTracker(_ tracker: CertifaceSecurity.SecurityManager?) -> Self
+    final public func build() -> CertifaceFacetec.Liveness3DStarterData
+    @objc deinit
+  }
+}
+public enum Liveness3DTextKey {
+  case readyHeader1
+  case readyHeader2
+  case readyMessage1
+  case readyMessage2
+  case readyButton
+  case retryHeader
+  case retrySubheader
+  case retryYourPicture
+  case retryIdealPicture
+  case retryMessageSmile
+  case retryMessageLightning
+  case retryMessageContrast
+  case retryButton
+  case resultUploadMessage
+  case resultSuccessMessage
+  case feedbackCenterFace
+  case feedbackFaceNotFound
+  case feedbackFaceNotLookingStraightAhead
+  case feedbackFaceNotUpright
+  case feedbackHoldSteady
+  case feedbackMovePhoneAway
+  case feedbackMovePhoneCloser
+  case feedbackMovePhoneToEyeLevel
+  case feedbackUseEvenLighting
+  case feedbackFrameYourFace
+  case feedbackPositionFaceStraightInOval
+  case feedbackHoldSteady1
+  case feedbackHoldSteady2
+  case feedbackHoldSteady3
+  case feedbackRemoveDarkGlasses
+  case feedbackNeutralExpression
+  case feedbackConditionsTooBright
+  case feedbackBrightenYourEnvironment
+  public static func == (a: CertifaceFacetec.Liveness3DTextKey, b: CertifaceFacetec.Liveness3DTextKey) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct Liveness3DTheme {
+  public enum CancelButtonLocation : Swift.Int {
+    case topLeft, topRight, disabled
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public enum ThemeType : Swift.Int {
+    case light, dark
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public init(_ theme: CertifaceFacetec.Liveness3DTheme.ThemeType)
+  public var readyScreenCustomizationHeaderFont: UIKit.UIFont?
+  public var readyScreenCustomizationHeaderTextColor: UIKit.UIColor
+  public var readyScreenCustomizationSubtextFont: UIKit.UIFont?
+  public var readyScreenCustomizationSubtextTextColor: UIKit.UIColor
+  public var readyScreenCustomizationTextBackgroundColor: UIKit.UIColor?
+  public var readyScreenCustomizationTextBackgroundCornerRadius: Swift.Int32
+  public var resultScreenCustomizationMessageFont: UIKit.UIFont?
+  public var resultScreenCustomizationTextColor: UIKit.UIColor
+  public var resultScreenCustomizationShowUploadProgressBar: Swift.Bool
+  public var resultScreenCustomizationUploadProgressFillColor: UIKit.UIColor
+  public var resultScreenCustomizationUploadProgressTrackColor: UIKit.UIColor
+  public var resultScreenCustomizationAnimationRelativeScale: Swift.Float
+  public var resultScreenCustomizationAnimationStyle: CertifaceFacetec.ResultAnimationStyle
+  public var retryScreenCustomizationHeaderFont: UIKit.UIFont?
+  public var retryScreenCustomizationHeaderTextColor: UIKit.UIColor
+  public var retryScreenCustomizationSubtextFont: UIKit.UIFont?
+  public var retryScreenCustomizationSubtextTextColor: UIKit.UIColor
+  public var retryScreenCustomizationImageBorderColor: UIKit.UIColor
+  public var retryScreenCustomizationImageBorderWidth: Swift.Int32
+  public var retryScreenCustomizationImageCornerRadius: Swift.Int32
+  public var guidanceCustomizationHeaderFont: UIKit.UIFont?
+  public var guidanceCustomizationSubtextFont: UIKit.UIFont?
+  public var guidanceCustomizationButtonBackgroundNormalColor: UIKit.UIColor
+  public var guidanceCustomizationButtonBackgroundHighlightColor: UIKit.UIColor
+  public var guidanceCustomizationButtonBackgroundDisabledColor: UIKit.UIColor
+  public var guidanceCustomizationButtonTextNormalColor: UIKit.UIColor
+  public var guidanceCustomizationButtonTextHighlightColor: UIKit.UIColor
+  public var guidanceCustomizationButtonTextDisabledColor: UIKit.UIColor
+  public var guidanceCustomizationButtonFont: UIKit.UIFont?
+  public var guidanceCustomizationButtonBorderColor: UIKit.UIColor
+  public var guidanceCustomizationButtonBorderWidth: Swift.Int32
+  public var guidanceCustomizationButtonCornerRadius: Swift.Int32
+  public var frameCustomizationBorderWidth: Swift.Int32
+  public var frameCustomizationBorderColor: UIKit.UIColor
+  public var frameCustomizationBackgroundColor: UIKit.UIColor
+  public var frameCustomizationCornerRadius: Swift.Int32
+  public var frameCustomizationShadow: CertifaceFacetec.Liveness3DShadow?
+  public var ovalCustomizationStrokeColor: UIKit.UIColor
+  public var ovalCustomizationStrokeWidth: Swift.Int32
+  public var ovalCustomizationProgressColor1: UIKit.UIColor
+  public var ovalCustomizationProgressColor2: UIKit.UIColor
+  public var ovalCustomizationProgressStrokeWidth: Swift.Int32
+  public var ovalCustomizationProgressRadialOffset: Swift.Int32
+  public var overlayCustomizationBackgroundColor: UIKit.UIColor
+  public var overlayCustomizationBrandingImage: UIKit.UIImage?
+  public var overlayCustomizationShowBrandingImage: Swift.Bool
+  public var feedbackCustomizationCornerRadius: Swift.Int32
+  public var feedbackCustomizationBackgroundColor: UIKit.UIColor
+  public var feedbackCustomizationTextColor: UIKit.UIColor
+  public var feedbackCustomizationTextFont: UIKit.UIFont?
+  public var feedbackCustomizationShadow: CertifaceFacetec.Liveness3DShadow?
+  public var cancelButtonCustomizationCustomImage: UIKit.UIImage?
+  public var cancelButtonCustomizationLocation: CertifaceFacetec.Liveness3DTheme.CancelButtonLocation
+  public var vocalGuidanceMode: CertifaceFacetec.VocalGuidanceMode
+  public static func builder() -> CertifaceFacetec.Liveness3DThemeBuilder
+}
+@_hasMissingDesignatedInitializers final public class Liveness3DThemeBuilder {
+  final public func build() -> CertifaceFacetec.Liveness3DTheme
+  @discardableResult
+  final public func setReadyScreenHeaderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setReadyScreenHeaderFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setReadyScreenMessageColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setReadyScreenMessageFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setReadyScreenTextBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setReadyScreenTextBackgroundCornerRadius(_ radius: Swift.Int) -> Self
+  @discardableResult
+  final public func setResultScreenMessageColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setResultScreenMessageFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setResultScreenUploadProgressBarEnabled(_ enabled: Swift.Bool) -> Self
+  @discardableResult
+  final public func setResultScreenUploadProgressBarFillColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setResultScreenUploadProgressBarTrackColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setResultScreenAnimationStyle(_ style: CertifaceFacetec.ResultAnimationStyle) -> Self
+  @discardableResult
+  final public func setResultScreenAnimationScale(_ scale: CoreFoundation.CGFloat) -> Self
+  @discardableResult
+  final public func setRetryScreenHeaderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setRetryScreenHeaderFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setRetryScreenCaptionColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setRetryScreenCaptionFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setRetryScreenImageBorderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setRetryScreenImageBorderWidth(_ width: Swift.Int) -> Self
+  @discardableResult
+  final public func setRetryScreenImageBorderCornerRadius(_ radius: Swift.Int) -> Self
+  @discardableResult
+  final public func setGuidanceHeaderFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setGuidanceSubtextFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setGuidanceButtonBackgroundNormalColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setGuidanceButtonBackgroundHighlightColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setGuidanceButtonBackgroundDisabledColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setGuidanceButtonTextNormalColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setGuidanceButtonTextHighlightColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setGuidanceButtonTextDisabledColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setGuidanceButtonFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setGuidanceButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setGuidanceButtonBorderWidth(_ width: Swift.Int) -> Self
+  @discardableResult
+  final public func setGuidanceButtonBorderCornerRadius(_ radius: Swift.Int) -> Self
+  @discardableResult
+  final public func setFrameBorderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setFrameBorderWidth(_ width: Swift.Int) -> Self
+  @discardableResult
+  final public func setFrameBorderCornerRadius(_ radius: Swift.Int) -> Self
+  @discardableResult
+  final public func setFrameBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setFrameShadow(_ shadow: CertifaceFacetec.Liveness3DShadow) -> Self
+  @discardableResult
+  final public func setOvalStrokeColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setOvalStrokeWidth(_ width: Swift.Int) -> Self
+  @discardableResult
+  final public func setOvalProgressFirstColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setOvalProgressSecondColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setOvalProgressWidth(_ width: Swift.Int) -> Self
+  @discardableResult
+  final public func setOvalProgressOffset(_ offset: Swift.Int) -> Self
+  @discardableResult
+  final public func setOverlayBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setOverlayBrandImage(_ image: UIKit.UIImage?) -> Self
+  @discardableResult
+  final public func setFeedbackMessageColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setFeedbackMessageFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setFeedbackBarBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setFeedbackBarCornerRadius(_ radius: Swift.Int) -> Self
+  @discardableResult
+  final public func setFeedbackBarShadow(_ shadow: CertifaceFacetec.Liveness3DShadow) -> Self
+  @discardableResult
+  final public func setCancelButtonIcon(_ icon: UIKit.UIImage?) -> Self
+  @discardableResult
+  final public func setCancelButtonLocation(_ location: CertifaceFacetec.Liveness3DTheme.CancelButtonLocation) -> Self
+  @discardableResult
+  final public func setVocalGuidanceMode(_ mode: CertifaceFacetec.VocalGuidanceMode) -> Self
+  @objc deinit
+}
+public struct Liveness3DUser {
+  public init(appKey: Swift.String, ticket: Swift.String? = nil, environment: CertifaceFacetec.Environment, defaultTheme: CertifaceFacetec.Liveness3DTheme? = nil, lowLightTheme: CertifaceFacetec.Liveness3DTheme? = nil, texts: [CertifaceFacetec.Liveness3DTextKey : Swift.String]? = nil)
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class Liveness3DViewController : UIKit.UINavigationController {
+  @_Concurrency.MainActor @preconcurrency weak public var liveness3DDelegate: (any CertifaceFacetec.Liveness3DDelegate)?
+  @_Concurrency.MainActor @preconcurrency convenience public init(liveness3DUser: CertifaceFacetec.Liveness3DUser, delegate: any CertifaceFacetec.Liveness3DDelegate, customInstructionView: (any CertifaceFacetec.Liveness3DCustomInstructionView)? = nil, customPermissionView: (any CertifaceFacetec.CustomCameraPermissionView)? = nil)
+  @objc deinit
+}
+extension CertifaceFacetec.Liveness3DViewController : UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+}
+public enum VocalGuidanceMode : Swift.Int {
+  case noVocalGuidance
+  case minimalVocalGuidance
+  case fullVocalGuidance
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum ResultAnimationStyle {
+  case blob(appearance: CertifaceFacetec.BlobAnimationAppearance)
+  case spinner(appearance: CertifaceFacetec.SpinnerAnimationAppearance)
+  case image(appearance: CertifaceFacetec.ImageAnimationAppearance)
+  case custom(delegate: any CertifaceFacetec.CustomResultAnimationDelegate)
+}
+public struct SpinnerAnimationAppearance {
+  public init(spinnerColor: UIKit.UIColor, checkmarkForegroundColor: UIKit.UIColor, checkmarkBackgroundColor: UIKit.UIColor)
+}
+extension CertifaceFacetec.Liveness3DErrorCode : Swift.Equatable {}
+extension CertifaceFacetec.Liveness3DErrorCode : Swift.Hashable {}
+extension CertifaceFacetec.Liveness3DErrorCode : Swift.RawRepresentable {}
+extension CertifaceFacetec.Liveness3DTextKey : Swift.Equatable {}
+extension CertifaceFacetec.Liveness3DTextKey : Swift.Hashable {}
+extension CertifaceFacetec.Liveness3DTheme.CancelButtonLocation : Swift.Equatable {}
+extension CertifaceFacetec.Liveness3DTheme.CancelButtonLocation : Swift.Hashable {}
+extension CertifaceFacetec.Liveness3DTheme.CancelButtonLocation : Swift.RawRepresentable {}
+extension CertifaceFacetec.Liveness3DTheme.ThemeType : Swift.Equatable {}
+extension CertifaceFacetec.Liveness3DTheme.ThemeType : Swift.Hashable {}
+extension CertifaceFacetec.Liveness3DTheme.ThemeType : Swift.RawRepresentable {}
+extension CertifaceFacetec.VocalGuidanceMode : Swift.Equatable {}
+extension CertifaceFacetec.VocalGuidanceMode : Swift.Hashable {}
+extension CertifaceFacetec.VocalGuidanceMode : Swift.RawRepresentable {}

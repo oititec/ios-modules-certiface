@@ -1,0 +1,771 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-bare-slash-regex -module-name CertifaceComponents
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import AVFoundation
+import CoreGraphics
+import CoreText
+import DeveloperToolsSupport
+import Foundation
+import Swift
+import SwiftUI
+import UIKit.UIButton
+import UIKit.UIColor
+import UIKit.UIImage
+import UIKit
+import UIKit.UIView
+import UIKit.UIViewController
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_spi(CertifaceInternal) public struct ActivityIndicatorConfiguration : CertifaceComponents.LoadingViewConfigurationProtocol {
+  @_spi(CertifaceInternal) public let loadingType: CertifaceComponents.LoadingTypes
+  @_spi(CertifaceInternal) public let loadingColor: UIKit.UIColor
+  @_spi(CertifaceInternal) public let backgroundColor: UIKit.UIColor
+  @_spi(CertifaceInternal) public let scaleFactor: Swift.Int
+  @_spi(CertifaceInternal) public init(loadingColor: UIKit.UIColor, backgroundColor: UIKit.UIColor, scaleFactor: Swift.Int)
+  @_spi(CertifaceInternal) public func createLoadingView() -> UIKit.UIView
+}
+@_spi(CertifaceInternal) @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class BaseFieldComponent : UIKit.UIView {
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public init(model: CertifaceComponents.BaseFieldModel)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func disable()
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func enable()
+  @_spi(CertifaceInternal) @discardableResult
+  @_Concurrency.MainActor @preconcurrency public func showWarning(withText text: Swift.String) -> Swift.Bool
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func showOffWarning()
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func canShowWarning() -> Swift.Bool
+  @_spi(CertifaceInternal) @objc deinit
+}
+@_spi(CertifaceInternal) public struct BaseFieldModel {
+  @_spi(CertifaceInternal) public var label: Swift.String
+  @_spi(CertifaceInternal) public var size: CertifaceComponents.TextFieldComponentSize
+  @_spi(CertifaceInternal) public var icon: CertifaceComponents.ComponentIcon
+}
+@_spi(CertifaceInternal) @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class ButtonComponent : UIKit.UIButton {
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public var isLoading: Swift.Bool {
+    @_spi(CertifaceInternal) get
+    @_spi(CertifaceInternal) set
+  }
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public init(model: CertifaceComponents.ButtonComponentModel, identifier: Swift.String? = nil)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func changeTitle(to newTitle: Swift.String)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
+  @_spi(CertifaceInternal) @objc deinit
+}
+public protocol ButtonLayoutContraintsModel {
+  var heightValue: CoreFoundation.CGFloat { get }
+  func layout(_ view: UIKit.UIView, superview: UIKit.UIView, spacing: CoreFoundation.CGFloat)
+  func layoutSquare(_ view: UIKit.UIView)
+  func layoutFont(titleLabel: UIKit.UILabel)
+  func layoutIcon(iconImage: UIKit.UIImageView, uiView: UIKit.UIView)
+}
+@_spi(CertifaceInternal) public struct ButtonComponentModel {
+  @_spi(CertifaceInternal) public init(title: Swift.String? = nil, titleFont: UIKit.UIFont? = nil, type: CertifaceComponents.ButtonComponentType = .complex, size: CertifaceComponents.ComponentSize, icon: CertifaceComponents.ComponentIcon, loadingIcon: UIKit.UIImage? = nil, highlightedStyle: CertifaceComponents.ButtonComponentStyles, normalStyle: CertifaceComponents.ButtonComponentStyles, disabledStyle: CertifaceComponents.ButtonComponentStyles)
+}
+@_spi(CertifaceInternal) public struct ButtonComponentAppearance {
+  @_spi(CertifaceInternal) public let backgroundColor: UIKit.UIColor
+  @_spi(CertifaceInternal) public let borderColor: UIKit.UIColor
+  @_spi(CertifaceInternal) public let contentColor: UIKit.UIColor
+  @_spi(CertifaceInternal) public init(backgroundColor: UIKit.UIColor, borderColor: UIKit.UIColor, contentColor: UIKit.UIColor)
+}
+public enum ButtonComponentType {
+  case simple
+  case complex
+  public static func == (a: CertifaceComponents.ButtonComponentType, b: CertifaceComponents.ButtonComponentType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_spi(CertifaceInternal) public enum ButtonComponentStyles {
+  @_spi(CertifaceInternal) case clear
+  @_spi(CertifaceInternal) case custom(CertifaceComponents.ButtonComponentAppearance)
+  @_spi(CertifaceInternal) case standardPrimaryHightlithed
+  @_spi(CertifaceInternal) case standardPrimaryNormal
+  @_spi(CertifaceInternal) case standardPrimaryDisabled
+  @_spi(CertifaceInternal) case standardSecondaryHightlithed
+  @_spi(CertifaceInternal) case standardSecondaryNormal
+  @_spi(CertifaceInternal) case standardSecondaryDisabled
+  @_spi(CertifaceInternal) case standardGhostHightlithed
+  @_spi(CertifaceInternal) case standardGhostHover
+  @_spi(CertifaceInternal) case standardGhostNormal
+  @_spi(CertifaceInternal) case standardGhostDisabled
+  @_spi(CertifaceInternal) case onColorPrimaryHightlithed
+  @_spi(CertifaceInternal) case onColorPrimaryNormal
+  @_spi(CertifaceInternal) case onColorPrimaryDisabled
+  @_spi(CertifaceInternal) case onColorSecondaryHightlithed
+  @_spi(CertifaceInternal) case onColorSecondaryNormal
+  @_spi(CertifaceInternal) case onColorSecondaryDisabled
+  @_spi(CertifaceInternal) case onColorGhostHightlithed
+  @_spi(CertifaceInternal) case onColorGhostNormal
+  @_spi(CertifaceInternal) case onColorGhostDisabled
+  @_spi(CertifaceInternal) public var appearance: CertifaceComponents.ButtonComponentAppearance {
+    @_spi(CertifaceInternal) get
+  }
+}
+@_spi(CertifaceInternal) extension CoreFoundation.CGFloat {
+  @_spi(CertifaceInternal) public static func widthValue(_ value: CoreFoundation.CGFloat, from frame: CoreFoundation.CGRect? = nil) -> CoreFoundation.CGFloat
+  @_spi(CertifaceInternal) public static func heightValue(_ value: CoreFoundation.CGFloat, from frame: CoreFoundation.CGRect? = nil) -> CoreFoundation.CGFloat
+  @_spi(CertifaceInternal) public static func widthMultiplier(to value: CoreFoundation.CGFloat, from frame: CoreFoundation.CGRect? = nil) -> CoreFoundation.CGFloat
+  @_spi(CertifaceInternal) public static func heightMultiplier(to value: CoreFoundation.CGFloat, from frame: CoreFoundation.CGRect? = nil) -> CoreFoundation.CGFloat
+}
+@_spi(CertifaceInternal) @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class CertifaceHeaderComponent : UIKit.UIView {
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public var optionsAction: () -> Swift.Void
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency final public let optionsButtonIdentifier: Swift.String
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public init(model: CertifaceComponents.CertifaceHeaderComponentModel)
+  @_spi(CertifaceInternal) @objc deinit
+}
+@_spi(CertifaceInternal) public struct CertifaceHeaderComponentModel {
+  @_spi(CertifaceInternal) public init(certifaceLogoImage: UIKit.UIImage?, optionsImage: UIKit.UIImage?, optionsButtonIdentifier: Swift.String)
+}
+@_spi(CertifaceInternal) public enum CharacterType : Swift.CaseIterable {
+  @_spi(CertifaceInternal) case letter
+  @_spi(CertifaceInternal) case whitespace
+  @_spi(CertifaceInternal) case number
+  @_spi(CertifaceInternal) case symbol
+  @_spi(CertifaceInternal) case punctuation
+  @_spi(CertifaceInternal) case emailSymbol
+  @_spi(CertifaceInternal) case dotSymbol
+  @_spi(CertifaceInternal) case any
+  @_spi(CertifaceInternal) public static func == (a: CertifaceComponents.CharacterType, b: CertifaceComponents.CharacterType) -> Swift.Bool
+  @_spi(CertifaceInternal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(CertifaceInternal) public typealias AllCases = [CertifaceComponents.CharacterType]
+  @_spi(CertifaceInternal) nonisolated public static var allCases: [CertifaceComponents.CharacterType] {
+    @_spi(CertifaceInternal) get
+  }
+  @_spi(CertifaceInternal) public var hashValue: Swift.Int {
+    @_spi(CertifaceInternal) get
+  }
+}
+@_spi(CertifaceInternal) public protocol CheckCameraPermissionDelegate : AnyObject {
+  @_spi(CertifaceInternal) func checkCameraPermission(continueFrom cameraPermissionVC: UIKit.UIViewController)
+  @_spi(CertifaceInternal) func checkCameraPermission(close cameraPermissionVC: UIKit.UIViewController)
+}
+@_spi(CertifaceInternal) public protocol CheckCameraPermissionTrackerDelegate : AnyObject {
+  @_spi(CertifaceInternal) func trackViewDidAppear()
+  @_spi(CertifaceInternal) func trackGoBackAction()
+  @_spi(CertifaceInternal) func trackCheckPermissionAction()
+  @_spi(CertifaceInternal) func trackGoToSettingsAction()
+  @_spi(CertifaceInternal) func trackCloseAction()
+}
+@_spi(CertifaceInternal) @objc @_Concurrency.MainActor @preconcurrency public class CheckCameraPermissionViewController : UIKit.UIViewController {
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency weak public var delegate: (any CertifaceComponents.CheckCameraPermissionDelegate)?
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency weak public var trackerDelegate: (any CertifaceComponents.CheckCameraPermissionTrackerDelegate)?
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public init(customizationProperties: CertifaceComponents.CheckCameraPermissionViewProperties = .init(), customView: (any CertifaceComponents.CustomCameraPermissionView)? = nil)
+  @_spi(CertifaceInternal) @available(*, unavailable)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc override dynamic public func loadView()
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_spi(CertifaceInternal) @objc deinit
+}
+@_spi(CertifaceInternal) public struct CheckCameraPermissionViewProperties {
+  @_spi(CertifaceInternal) public var backButtonIcon: UIKit.UIImage?
+  @_spi(CertifaceInternal) public var backButtonNormalStyle: CertifaceComponents.ButtonComponentStyles
+  @_spi(CertifaceInternal) public var cameraImage: UIKit.UIImage?
+  @_spi(CertifaceInternal) public var cameraImageColor: UIKit.UIColor
+  @_spi(CertifaceInternal) public var title: Swift.String
+  @_spi(CertifaceInternal) public var titleColor: UIKit.UIColor
+  @_spi(CertifaceInternal) public var titleFont: UIKit.UIFont
+  @_spi(CertifaceInternal) public var caption: Swift.String
+  @_spi(CertifaceInternal) public var captionColor: UIKit.UIColor
+  @_spi(CertifaceInternal) public var captionFont: UIKit.UIFont
+  @_spi(CertifaceInternal) public var checkPermissionButtonText: Swift.String
+  @_spi(CertifaceInternal) public var checkPermissionButtonTextFont: UIKit.UIFont
+  @_spi(CertifaceInternal) public var checkPermissionButtonHighlightedStyle: CertifaceComponents.ButtonComponentStyles
+  @_spi(CertifaceInternal) public var checkPermissionButtonNormalStyle: CertifaceComponents.ButtonComponentStyles
+  @_spi(CertifaceInternal) public var checkPermissionButtonDisabledStyle: CertifaceComponents.ButtonComponentStyles
+  @_spi(CertifaceInternal) public var backgroundColor: UIKit.UIColor
+  @_spi(CertifaceInternal) public var bottomSheetCornerRadius: CoreFoundation.CGFloat
+  @_spi(CertifaceInternal) public var bottomSheetColor: UIKit.UIColor
+  @_spi(CertifaceInternal) public var bottomSheetTitle: Swift.String
+  @_spi(CertifaceInternal) public var bottomSheetTitleColor: UIKit.UIColor
+  @_spi(CertifaceInternal) public var bottomSheetTitleFont: UIKit.UIFont
+  @_spi(CertifaceInternal) public var bottomSheetCaption: Swift.String
+  @_spi(CertifaceInternal) public var bottomSheetCaptionFont: UIKit.UIFont
+  @_spi(CertifaceInternal) public var bottomSheetCaptionColor: UIKit.UIColor
+  @_spi(CertifaceInternal) public var openSettingsButtonText: Swift.String
+  @_spi(CertifaceInternal) public var openSettingsButtonTextFont: UIKit.UIFont
+  @_spi(CertifaceInternal) public var openSettingsButtonHighlightedStyle: CertifaceComponents.ButtonComponentStyles
+  @_spi(CertifaceInternal) public var openSettingsButtonNormalStyle: CertifaceComponents.ButtonComponentStyles
+  @_spi(CertifaceInternal) public var openSettingsButtonDisabledStyle: CertifaceComponents.ButtonComponentStyles
+  @_spi(CertifaceInternal) public var closeButtonText: Swift.String
+  @_spi(CertifaceInternal) public var closeButtonTextFont: UIKit.UIFont
+  @_spi(CertifaceInternal) public var closeButtonHighlightedStyle: CertifaceComponents.ButtonComponentStyles
+  @_spi(CertifaceInternal) public var closeButtonNormalStyle: CertifaceComponents.ButtonComponentStyles
+  @_spi(CertifaceInternal) public var closeButtonDisabledStyle: CertifaceComponents.ButtonComponentStyles
+  @_spi(CertifaceInternal) public var accessibilityLabelBackButton: Swift.String
+  @_spi(CertifaceInternal) public var accessibilityLabelCheckPermissionButton: Swift.String
+  @_spi(CertifaceInternal) public var accessibilityLabelOpenSettingsButton: Swift.String
+  @_spi(CertifaceInternal) public var accessibilityLabelCloseButton: Swift.String
+  @_spi(CertifaceInternal) public init()
+}
+@_spi(CertifaceInternal) @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class CheckboxComponent : UIKit.UIView {
+  @_spi(CertifaceInternal) public typealias OnChangeValueHandler = (Swift.Bool) -> Swift.Void
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public init(label: Swift.String, checkIcon: UIKit.UIImage?)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func setSelected(_ value: Swift.Bool)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func setDisabled(_ value: Swift.Bool)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func onChangeValue(handler: @escaping CertifaceComponents.CheckboxComponent.OnChangeValueHandler)
+  @_spi(CertifaceInternal) @objc deinit
+}
+@_spi(CertifaceInternal) public enum ComponentIcon {
+  @_spi(CertifaceInternal) case none
+  @_spi(CertifaceInternal) case has(UIKit.UIImage?)
+}
+@_spi(CertifaceInternal) public enum ComponentSize {
+  @_spi(CertifaceInternal) case ultraLarge
+  @_spi(CertifaceInternal) case large
+  @_spi(CertifaceInternal) case medium
+  @_spi(CertifaceInternal) case small
+  @_spi(CertifaceInternal) public static func == (a: CertifaceComponents.ComponentSize, b: CertifaceComponents.ComponentSize) -> Swift.Bool
+  @_spi(CertifaceInternal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(CertifaceInternal) public var hashValue: Swift.Int {
+    @_spi(CertifaceInternal) get
+  }
+}
+@_spi(CertifaceInternal) extension CertifaceComponents.ConstraintBuilder {
+  @_spi(CertifaceInternal) public func bottom(anchor uiViewAnchor: UIKit.NSLayoutYAxisAnchor, padding: CoreFoundation.CGFloat = 0.0) -> CertifaceComponents.ConstraintBuilder
+  @_spi(CertifaceInternal) public func bottom(anchor uiViewAnchor: UIKit.UIView, padding: CoreFoundation.CGFloat = 0.0) -> CertifaceComponents.ConstraintBuilder
+  @_spi(CertifaceInternal) public func bottom(anchor layoutGuide: UIKit.UILayoutGuide, padding: CoreFoundation.CGFloat = 0.0) -> CertifaceComponents.ConstraintBuilder
+}
+@_spi(CertifaceInternal) extension CertifaceComponents.ConstraintBuilder {
+  @_spi(CertifaceInternal) public func centerX(anchor uiViewAnchor: UIKit.NSLayoutXAxisAnchor, padding: CoreFoundation.CGFloat = 0.0) -> CertifaceComponents.ConstraintBuilder
+  @_spi(CertifaceInternal) public func centerX(anchor uiViewAnchor: UIKit.UIView, padding: CoreFoundation.CGFloat = 0.0) -> CertifaceComponents.ConstraintBuilder
+}
+@_spi(CertifaceInternal) extension CertifaceComponents.ConstraintBuilder {
+  @_spi(CertifaceInternal) public func centerY(anchor uiViewAnchor: UIKit.NSLayoutYAxisAnchor, padding: CoreFoundation.CGFloat = 0.0) -> CertifaceComponents.ConstraintBuilder
+  @_spi(CertifaceInternal) public func centerY(anchor uiViewAnchor: UIKit.UIView, padding: CoreFoundation.CGFloat = 0.0) -> CertifaceComponents.ConstraintBuilder
+}
+@_spi(CertifaceInternal) extension CertifaceComponents.ConstraintBuilder {
+  @_spi(CertifaceInternal) public func height(anchor uiViewAnchor: UIKit.NSLayoutDimension, multiplier: CoreFoundation.CGFloat = 1.0) -> CertifaceComponents.ConstraintBuilder
+  @_spi(CertifaceInternal) public func height(anchor uiViewAnchor: UIKit.UIView, multiplier: CoreFoundation.CGFloat = 1.0) -> CertifaceComponents.ConstraintBuilder
+  @_spi(CertifaceInternal) public func height(constant: CoreFoundation.CGFloat) -> CertifaceComponents.ConstraintBuilder
+}
+@_spi(CertifaceInternal) extension CertifaceComponents.ConstraintBuilder {
+  @_spi(CertifaceInternal) public func leading(anchor uiViewAnchor: UIKit.NSLayoutXAxisAnchor, padding: CoreFoundation.CGFloat = 0.0) -> CertifaceComponents.ConstraintBuilder
+  @_spi(CertifaceInternal) public func leading(anchor uiViewAnchor: UIKit.UIView, padding: CoreFoundation.CGFloat = 0.0) -> CertifaceComponents.ConstraintBuilder
+  @_spi(CertifaceInternal) public func leading(anchor layoutGuide: UIKit.UILayoutGuide, padding: CoreFoundation.CGFloat = 0.0) -> CertifaceComponents.ConstraintBuilder
+}
+@_spi(CertifaceInternal) extension CertifaceComponents.ConstraintBuilder {
+  @_spi(CertifaceInternal) public func top(anchor uiViewAnchor: UIKit.NSLayoutYAxisAnchor, padding: CoreFoundation.CGFloat = 0.0) -> CertifaceComponents.ConstraintBuilder
+  @_spi(CertifaceInternal) public func top(anchor uiView: UIKit.UIView, padding: CoreFoundation.CGFloat = 0.0) -> CertifaceComponents.ConstraintBuilder
+  @_spi(CertifaceInternal) public func top(anchor layoutGuide: UIKit.UILayoutGuide, padding: CoreFoundation.CGFloat = 0.0) -> CertifaceComponents.ConstraintBuilder
+}
+@_spi(CertifaceInternal) extension CertifaceComponents.ConstraintBuilder {
+  @_spi(CertifaceInternal) public func trailing(anchor uiViewAnchor: UIKit.NSLayoutXAxisAnchor, padding: CoreFoundation.CGFloat = 0.0) -> CertifaceComponents.ConstraintBuilder
+  @_spi(CertifaceInternal) public func trailing(anchor uiViewAnchor: UIKit.UIView, padding: CoreFoundation.CGFloat = 0.0) -> CertifaceComponents.ConstraintBuilder
+  @_spi(CertifaceInternal) public func trailing(anchor layoutGuide: UIKit.UILayoutGuide, padding: CoreFoundation.CGFloat = 0.0) -> CertifaceComponents.ConstraintBuilder
+}
+@_spi(CertifaceInternal) extension CertifaceComponents.ConstraintBuilder {
+  @_spi(CertifaceInternal) public func width(anchor uiViewAnchor: UIKit.NSLayoutDimension, multiplier: CoreFoundation.CGFloat = 1.0) -> CertifaceComponents.ConstraintBuilder
+  @_spi(CertifaceInternal) public func width(anchor uiViewAnchor: UIKit.UIView, multiplier: CoreFoundation.CGFloat = 1.0) -> CertifaceComponents.ConstraintBuilder
+  @_spi(CertifaceInternal) public func width(constant: CoreFoundation.CGFloat) -> CertifaceComponents.ConstraintBuilder
+}
+@_spi(CertifaceInternal) public class ConstraintBuilder {
+  @_spi(CertifaceInternal) public init(_ view: UIKit.UIView)
+  @_spi(CertifaceInternal) public func constraintReference(_ constraintReference: inout UIKit.NSLayoutConstraint) -> CertifaceComponents.ConstraintBuilder
+  @_spi(CertifaceInternal) public func build()
+  @_spi(CertifaceInternal) @objc deinit
+}
+public protocol CustomCameraPermissionView : UIKit.UIView {
+  var backButton: UIKit.UIButton! { get }
+  var checkPermissionButton: UIKit.UIButton! { get }
+  var openSettingsButton: UIKit.UIButton! { get }
+  var closeButton: UIKit.UIButton! { get }
+  func showBottomSheet(visibility: CertifaceComponents.Visibility)
+}
+@_spi(CertifaceInternal) @objc @_Concurrency.MainActor @preconcurrency public class CustomShape : UIKit.UIView {
+  @_spi(CertifaceInternal) public typealias ShapeBuilder = (_ shape: UIKit.UIView, _ rect: CoreFoundation.CGRect) -> Swift.Void
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public var path: UIKit.UIBezierPath?
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public init(shapeBuilder: @escaping CertifaceComponents.CustomShape.ShapeBuilder)
+  @_spi(CertifaceInternal) @available(*, unavailable)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc override dynamic public func draw(_ rect: CoreFoundation.CGRect)
+  @_spi(CertifaceInternal) @objc deinit
+}
+@_spi(CertifaceInternal) extension CertifaceComponents.DesignTokens {
+  @_spi(CertifaceInternal) public enum BorderWidth {
+    @_spi(CertifaceInternal) public static let none: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let hairline: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let thin: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let thick: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let heavy: CoreFoundation.CGFloat
+  }
+}
+@_spi(CertifaceInternal) extension CertifaceComponents.DesignTokens {
+  @_spi(CertifaceInternal) public enum Color {
+    @_spi(CertifaceInternal) public enum Brand {
+      @_spi(CertifaceInternal) public enum Primary {
+        @_spi(CertifaceInternal) public static let pure: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let light: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let medium: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let dark: UIKit.UIColor
+      }
+      @_spi(CertifaceInternal) public enum Secondary {
+        @_spi(CertifaceInternal) public static let pure: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let light: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let medium: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let dark: UIKit.UIColor
+      }
+      @_spi(CertifaceInternal) public enum Tertiary {
+        @_spi(CertifaceInternal) public static let pure: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let light: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let medium: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let dark: UIKit.UIColor
+      }
+    }
+    @_spi(CertifaceInternal) public enum Highlight {
+      @_spi(CertifaceInternal) public static let pure: UIKit.UIColor
+      @_spi(CertifaceInternal) public static let light: UIKit.UIColor
+      @_spi(CertifaceInternal) public static let medium: UIKit.UIColor
+      @_spi(CertifaceInternal) public static let dark: UIKit.UIColor
+    }
+    @_spi(CertifaceInternal) public enum Neutral {
+      @_spi(CertifaceInternal) public enum Low {
+        @_spi(CertifaceInternal) public static let pure: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let light: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let medium: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let dark: UIKit.UIColor
+      }
+      @_spi(CertifaceInternal) public enum High {
+        @_spi(CertifaceInternal) public static let pure: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let light: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let medium: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let dark: UIKit.UIColor
+      }
+    }
+    @_spi(CertifaceInternal) public enum Feedback {
+      @_spi(CertifaceInternal) public enum Warning {
+        @_spi(CertifaceInternal) public static let pure: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let light: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let medium: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let dark: UIKit.UIColor
+      }
+      @_spi(CertifaceInternal) public enum Helper {
+        @_spi(CertifaceInternal) public static let pure: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let light: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let medium: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let dark: UIKit.UIColor
+      }
+      @_spi(CertifaceInternal) public enum Success {
+        @_spi(CertifaceInternal) public static let pure: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let light: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let medium: UIKit.UIColor
+        @_spi(CertifaceInternal) public static let dark: UIKit.UIColor
+      }
+    }
+  }
+}
+@_spi(CertifaceInternal) extension CertifaceComponents.DesignTokens {
+  @_spi(CertifaceInternal) public enum CornerRadius {
+    @_spi(CertifaceInternal) public static let none: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let sm: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let md: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let lg: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let pill: CoreFoundation.CGFloat
+  }
+}
+@_spi(CertifaceInternal) extension CertifaceComponents.DesignTokens {
+  @_spi(CertifaceInternal) @_hasMissingDesignatedInitializers public class Font {
+    @_spi(CertifaceInternal) public enum Highlight {
+      @_spi(CertifaceInternal) public static func regular(size: CertifaceComponents.DesignTokens.Font.Size) -> UIKit.UIFont
+      @_spi(CertifaceInternal) public static func medium(size: CertifaceComponents.DesignTokens.Font.Size) -> UIKit.UIFont
+      @_spi(CertifaceInternal) public static func bold(size: CertifaceComponents.DesignTokens.Font.Size) -> UIKit.UIFont
+    }
+    @_spi(CertifaceInternal) public enum Base {
+      @_spi(CertifaceInternal) public static func regular(size: CertifaceComponents.DesignTokens.Font.Size) -> UIKit.UIFont
+      @_spi(CertifaceInternal) public static func medium(size: CertifaceComponents.DesignTokens.Font.Size) -> UIKit.UIFont
+      @_spi(CertifaceInternal) public static func bold(size: CertifaceComponents.DesignTokens.Font.Size) -> UIKit.UIFont
+    }
+    @_spi(CertifaceInternal) @objc deinit
+  }
+}
+@_spi(CertifaceInternal) extension CertifaceComponents.DesignTokens.Font {
+  @_spi(CertifaceInternal) public enum Size {
+    @_spi(CertifaceInternal) case xxs
+    @_spi(CertifaceInternal) case xs
+    @_spi(CertifaceInternal) case sm
+    @_spi(CertifaceInternal) case md
+    @_spi(CertifaceInternal) case lg
+    @_spi(CertifaceInternal) case hxs
+    @_spi(CertifaceInternal) case hsm
+    @_spi(CertifaceInternal) case hmd
+    @_spi(CertifaceInternal) case hlg
+    @_spi(CertifaceInternal) case hxl
+    @_spi(CertifaceInternal) case display
+    @_spi(CertifaceInternal) case giant
+    @_spi(CertifaceInternal) public static func == (a: CertifaceComponents.DesignTokens.Font.Size, b: CertifaceComponents.DesignTokens.Font.Size) -> Swift.Bool
+    @_spi(CertifaceInternal) public func hash(into hasher: inout Swift.Hasher)
+    @_spi(CertifaceInternal) public var hashValue: Swift.Int {
+      @_spi(CertifaceInternal) get
+    }
+  }
+}
+@_spi(CertifaceInternal) extension CertifaceComponents.DesignTokens {
+  @_spi(CertifaceInternal) public enum OpacityLevel {
+    @_spi(CertifaceInternal) public static let semiOpaque: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let intense: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let medium: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let light: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let semiTransparent: CoreFoundation.CGFloat
+  }
+}
+@_spi(CertifaceInternal) extension CertifaceComponents.DesignTokens {
+  @_spi(CertifaceInternal) public struct Shadow {
+    @_spi(CertifaceInternal) public static let level1: CertifaceComponents.DesignTokens.Shadow
+    @_spi(CertifaceInternal) public static let level2: CertifaceComponents.DesignTokens.Shadow
+    @_spi(CertifaceInternal) public static let level3: CertifaceComponents.DesignTokens.Shadow
+    @_spi(CertifaceInternal) public static let level4: CertifaceComponents.DesignTokens.Shadow
+  }
+}
+@_spi(CertifaceInternal) extension CertifaceComponents.DesignTokens {
+  @_spi(CertifaceInternal) public enum Spacing {
+    @_spi(CertifaceInternal) public static let quarck: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let nano: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let xxxs: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let xxs: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let xs: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let sm: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let md: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let lg: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let xl: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let xxl: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let xxxl: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let huge: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let giant: CoreFoundation.CGFloat
+  }
+}
+@_spi(CertifaceInternal) extension CertifaceComponents.DesignTokens {
+  @_spi(CertifaceInternal) public enum SpacingInset {
+    @_spi(CertifaceInternal) public static let quarck: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let nano: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let xs: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let sm: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let md: CoreFoundation.CGFloat
+    @_spi(CertifaceInternal) public static let lg: CoreFoundation.CGFloat
+  }
+}
+@_spi(CertifaceInternal) public enum DesignTokens {
+}
+@_spi(CertifaceInternal) @_hasMissingDesignatedInitializers public class FontUtil {
+  @_spi(CertifaceInternal) public static func registerFonts()
+  @_spi(CertifaceInternal) @objc deinit
+}
+@_spi(CertifaceInternal) @objc @_Concurrency.MainActor @preconcurrency public class HybridLoadingView : UIKit.UIView {
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public init(appearance: CertifaceComponents.HybridViewAppearance, accessibilityLabel: Swift.String? = nil)
+  @_spi(CertifaceInternal) @available(*, unavailable)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_spi(CertifaceInternal) @objc deinit
+}
+public struct HybridViewAppearance {
+  public init(configuration: any CertifaceComponents.LoadingViewConfigurationProtocol)
+}
+@_spi(CertifaceInternal) public struct InstructionsModel {
+  @_spi(CertifaceInternal) public let mainImage: UIKit.UIImage?
+  @_spi(CertifaceInternal) public let title: Swift.String
+  @_spi(CertifaceInternal) public let caption: Swift.String
+  @_spi(CertifaceInternal) public init(mainImage: UIKit.UIImage?, title: Swift.String, caption: Swift.String)
+}
+@_spi(CertifaceInternal) @objc @_Concurrency.MainActor @preconcurrency open class InstructionsView : UIKit.UIView {
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency final public let backSquareButton: CertifaceComponents.SquareButtonComponent
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public init(model: CertifaceComponents.InstructionsModel)
+  @_spi(CertifaceInternal) @available(*, unavailable)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency open func setupExtraViews() -> UIKit.UIView
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency open func setupConstraintsOfExtraViews()
+  @_spi(CertifaceInternal) @objc deinit
+}
+@_spi(CertifaceInternal) @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class LinkComponent : UIKit.UIButton {
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public init(model: CertifaceComponents.LinkComponentModel)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
+  @_spi(CertifaceInternal) @objc deinit
+}
+@_spi(CertifaceInternal) public enum LinkComponentStyles {
+  @_spi(CertifaceInternal) case standardNormal
+  @_spi(CertifaceInternal) case standardHightlithed
+  @_spi(CertifaceInternal) case onColorNormal
+  @_spi(CertifaceInternal) case onColorHightlithed
+  @_spi(CertifaceInternal) public static func == (a: CertifaceComponents.LinkComponentStyles, b: CertifaceComponents.LinkComponentStyles) -> Swift.Bool
+  @_spi(CertifaceInternal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(CertifaceInternal) public var hashValue: Swift.Int {
+    @_spi(CertifaceInternal) get
+  }
+}
+@_spi(CertifaceInternal) public protocol LinkLayoutContraintsModel {
+  @_spi(CertifaceInternal) var fontSize: CertifaceComponents.DesignTokens.Font.Size { get }
+  @_spi(CertifaceInternal) var iconMultiplier: CoreFoundation.CGFloat { get }
+  @_spi(CertifaceInternal) var componentHeight: CoreFoundation.CGFloat { get }
+  @_spi(CertifaceInternal) var verticalPadding: CoreFoundation.CGFloat { get }
+}
+@_spi(CertifaceInternal) public struct LinkComponentModel {
+  @_spi(CertifaceInternal) public init(text: Swift.String, icon: CertifaceComponents.ComponentIcon, size: CertifaceComponents.ComponentSize, normalStyle: CertifaceComponents.LinkComponentStyles, highlightedStyle: CertifaceComponents.LinkComponentStyles)
+}
+@_spi(CertifaceInternal) public enum LoadingTypes {
+  @_spi(CertifaceInternal) case activityIndicator
+  @_spi(CertifaceInternal) case spinner
+  @_spi(CertifaceInternal) public static func == (a: CertifaceComponents.LoadingTypes, b: CertifaceComponents.LoadingTypes) -> Swift.Bool
+  @_spi(CertifaceInternal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(CertifaceInternal) public var hashValue: Swift.Int {
+    @_spi(CertifaceInternal) get
+  }
+}
+public protocol LoadingViewConfigurationProtocol {
+  var backgroundColor: UIKit.UIColor { get }
+  func createLoadingView() -> UIKit.UIView
+}
+#if compiler(>=5.3) && $NoncopyableGenerics
+@_spi(CertifaceInternal) extension Swift.Optional where Wrapped == CertifaceComponents.HybridViewAppearance {
+  @_spi(CertifaceInternal) public func orDefault() -> CertifaceComponents.HybridViewAppearance
+}
+#else
+@_spi(CertifaceInternal) extension Swift.Optional where Wrapped == CertifaceComponents.HybridViewAppearance {
+  @_spi(CertifaceInternal) public func orDefault() -> CertifaceComponents.HybridViewAppearance
+}
+#endif
+@_spi(CertifaceInternal) @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class RadioButtonComponent : CertifaceComponents.CheckboxComponent {
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency override public init(label: Swift.String, checkIcon: UIKit.UIImage?)
+  @_spi(CertifaceInternal) @objc deinit
+}
+@_spi(CertifaceInternal) @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class SearchFieldComponent : UIKit.UIView, UIKit.UITextFieldDelegate {
+  @_spi(CertifaceInternal) public typealias SearchHandler = (_ component: CertifaceComponents.SearchFieldComponent, _ searchText: Swift.String) -> Swift.Void
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc override dynamic public var isFocused: Swift.Bool {
+    @_spi(CertifaceInternal) @objc get
+    @_spi(CertifaceInternal) @objc set
+  }
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public init(model: CertifaceComponents.SearchFieldComponentModel)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func onSearchSubmit(handler: @escaping CertifaceComponents.SearchFieldComponent.SearchHandler)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func onValueChange(handler: @escaping CertifaceComponents.SearchFieldComponent.SearchHandler)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func onSearchReturn(handler: @escaping CertifaceComponents.SearchFieldComponent.SearchHandler)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func setEnabled(_ enabledValue: Swift.Bool)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc public func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc public func textFieldDidEndEditing(_ textField: UIKit.UITextField)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc public func textFieldDidChangeSelection(_ textField: UIKit.UITextField)
+  @_spi(CertifaceInternal) @objc deinit
+}
+@_spi(CertifaceInternal) public struct SearchFieldComponentModel {
+  @_spi(CertifaceInternal) public init(searchImage: UIKit.UIImage?, cancelImage: UIKit.UIImage?, hasButton: Swift.Bool, placeholder: Swift.String)
+  @_spi(CertifaceInternal) public init(searchImage: UIKit.UIImage?, cancelImage: UIKit.UIImage?, hasButton: Swift.Bool)
+}
+@_spi(CertifaceInternal) @objc @_Concurrency.MainActor @preconcurrency public class SecureTextFieldComponent : CertifaceComponents.BaseFieldComponent, UIKit.UITextFieldDelegate {
+  @_spi(CertifaceInternal) public typealias ValueChangeHandler = (_ component: CertifaceComponents.SecureTextFieldComponent, _ value: Swift.String) -> Swift.Void
+  @_spi(CertifaceInternal) public typealias LostFocusHandler = (_ component: CertifaceComponents.SecureTextFieldComponent, _ value: Swift.String) -> Swift.Void
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc override dynamic public var isFocused: Swift.Bool {
+    @_spi(CertifaceInternal) @objc get
+    @_spi(CertifaceInternal) @objc set
+  }
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public var textFieldValue: Swift.String {
+    @_spi(CertifaceInternal) get
+  }
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public init(model: CertifaceComponents.TextFieldComponentModel, iconVisibilityOn: UIKit.UIImage?, iconVisibilityOff: UIKit.UIImage?)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency override public func disable()
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency override public func enable()
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency override public func canShowWarning() -> Swift.Bool
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func onValueChange(handler: @escaping CertifaceComponents.SecureTextFieldComponent.ValueChangeHandler)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func onLostFocus(handler: @escaping CertifaceComponents.SecureTextFieldComponent.LostFocusHandler)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func clear()
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc public func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc public func textFieldDidEndEditing(_ textField: UIKit.UITextField)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc public func textFieldDidChangeSelection(_ textField: UIKit.UITextField)
+  @_spi(CertifaceInternal) @objc deinit
+}
+@_spi(CertifaceInternal) @objc @_Concurrency.MainActor @preconcurrency public class SelectComponent : CertifaceComponents.BaseFieldComponent {
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public init(model: CertifaceComponents.BaseFieldModel, downIcon: UIKit.UIImage?)
+  @_spi(CertifaceInternal) @objc deinit
+}
+@_spi(CertifaceInternal) public struct SpinnerConfiguration : CertifaceComponents.LoadingViewConfigurationProtocol {
+  @_spi(CertifaceInternal) public let backgroundColor: UIKit.UIColor
+  @_spi(CertifaceInternal) public let loadingType: CertifaceComponents.LoadingTypes
+  @_spi(CertifaceInternal) public let loadingColor: UIKit.UIColor
+  @_spi(CertifaceInternal) public let strokeWidth: CoreFoundation.CGFloat
+  @_spi(CertifaceInternal) public let scaleFactor: Swift.Int
+  @_spi(CertifaceInternal) public init(backgroundColor: UIKit.UIColor, loadingColor: UIKit.UIColor, strokeWidth: CoreFoundation.CGFloat, scaleFactor: Swift.Int)
+  @_spi(CertifaceInternal) public func createLoadingView() -> UIKit.UIView
+}
+@_spi(CertifaceInternal) @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class SquareButtonComponent : CertifaceComponents.ButtonComponent {
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func layoutForSuperview(_ superview: UIKit.UIView, with layoutContraintModel: any CertifaceComponents.ButtonLayoutContraintsModel)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency override public init(model: CertifaceComponents.ButtonComponentModel, identifier: Swift.String? = nil)
+  @_spi(CertifaceInternal) @objc deinit
+}
+@_spi(CertifaceInternal) @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class SwitchComponent : UIKit.UIView {
+  @_spi(CertifaceInternal) public typealias ValueChangedHandler = (_ value: Swift.Bool) -> Swift.Void
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public var isDisabled: Swift.Bool {
+    @_spi(CertifaceInternal) get
+    @_spi(CertifaceInternal) set
+  }
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public var isSelected: Swift.Bool {
+    @_spi(CertifaceInternal) get
+  }
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func setSelected(to value: Swift.Bool)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func addObserverToValueChanged(handler: @escaping CertifaceComponents.SwitchComponent.ValueChangedHandler)
+  @_spi(CertifaceInternal) @objc deinit
+}
+@_spi(CertifaceInternal) @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class TextAreaComponent : UIKit.UIView, UIKit.UITextViewDelegate {
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc override dynamic public var isFocused: Swift.Bool {
+    @_spi(CertifaceInternal) @objc get
+    @_spi(CertifaceInternal) @objc set
+  }
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public var textAreaValue: Swift.String {
+    @_spi(CertifaceInternal) get
+  }
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public var observeValueChanges: (Swift.String, Swift.String) -> Swift.Void
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public init(model: CertifaceComponents.TextFieldComponentModel)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func disable()
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func enable()
+  @_spi(CertifaceInternal) @discardableResult
+  @_Concurrency.MainActor @preconcurrency public func showWarning(withText text: Swift.String) -> Swift.Bool
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func showOffWarning()
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc public func textViewDidBeginEditing(_ textView: UIKit.UITextView)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc public func textViewDidEndEditing(_ textView: UIKit.UITextView)
+  @_spi(CertifaceInternal) @objc deinit
+}
+@_spi(CertifaceInternal) @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class TextFieldComponent : UIKit.UIView, UIKit.UITextFieldDelegate {
+  @_spi(CertifaceInternal) public typealias ObserveValueChangesHandler = (_ value: Swift.String, _ rawValue: Swift.String) -> Swift.Void
+  @_spi(CertifaceInternal) public typealias LostFocusHandler = (_ component: CertifaceComponents.TextFieldComponent, _ value: Swift.String, _ rawValue: Swift.String) -> Swift.Void
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc override dynamic public var isFocused: Swift.Bool {
+    @_spi(CertifaceInternal) @objc get
+    @_spi(CertifaceInternal) @objc set
+  }
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public var textFieldValue: Swift.String {
+    @_spi(CertifaceInternal) get
+  }
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public var textFieldRawValue: Swift.String {
+    @_spi(CertifaceInternal) get
+  }
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public init(model: CertifaceComponents.TextFieldComponentModel)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func disable()
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func enable()
+  @_spi(CertifaceInternal) @discardableResult
+  @_Concurrency.MainActor @preconcurrency public func showWarning(withText text: Swift.String) -> Swift.Bool
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func showOffWarning()
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func addObserveValueChangesAction(handler: @escaping CertifaceComponents.TextFieldComponent.ObserveValueChangesHandler)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func addOnLostFocusAction(handler: @escaping CertifaceComponents.TextFieldComponent.LostFocusHandler)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func setText(_ text: Swift.String)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func clear()
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc public func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc public func textFieldDidEndEditing(_ textField: UIKit.UITextField)
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency @objc public func textFieldDidChangeSelection(_ textField: UIKit.UITextField)
+  @_spi(CertifaceInternal) @objc deinit
+}
+@_spi(CertifaceInternal) public struct TextFieldComponentModel {
+  @_spi(CertifaceInternal) public init(label: Swift.String, placeholder: Swift.String, icon: CertifaceComponents.ComponentIcon, size: CertifaceComponents.TextFieldComponentSize, masks: [Swift.String] = [], acceptedCharacters: [CertifaceComponents.CharacterType] = [], keyboardType: UIKit.UIKeyboardType = .default, autocapitalizationType: UIKit.UITextAutocapitalizationType = .sentences, identifier: Swift.String? = nil, textViewIdentifier: Swift.String? = nil, helperIdentifier: Swift.String? = nil)
+}
+@_spi(CertifaceInternal) public enum TextFieldComponentSize {
+  @_spi(CertifaceInternal) case normal
+  @_spi(CertifaceInternal) case large
+  @_spi(CertifaceInternal) public static func == (a: CertifaceComponents.TextFieldComponentSize, b: CertifaceComponents.TextFieldComponentSize) -> Swift.Bool
+  @_spi(CertifaceInternal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(CertifaceInternal) public var hashValue: Swift.Int {
+    @_spi(CertifaceInternal) get
+  }
+}
+@_spi(CertifaceInternal) extension UIKit.UIImage {
+  @_spi(CertifaceInternal) public func cropToRect(rect: CoreFoundation.CGRect) -> UIKit.UIImage
+}
+@_spi(CertifaceInternal) extension UIKit.UIImage {
+  @_spi(CertifaceInternal) public func resizeImage(targetSize: CoreFoundation.CGSize) -> UIKit.UIImage?
+  @_spi(CertifaceInternal) public func toBase64(withSizeInMb expectedSizeInMb: Swift.Float) -> Swift.String?
+}
+@_spi(CertifaceInternal) extension UIKit.UIImage {
+  @_spi(CertifaceInternal) public static func rotatedImage(from cgImage: CoreGraphics.CGImage, rotatedBy degrees: Swift.Double) -> UIKit.UIImage?
+}
+@_spi(CertifaceInternal) extension UIKit.UIImage {
+  @_spi(CertifaceInternal) public static func fromGif(resourceName: Swift.String, bundle externalBundle: Foundation.Bundle? = nil, durationPerFrame duration: CoreFoundation.CGFloat) -> UIKit.UIImage?
+}
+@_spi(CertifaceInternal) extension UIKit.UIView {
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func makeConstraints() -> CertifaceComponents.ConstraintBuilder
+}
+@_spi(CertifaceInternal) extension UIKit.UIView {
+  @_spi(CertifaceInternal) @_Concurrency.MainActor @preconcurrency public func createImageFromView() -> UIKit.UIImage
+}
+extension CertifaceComponents.ViewBuilder {
+  public struct ImageView {
+    public static func create(for imageName: Swift.String, bundle: Foundation.Bundle = .main) -> CertifaceComponents.ViewBuilder.ImageView
+    public static func create(with image: UIKit.UIImage? = nil) -> CertifaceComponents.ViewBuilder.ImageView
+    public func build() -> UIKit.UIImageView
+    public func tintColor(_ color: UIKit.UIColor) -> CertifaceComponents.ViewBuilder.ImageView
+    public func contentMode(_ mode: UIKit.UIView.ContentMode) -> CertifaceComponents.ViewBuilder.ImageView
+    public func backgroundColor(_ color: UIKit.UIColor) -> CertifaceComponents.ViewBuilder.ImageView
+    public func cornerRadius(_ radius: CoreFoundation.CGFloat) -> CertifaceComponents.ViewBuilder.ImageView
+    @available(iOS 11.0, *)
+    public func cornerRadius(_ radius: CoreFoundation.CGFloat, edges: QuartzCore.CACornerMask) -> CertifaceComponents.ViewBuilder.ImageView
+    public func masksToBounds(_ value: Swift.Bool = true) -> CertifaceComponents.ViewBuilder.ImageView
+  }
+}
+@_spi(CertifaceInternal) extension CertifaceComponents.ViewBuilder {
+  @_spi(CertifaceInternal) public struct Label {
+    @_spi(CertifaceInternal) public static func create(for text: Swift.String) -> CertifaceComponents.ViewBuilder.Label
+    @_spi(CertifaceInternal) public static func create() -> CertifaceComponents.ViewBuilder.Label
+    @_spi(CertifaceInternal) public static func create(withAttributedString attrString: Foundation.NSAttributedString) -> CertifaceComponents.ViewBuilder.Label
+    @_spi(CertifaceInternal) public func build() -> UIKit.UILabel
+    @_spi(CertifaceInternal) public func numberOfLines(_ number: Swift.Int) -> CertifaceComponents.ViewBuilder.Label
+    @_spi(CertifaceInternal) public func textAligment(_ aligment: UIKit.NSTextAlignment) -> CertifaceComponents.ViewBuilder.Label
+    @_spi(CertifaceInternal) public func font(_ font: UIKit.UIFont) -> CertifaceComponents.ViewBuilder.Label
+    @_spi(CertifaceInternal) public func textColor(_ color: UIKit.UIColor) -> CertifaceComponents.ViewBuilder.Label
+    @_spi(CertifaceInternal) public func identifier(_ identifier: Swift.String) -> CertifaceComponents.ViewBuilder.Label
+  }
+}
+@_spi(CertifaceInternal) extension CertifaceComponents.ViewBuilder {
+  @_spi(CertifaceInternal) public struct TextField {
+    @_spi(CertifaceInternal) public static func create() -> CertifaceComponents.ViewBuilder.TextField
+    @_spi(CertifaceInternal) public func build() -> UIKit.UITextField
+    @_spi(CertifaceInternal) public func font(_ font: UIKit.UIFont) -> CertifaceComponents.ViewBuilder.TextField
+    @_spi(CertifaceInternal) public func textColor(_ color: UIKit.UIColor) -> CertifaceComponents.ViewBuilder.TextField
+    @_spi(CertifaceInternal) public func tintColor(_ color: UIKit.UIColor) -> CertifaceComponents.ViewBuilder.TextField
+    @_spi(CertifaceInternal) public func textAlignment(_ alignment: UIKit.NSTextAlignment) -> CertifaceComponents.ViewBuilder.TextField
+    @_spi(CertifaceInternal) public func clearButtonMode(_ mode: UIKit.UITextField.ViewMode) -> CertifaceComponents.ViewBuilder.TextField
+    @_spi(CertifaceInternal) public func showSecureTextEntry(_ value: Swift.Bool) -> CertifaceComponents.ViewBuilder.TextField
+  }
+}
+@_spi(CertifaceInternal) extension CertifaceComponents.ViewBuilder {
+  @_spi(CertifaceInternal) public struct View {
+    @_spi(CertifaceInternal) public static func create(with frame: CoreFoundation.CGRect) -> CertifaceComponents.ViewBuilder.View
+    @_spi(CertifaceInternal) public static func create(with size: CoreFoundation.CGSize) -> CertifaceComponents.ViewBuilder.View
+    @_spi(CertifaceInternal) public static func create() -> CertifaceComponents.ViewBuilder.View
+    @_spi(CertifaceInternal) public func build() -> UIKit.UIView
+    @_spi(CertifaceInternal) public func backgroundColor(_ color: UIKit.UIColor) -> CertifaceComponents.ViewBuilder.View
+    @_spi(CertifaceInternal) public func backgroundColor(_ color: UIKit.UIColor, opacity: CoreFoundation.CGFloat = 1.0) -> CertifaceComponents.ViewBuilder.View
+    @_spi(CertifaceInternal) public func borderColor(_ color: UIKit.UIColor) -> CertifaceComponents.ViewBuilder.View
+    @_spi(CertifaceInternal) public func borderWidth(_ width: CoreFoundation.CGFloat) -> CertifaceComponents.ViewBuilder.View
+    @_spi(CertifaceInternal) public func cornerRadius(_ radius: CoreFoundation.CGFloat) -> CertifaceComponents.ViewBuilder.View
+    @_spi(CertifaceInternal) @available(iOS 11.0, *)
+    public func cornerRadius(_ radius: CoreFoundation.CGFloat, edges: QuartzCore.CACornerMask) -> CertifaceComponents.ViewBuilder.View
+    @_spi(CertifaceInternal) public func masksToBounds(_ value: Swift.Bool = true) -> CertifaceComponents.ViewBuilder.View
+    @_spi(CertifaceInternal) public func customContent(contentBuilder: @escaping (UIKit.UIView) -> Swift.Void) -> CertifaceComponents.ViewBuilder.View
+  }
+}
+public enum ViewBuilder {
+}
+public enum Visibility : Swift.Int, Swift.CaseIterable {
+  case displayed
+  case hidden
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [CertifaceComponents.Visibility]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [CertifaceComponents.Visibility] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension CertifaceComponents.ButtonComponentType : Swift.Equatable {}
+extension CertifaceComponents.ButtonComponentType : Swift.Hashable {}
+@_spi(CertifaceInternal) extension CertifaceComponents.CharacterType : Swift.Equatable {}
+@_spi(CertifaceInternal) extension CertifaceComponents.CharacterType : Swift.Hashable {}
+@_spi(CertifaceInternal) extension CertifaceComponents.ComponentSize : Swift.Equatable {}
+@_spi(CertifaceInternal) extension CertifaceComponents.ComponentSize : Swift.Hashable {}
+@_spi(CertifaceInternal) extension CertifaceComponents.DesignTokens.Font.Size : Swift.Equatable {}
+@_spi(CertifaceInternal) extension CertifaceComponents.DesignTokens.Font.Size : Swift.Hashable {}
+@_spi(CertifaceInternal) extension CertifaceComponents.LinkComponentStyles : Swift.Equatable {}
+@_spi(CertifaceInternal) extension CertifaceComponents.LinkComponentStyles : Swift.Hashable {}
+@_spi(CertifaceInternal) extension CertifaceComponents.LoadingTypes : Swift.Equatable {}
+@_spi(CertifaceInternal) extension CertifaceComponents.LoadingTypes : Swift.Hashable {}
+@_spi(CertifaceInternal) extension CertifaceComponents.TextFieldComponentSize : Swift.Equatable {}
+@_spi(CertifaceInternal) extension CertifaceComponents.TextFieldComponentSize : Swift.Hashable {}
+extension CertifaceComponents.Visibility : Swift.Equatable {}
+extension CertifaceComponents.Visibility : Swift.Hashable {}
+extension CertifaceComponents.Visibility : Swift.RawRepresentable {}
