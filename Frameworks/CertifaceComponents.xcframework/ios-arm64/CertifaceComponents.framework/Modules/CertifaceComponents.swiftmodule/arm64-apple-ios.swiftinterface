@@ -1,0 +1,84 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name CertifaceComponents
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import AVFoundation
+import CoreGraphics
+import CoreText
+import DeveloperToolsSupport
+import Foundation
+import Swift
+import SwiftUI
+import UIKit.UIButton
+import UIKit.UIColor
+import UIKit.UIImage
+import UIKit
+import UIKit.UIView
+import UIKit.UIViewController
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public protocol ButtonLayoutContraintsModel {
+  var heightValue: CoreFoundation.CGFloat { get }
+  func layout(_ view: UIKit.UIView, superview: UIKit.UIView, spacing: CoreFoundation.CGFloat)
+  func layoutSquare(_ view: UIKit.UIView)
+  func layoutFont(titleLabel: UIKit.UILabel)
+  func layoutIcon(iconImage: UIKit.UIImageView, uiView: UIKit.UIView)
+}
+public enum ButtonComponentType {
+  case simple
+  case complex
+  public static func == (a: CertifaceComponents.ButtonComponentType, b: CertifaceComponents.ButtonComponentType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol CustomCameraPermissionView : UIKit.UIView {
+  var backButton: UIKit.UIButton! { get }
+  var checkPermissionButton: UIKit.UIButton! { get }
+  var openSettingsButton: UIKit.UIButton! { get }
+  var closeButton: UIKit.UIButton! { get }
+  func showBottomSheet(visibility: CertifaceComponents.Visibility)
+}
+public struct HybridViewAppearance {
+  public init(configuration: any CertifaceComponents.LoadingViewConfigurationProtocol)
+}
+public protocol LoadingViewConfigurationProtocol {
+  var backgroundColor: UIKit.UIColor { get }
+  func createLoadingView() -> UIKit.UIView
+}
+extension CertifaceComponents.ViewBuilder {
+  public struct ImageView {
+    public static func create(for imageName: Swift.String, bundle: Foundation.Bundle = .main) -> CertifaceComponents.ViewBuilder.ImageView
+    public static func create(with image: UIKit.UIImage? = nil) -> CertifaceComponents.ViewBuilder.ImageView
+    public func build() -> UIKit.UIImageView
+    public func tintColor(_ color: UIKit.UIColor) -> CertifaceComponents.ViewBuilder.ImageView
+    public func contentMode(_ mode: UIKit.UIView.ContentMode) -> CertifaceComponents.ViewBuilder.ImageView
+    public func backgroundColor(_ color: UIKit.UIColor) -> CertifaceComponents.ViewBuilder.ImageView
+    public func cornerRadius(_ radius: CoreFoundation.CGFloat) -> CertifaceComponents.ViewBuilder.ImageView
+    @available(iOS 11.0, *)
+    public func cornerRadius(_ radius: CoreFoundation.CGFloat, edges: QuartzCore.CACornerMask) -> CertifaceComponents.ViewBuilder.ImageView
+    public func masksToBounds(_ value: Swift.Bool = true) -> CertifaceComponents.ViewBuilder.ImageView
+  }
+}
+public enum ViewBuilder {
+}
+public enum Visibility : Swift.Int, Swift.CaseIterable {
+  case displayed
+  case hidden
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [CertifaceComponents.Visibility]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [CertifaceComponents.Visibility] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension CertifaceComponents.ButtonComponentType : Swift.Equatable {}
+extension CertifaceComponents.ButtonComponentType : Swift.Hashable {}
+extension CertifaceComponents.Visibility : Swift.Equatable {}
+extension CertifaceComponents.Visibility : Swift.Hashable {}
+extension CertifaceComponents.Visibility : Swift.RawRepresentable {}

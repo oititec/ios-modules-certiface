@@ -1,0 +1,4 @@
+framework module CertifaceSecurity {
+  header "CertifaceSecurity-Swift.h"
+  requires objc
+}

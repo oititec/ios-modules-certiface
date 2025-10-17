@@ -1,4 +1,0 @@
-framework module OitiNetwork {
-  header "OitiNetwork-Swift.h"
-  requires objc
-}

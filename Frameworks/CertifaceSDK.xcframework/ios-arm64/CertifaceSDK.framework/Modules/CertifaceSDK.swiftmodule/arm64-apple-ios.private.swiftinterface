@@ -1,0 +1,309 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name CertifaceSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import AVFoundation
+@_spi(CertifaceInternal) import CertifaceComponents
+import CertifaceFacetec
+import CertifaceIProov
+import CertifaceNetwork
+import CertifaceSecurity
+import CertifaceUtils
+import DeveloperToolsSupport
+import Foundation
+import Swift
+import SwiftUI
+import UIKit.UIImage
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public typealias Visibility = CertifaceComponents.Visibility
+public protocol CustomCameraPermissionView : CertifaceComponents.CustomCameraPermissionView {
+  override func showBottomSheet(visibility: CertifaceSDK.Visibility)
+}
+public typealias IProovCustomLoadingView = CertifaceIProov.IProovCustomLoadingView
+public typealias IProovResultLayoutType = CertifaceIProov.IProovResultLayoutType
+public protocol IProovCustomResultView : CertifaceIProov.IProovCustomResultView {
+  override func display(for resultType: CertifaceSDK.IProovResultLayoutType, retryReason: Swift.String?)
+  override func changeLoadingVisibility(to visibility: CertifaceSDK.Visibility)
+}
+public typealias BlobAnimationAppearance = CertifaceFacetec.BlobAnimationAppearance
+public typealias Liveness3DShadow = CertifaceFacetec.Liveness3DShadow
+public typealias Liveness3DTheme = CertifaceFacetec.Liveness3DTheme
+public typealias Liveness3DThemeBuilder = CertifaceFacetec.Liveness3DThemeBuilder
+public typealias Liveness3DTextKey = CertifaceFacetec.Liveness3DTextKey
+@_hasMissingDesignatedInitializers final public class CameraPermissionCustomizationBuilder {
+  @discardableResult
+  final public func setBackButtonIcon(_ icon: UIKit.UIImage?) -> Self
+  @discardableResult
+  final public func setBackButtonIconColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBackButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBackButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCameraImage(_ image: UIKit.UIImage?) -> Self
+  @discardableResult
+  final public func setCameraImageColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setTitle(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setTitleColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setTitleFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setCaption(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setCaptionColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCaptionFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setCheckPermissionButtonText(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setCheckPermissionButtonTextFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setCheckPermissionButtonTextColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCheckPermissionButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCheckPermissionButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBottomSheetColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBottomSheetCornerRadius(_ radius: CoreFoundation.CGFloat) -> Self
+  @discardableResult
+  final public func setBottomSheetTitle(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setBottomSheetTitleColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBottomSheetTitleFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setBottomSheetCaption(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setBottomSheetCaptionColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBottomSheetCaptionFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setOpenSettingsButtonText(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setOpenSettingsButtonTextFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setOpenSettingsButtonTextColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setOpenSettingsButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setOpenSettingsButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCloseButtonText(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setCloseButtonTextFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setCloseButtonTextColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCloseButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCloseButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  @objc deinit
+}
+public enum CertifaceSDKFactory {
+  public static func createLivenessManager(for provider: CertifaceSDK.LivenessProvider) -> any CertifaceSDK.LivenessManager
+}
+public enum Environment {
+  case hml, prd
+  public static func == (a: CertifaceSDK.Environment, b: CertifaceSDK.Environment) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct FacetecCustomization {
+  public static func builder() -> CertifaceSDK.FacetecCustomizationBuilder
+}
+@_hasMissingDesignatedInitializers final public class FacetecCustomizationBuilder {
+  final public func build() -> CertifaceSDK.FacetecCustomization
+  @discardableResult
+  final public func setInstructionCustomization(_ builderHandler: @escaping (_ instructionBuilder: CertifaceSDK.InstructionCustomizationBuilder) -> CertifaceSDK.InstructionCustomizationBuilder) -> Self
+  @discardableResult
+  final public func setCameraPermissionCustomization(_ builderHandler: @escaping (_ cameraPermissionBuilder: CertifaceSDK.CameraPermissionCustomizationBuilder) -> CertifaceSDK.CameraPermissionCustomizationBuilder) -> Self
+  @discardableResult
+  final public func setLoadingCustomization(_ builderHandler: @escaping (_ loadingBuilder: CertifaceSDK.FacetecLoadingCustomizationBuilder) -> CertifaceSDK.FacetecLoadingCustomizationBuilder) -> Self
+  @discardableResult
+  final public func setLivenessDefaultTheme(_ builderHandler: @escaping (_ defaultThemeBuilder: CertifaceSDK.Liveness3DThemeBuilder) -> CertifaceSDK.Liveness3DThemeBuilder) -> Self
+  @discardableResult
+  final public func setLivenessLowLightTheme(_ builderHandler: @escaping (_ defaultThemeBuilder: CertifaceSDK.Liveness3DThemeBuilder) -> CertifaceSDK.Liveness3DThemeBuilder) -> Self
+  @discardableResult
+  final public func setLivenessTexts(_ texts: [CertifaceSDK.Liveness3DTextKey : Swift.String]) -> Self
+  @discardableResult
+  final public func setCustomInstructionView(_ customView: any CertifaceSDK.LivenessCustomInstructionView) -> Self
+  @discardableResult
+  final public func setCustomCameraPermissionView(_ customView: any CertifaceSDK.CustomCameraPermissionView) -> Self
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class FacetecLoadingCustomizationBuilder {
+  @discardableResult
+  final public func setBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setSpinnerColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setSpinnerWidth(_ width: CoreFoundation.CGFloat) -> Self
+  @discardableResult
+  final public func setSpinnerScaleFactor(_ scaleFactor: Swift.Int) -> Self
+  @objc deinit
+}
+public struct IProovCustomization {
+  public static func builder() -> CertifaceSDK.IProovCustomizationBuilder
+}
+@_hasMissingDesignatedInitializers final public class IProovCustomizationBuilder {
+  final public func build() -> CertifaceSDK.IProovCustomization
+  @discardableResult
+  final public func setInstructionCustomization(_ builderHandler: @escaping (_ instructionBuilder: CertifaceSDK.InstructionCustomizationBuilder) -> CertifaceSDK.InstructionCustomizationBuilder) -> Self
+  @discardableResult
+  final public func setCameraPermissionCustomization(_ builderHandler: @escaping (_ cameraPermissionBuilder: CertifaceSDK.CameraPermissionCustomizationBuilder) -> CertifaceSDK.CameraPermissionCustomizationBuilder) -> Self
+  @discardableResult
+  final public func setLivenessCustomization(_ builderHandler: @escaping (_ livenessBuilder: CertifaceIProov.IProovLivenessCustomizationBuilder) -> CertifaceIProov.IProovLivenessCustomizationBuilder) -> Self
+  @discardableResult
+  final public func setLoadingCustomization(_ builderHandler: @escaping (_ loadingBuilder: CertifaceIProov.IProovLoadingCustomizationBuilder) -> CertifaceIProov.IProovLoadingCustomizationBuilder) -> Self
+  @discardableResult
+  final public func setResultCustomization(_ builderHandler: @escaping (_ resultBuilder: CertifaceIProov.IProovResultCustomizationBuilder) -> CertifaceIProov.IProovResultCustomizationBuilder) -> Self
+  @discardableResult
+  final public func setCustomInstructionView(_ customView: any CertifaceSDK.LivenessCustomInstructionView) -> Self
+  @discardableResult
+  final public func setCustomCameraPermissionView(_ customView: any CertifaceSDK.CustomCameraPermissionView) -> Self
+  @discardableResult
+  final public func setLoadingView(_ customView: CertifaceSDK.IProovCustomLoadingView) -> Self
+  @discardableResult
+  final public func setResultView(_ customView: any CertifaceSDK.IProovCustomResultView) -> Self
+  @objc deinit
+}
+public struct InstructionCustomization {
+  public static func builder() -> CertifaceSDK.InstructionCustomizationBuilder
+}
+@_hasMissingDesignatedInitializers final public class InstructionCustomizationBuilder {
+  @discardableResult
+  final public func setBackButtonIcon(_ icon: UIKit.UIImage) -> Self
+  @discardableResult
+  final public func setBackButtonIconColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBackButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBackButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setContextImage(_ image: UIKit.UIImage) -> Self
+  @discardableResult
+  final public func setBottomSheetColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBottomSheetCornerRadius(_ radius: CoreFoundation.CGFloat) -> Self
+  @discardableResult
+  final public func setTitle(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setTitleColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setTitleFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setCaption(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setCaptionColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCaptionFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setFirstInstructionIcon(_ icon: UIKit.UIImage) -> Self
+  @discardableResult
+  final public func setFirstInstructionTitle(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setFirstInstructionTitleColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setFirstInstructionTitleFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setSecondInstructionIcon(_ icon: UIKit.UIImage) -> Self
+  @discardableResult
+  final public func setSecondInstructionTitle(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setSecondInstructionTitleColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setSecondInstructionTitleFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setContinueButtonText(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setContinueButtonFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setContinueButtonTextColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setContinueButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setContinueButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  @objc deinit
+}
+public protocol LivenessCallback : AnyObject {
+  func onSuccess(_ result: CertifaceSDK.LivenessResult)
+  func onError(_ error: CertifaceSDK.LivenessError)
+}
+public protocol LivenessCustomInstructionView : UIKit.UIView {
+  var backButton: UIKit.UIButton! { get }
+  var continueButton: UIKit.UIButton! { get }
+  func changeLoadingVisibility(to visibility: CertifaceSDK.Visibility)
+}
+public enum LivenessError : Swift.Int, Swift.Error {
+  case invalidAppKey
+  case noCameraPermission
+  case noInternetConnection
+  case livenessNotCompleted
+  case livenessNotInitialized
+  case transactionNotCompleted
+  case invalidCustomization
+  case invalidProvider
+  case genericException
+  public var code: Swift.Int {
+    get
+  }
+  public var message: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public protocol LivenessManager {
+  func start(at rootViewController: UIKit.UIViewController, options: CertifaceSDK.LivenessManagerOptions, callback: any CertifaceSDK.LivenessCallback)
+}
+public struct LivenessManagerOptions {
+}
+extension CertifaceSDK.LivenessManagerOptions {
+  public static func builder(appKey: Swift.String, environment: CertifaceSDK.Environment) -> CertifaceSDK.LivenessManagerOptions.Builder
+  @_hasMissingDesignatedInitializers final public class Builder {
+    final public func setIProovCustomization(_ customization: CertifaceSDK.IProovCustomization) -> Self
+    final public func setFacetecCustomization(_ customization: CertifaceSDK.FacetecCustomization) -> Self
+    final public func build() -> CertifaceSDK.LivenessManagerOptions
+    @objc deinit
+  }
+}
+public struct LivenessResult {
+  public var valid: Swift.Bool
+  public var codId: Swift.Double
+  public var cause: Swift.String?
+  public var `protocol`: Swift.String
+  public var scanResultBlob: Swift.String?
+}
+public enum LivenessProvider : Swift.String {
+  case iproov
+  case facetec
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension CertifaceSDK.Environment : Swift.Equatable {}
+extension CertifaceSDK.Environment : Swift.Hashable {}
+extension CertifaceSDK.LivenessError : Swift.Equatable {}
+extension CertifaceSDK.LivenessError : Swift.Hashable {}
+extension CertifaceSDK.LivenessError : Swift.RawRepresentable {}
+extension CertifaceSDK.LivenessProvider : Swift.Equatable {}
+extension CertifaceSDK.LivenessProvider : Swift.Hashable {}
+extension CertifaceSDK.LivenessProvider : Swift.RawRepresentable {}

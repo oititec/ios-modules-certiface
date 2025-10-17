@@ -1,11 +1,11 @@
 platform :ios, '13.0'
 
 source 'https://github.com/oititec/ios-artifactory.git'
-source 'https://github.com/CocoaPods/Specs.git'
+source 'https://cdn.cocoapods.org'
 
 target 'Example' do
   use_frameworks!
 
   # Pods
-  pod 'OitiSDK', '0.5.0'
+  pod 'CertifaceSDK', path: '../'
 end

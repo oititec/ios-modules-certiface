@@ -1,4 +1,0 @@
-framework module OitiLivenessIProov {
-  header "OitiLivenessIProov-Swift.h"
-  requires objc
-}

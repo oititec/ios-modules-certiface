@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		13BDC6D8233AC7373A3335E6 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB7E537A26268B249A0DCD7 /* Pods_Example.framework */; };
+		50D3BE272EA295CA0079AE8F /* FacetecCustomizationExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D3BE262EA295CA0079AE8F /* FacetecCustomizationExample.swift */; };
+		50D3BE292EA2BB060079AE8F /* IProovCustomizationExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D3BE282EA2BB060079AE8F /* IProovCustomizationExample.swift */; };
 		50DE834F2E14199000A1EB8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE834E2E14199000A1EB8E /* AppDelegate.swift */; };
 		50DE83582E14199100A1EB8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DE83572E14199100A1EB8E /* Assets.xcassets */; };
 		50DE835B2E14199100A1EB8E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 50DE835A2E14199100A1EB8E /* Base */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50D3BE262EA295CA0079AE8F /* FacetecCustomizationExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacetecCustomizationExample.swift; sourceTree = "<group>"; };
+		50D3BE282EA2BB060079AE8F /* IProovCustomizationExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IProovCustomizationExample.swift; sourceTree = "<group>"; };
 		50DE834B2E14199000A1EB8E /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DE834E2E14199000A1EB8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50DE83572E14199100A1EB8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +67,15 @@
 				6BE8C6B13C0E662677B58D7F /* Pods-Example.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		50D3BE252EA295AE0079AE8F /* Customization */ = {
+			isa = PBXGroup;
+			children = (
+				50D3BE262EA295CA0079AE8F /* FacetecCustomizationExample.swift */,
+				50D3BE282EA2BB060079AE8F /* IProovCustomizationExample.swift */,
+			);
+			path = Customization;
 			sourceTree = "<group>";
 		};
 		50DE83422E14199000A1EB8E = {
@@ -115,6 +128,7 @@
 		50DE83662E141BDD00A1EB8E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				50D3BE252EA295AE0079AE8F /* Customization */,
 				50DE83672E141C0F00A1EB8E /* Content */,
 				50DE836C2E141D3200A1EB8E /* CustomViews */,
 			);
@@ -309,6 +323,8 @@
 				50DE837A2E1567DE00A1EB8E /* CustomIProovResultView.swift in Sources */,
 				50DE83632E141AE000A1EB8E /* SceneDelegate.swift in Sources */,
 				50DE83782E1567DE00A1EB8E /* CustomIProovLoadingView.swift in Sources */,
+				50D3BE292EA2BB060079AE8F /* IProovCustomizationExample.swift in Sources */,
+				50D3BE272EA295CA0079AE8F /* FacetecCustomizationExample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,7 +469,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KRCZ6X7U8S;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Example/Info.plist;
@@ -468,7 +484,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.oiti.app.oitisdk.example;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.oiti.app.certifacesdk.example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -488,7 +504,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KRCZ6X7U8S;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Example/Info.plist;
@@ -503,7 +519,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.oiti.app.oitisdk.example;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.oiti.app.certifacesdk.example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

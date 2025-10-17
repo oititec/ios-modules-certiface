@@ -1,0 +1,4 @@
+framework module CertifaceComponents {
+  header "CertifaceComponents-Swift.h"
+  requires objc
+}

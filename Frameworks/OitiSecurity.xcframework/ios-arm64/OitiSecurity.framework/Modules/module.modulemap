@@ -1,4 +1,0 @@
-framework module OitiSecurity {
-  header "OitiSecurity-Swift.h"
-  requires objc
-}

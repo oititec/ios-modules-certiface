@@ -3,13 +3,16 @@
 //  Example
 //
 
-import OitiSDK
+import CertifaceSDK
 import UIKit
 
 final class ContentViewController: UIViewController {
-    var appKey = "APP_KEY"
+    typealias ProviderBuilderClosure = (LivenessManagerOptions.Builder) -> LivenessManagerOptions
 
     private let customView = ContentView()
+    private let provider: LivenessProvider = .iproov
+    private let appKey = "APP_KEY"
+    private let environment: Environment = .hml
 
     override func loadView() {
         view = customView
@@ -23,6 +26,7 @@ final class ContentViewController: UIViewController {
     }
 
     private func configureElements() {
+        customView.providerLabel.text = provider.rawValue.uppercased()
         customView.defaultButton.addTarget(self, action: #selector(defaultJourney), for: .touchUpInside)
         customView.customAppearanceButton.addTarget(self, action: #selector(customAppearanceJourney), for: .touchUpInside)
         customView.customViewsButton.addTarget(self, action: #selector(customViewsJourney), for: .touchUpInside)
@@ -30,133 +34,46 @@ final class ContentViewController: UIViewController {
 
     @objc
     private func defaultJourney() {
-        createJourney(with: IProovCustomization.builder().build())
+        switch provider {
+        case .iproov:
+            createJourney(with: IProovCustomizationExample.setDefaultAppearance(in:))
+        case .facetec:
+            createJourney(with: FacetecCustomizationExample.setDefaultAppearance(in:))
+        @unknown default:
+            fatalError("Provider not implemented")
+        }
     }
 
     @objc
     private func customAppearanceJourney() {
-        let customization = IProovCustomization.builder()
-            .setInstructionCustomization { instructionBuilder in
-                instructionBuilder
-                    .setBackgroundColor(.purple)
-                    .setBackButtonIcon(UIImage(systemName: "trash") ?? UIImage())
-                    .setBackButtonColor(forContent: .red, background: .green, border: .white)
-                    .setContextImage(UIImage(systemName: "person") ?? UIImage())
-                    .setBottomSheetColor(.cyan)
-                    .setBottomSheetCornerRadius(10)
-                    .setTitleText(
-                        "Titulo aqui",
-                        color: .brown
-                    )
-                    .setCaptionText(
-                        "Subtitulo aqui",
-                        color: .systemPink
-                    )
-                    .setFirstInstructionIcon(UIImage(systemName: "star") ?? UIImage())
-                    .setFirstInstructionTitleText(
-                        "Descrição do ambiente",
-                        color: .darkGray
-                    )
-                    .setSecondInstructionIcon(UIImage(systemName: "house") ?? UIImage())
-                    .setSecondInstructionTitleText(
-                        "Descrição para uso de accessórios",
-                        color: .magenta
-                    )
-                    .setContinueButtonText("Iniciar")
-                    .setContinueButtonColor(forContent: .lightGray, background: .systemPink, border: .white)
-            }
-            .setCameraPermissionCustomization { cameraPermissionBuilder in
-                cameraPermissionBuilder
-                    .setCameraPermissionBackgroundColor(.systemPink)
-                    .setCameraPermissionBackButtonIcon(UIImage(systemName: "pencil") ?? UIImage())
-                    .setCameraPermissionBackButtonColors(forIcon: .white, background: .black, border: .blue)
-                    .setCameraPermissionImage(UIImage(systemName: "person.fill"), color: .cyan)
-                    .setCameraPermissionTitle(
-                        withText: "Permissão de câmera customizada",
-                        color: .white
-                    )
-                    .setCameraPermissionCaption(
-                        withText: "Descrição da permissão de câmera",
-                        color: .purple
-                    )
-                    .setCameraPermissionCheckPermissionButton(withText: "Averiguar")
-                    .setCameraPermissionCheckPermissionButtonNormalStateColors(
-                        forText: .red,
-                        background: .blue,
-                        border: .white
-                    )
-                    .setCameraPermissionBottomSheetShape(withColor: .green, cornerRadius: 0)
-                    .setCameraPermissionBottomSheetTitle(
-                        withText: "Hora de ir para os ajustes",
-                        color: .blue
-                    )
-                    .setCameraPermissionBottomSheetCaption(
-                        withText: "Ou será que não?",
-                        color: .orange
-                    )
-                    .setCameraPermissionOpenSettingsButton(withText: "Pular para ajustes")
-                    .setCameraPermissionOpenSettingsButtonNormalStateColors(
-                        forText: .orange,
-                        background: .darkGray,
-                        border: .blue
-                    )
-                    .setCameraPermissionCloseButton(withText: "Fechar tudo")
-                    .setCameraPermissionCloseButtonNormalStateColors(
-                        forText: .magenta,
-                        background: .cyan,
-                        border: .red
-                    )
-            }
-            .setLivenessCustomization { livenessBuilder in
-                livenessBuilder
-                    .setBackgroundColor(.red)
-                    .setPromptColors(forText: .green, backgroundColor: .white)
-                    .setHeader(withText: "HEADER", textColor: .yellow, backgroundColor: .blue)
-                    .setPromptRoundedCorners(enabled: false)
-                    .setLAOvalStrokeColors(forCapturing: .cyan, completed: .systemPink)
-                    .setGPAOvalStrokeColors(forNotReady: .yellow, completed: .blue)
-                    .setFilter(withStyle: .vibrant, color: .purple, backgroundColor: .orange)
-            }
-            .setLoadingCustomization { loadingBuilder in
-                loadingBuilder
-                    .setLoadingBackgroundColor(.brown)
-                    .setLoadingSpinner(withColor: .red, width: 10.7, scaleFactor: 5)
-            }
-            .setResultCustomization { resulBuilder in
-                resulBuilder
-                    .setResultBackgroundColor(.red, forResultType: .success)
-                    .setResultImage(nil, forResultType: .success)
-                    .setResultMessage("SUCCESS", forResultType: .success)
-                    .setResultMessageColor(.blue, forResultType: .success)
-                    .setResultBackgroundColor(.blue, forResultType: .error)
-                    .setResultImage(nil, forResultType: .error)
-                    .setResultMessage("ERROR", forResultType: .error)
-                    .setResultMessageColor(.red, forResultType: .error)
-            }
-            .build()
-
-        createJourney(with: customization)
+        switch provider {
+        case .iproov:
+            createJourney(with: IProovCustomizationExample.setCustomAppearance(in:))
+        case .facetec:
+            createJourney(with: FacetecCustomizationExample.setCustomAppearance(in:))
+        @unknown default:
+            fatalError("Provider not implemented")
+        }
     }
 
     @objc
     private func customViewsJourney() {
-        let customization = IProovCustomization.builder()
-            .setCustomInstructionView(CustomInstructionView())
-            .setCustomCameraPermissionView(CustomCameraPermissionViewImpl())
-            .setLoadingView(CustomIProovLoadingView())
-            .setResultView(CustomIProovResultView())
-            .build()
-
-        createJourney(with: customization)
+        switch provider {
+        case .iproov:
+            createJourney(with: IProovCustomizationExample.setCustomViews(in:))
+        case .facetec:
+            createJourney(with: FacetecCustomizationExample.setCustomViews(in:))
+        @unknown default:
+            fatalError("Provider not implemented")
+        }
     }
 
-    private func createJourney(with customization: IProovCustomization) {
-        let options = LivenessManagerOptions
-            .builder(appKey: appKey, environment: .hml)
-            .setIProovCustomization(customization)
-            .build()
+    private func createJourney(with providerBuilder: @escaping ProviderBuilderClosure) {
+        let builder = LivenessManagerOptions
+            .builder(appKey: appKey, environment: environment)
+        let options = providerBuilder(builder)
 
-        let manager = OitiSDKFactory.createLivenessManager(for: .iproov)
+        let manager = CertifaceSDKFactory.createLivenessManager(for: provider)
         manager.start(at: self, options: options, callback: self)
     }
 }
@@ -171,12 +88,12 @@ extension ContentViewController: LivenessCallback {
         Protocol: \(String(describing: result.protocol))
         """
 
-        showAlert(title: "Resultado LivenessIProov", message: message)
+        showAlert(title: "Resultado \(provider.rawValue.uppercased())", message: message)
     }
 
     func onError(_ error: LivenessError) {
         showAlert(
-            title: "Resultado LivenessIProov",
+            title: "Resultado \(provider.rawValue.uppercased())",
             message: "[\(error.code)]: \(error.message)"
         )
     }

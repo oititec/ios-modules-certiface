@@ -1,12 +1,10 @@
 //
 //  CustomIProovLoadingView.swift
-//  SampleFaceCaptcha
-//
-//  Created by Filipe Marques on 26/01/23.
+//  Example
 //
 
+import CertifaceSDK
 import UIKit
-import OitiSDK
 
 final class CustomIProovLoadingView: IProovCustomLoadingView {
     @IBOutlet weak var loadIndicator: UIActivityIndicatorView!

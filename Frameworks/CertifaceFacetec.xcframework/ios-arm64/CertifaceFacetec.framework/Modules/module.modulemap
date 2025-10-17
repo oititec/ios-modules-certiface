@@ -1,0 +1,4 @@
+framework module CertifaceFacetec {
+  header "CertifaceFacetec-Swift.h"
+  requires objc
+}

@@ -1,4 +1,0 @@
-framework module OitiComponents {
-  header "OitiComponents-Swift.h"
-  requires objc
-}
