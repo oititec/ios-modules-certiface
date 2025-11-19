@@ -10,11 +10,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		6Qk2kr/jnoOX+AxOwEiUvvzyXgM=
+		4tRM6ED3kCZjASD5bf6cUg/m428=
 		</data>
 		<key>Modules/CertifaceNetwork.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		fZ2wQbu0s9RniU/5cOmgdX7RjPw=
+		1M3Xn6gguwgU3E811Gg+iDfGNVs=
 		</data>
 		<key>Modules/CertifaceNetwork.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Modules/CertifaceNetwork.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ePTI7dYdT+U4E4Op6aTEt87GwUc=
+		+oGins5sSRKcfCwYv8iUYcJCnbs=
 		</data>
 		<key>Modules/CertifaceNetwork.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		fZ2wQbu0s9RniU/5cOmgdX7RjPw=
+		1M3Xn6gguwgU3E811Gg+iDfGNVs=
 		</data>
 		<key>Modules/CertifaceNetwork.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/CertifaceNetwork.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		pvJhIpwASkop20hbKk8nlrMe8ZI=
+		5ZxMvy4m/xN6XHlIFKYWRVXH9wU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -70,7 +70,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			J5foZW0j+wcc/9nEV1MyRD4QY5o5sBEWYj577PqPVRA=
+			JVS/rSgLnnDLYaUekhnuE4iz8RJlUzqT++gAUi6RsBU=
 			</data>
 		</dict>
 		<key>Modules/CertifaceNetwork.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -98,14 +98,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6wTW/5bH6ldmigrwzgYxhpEkufKwwIZSFKoMIqRxDKY=
+			HUAZqadoko/gGlnXGjUAQemBk43ULFwC3I3Lr79ksQ4=
 			</data>
 		</dict>
 		<key>Modules/CertifaceNetwork.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			J5foZW0j+wcc/9nEV1MyRD4QY5o5sBEWYj577PqPVRA=
+			JVS/rSgLnnDLYaUekhnuE4iz8RJlUzqT++gAUi6RsBU=
 			</data>
 		</dict>
 		<key>Modules/CertifaceNetwork.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -133,7 +133,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7o9VEq7BaFGDy1wzVXSVPk1wvH7Y2lZ/LUo0aH6EiqU=
+			0zC/BwB+LIJwITlO8inF7/xHUIRYUunJHEj6PDZ6K6c=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

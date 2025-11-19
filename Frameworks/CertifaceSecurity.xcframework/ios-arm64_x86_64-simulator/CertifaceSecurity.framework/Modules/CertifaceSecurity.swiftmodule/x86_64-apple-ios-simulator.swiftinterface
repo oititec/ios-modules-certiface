@@ -66,13 +66,15 @@ public protocol RequestHelper {
   final public func generateUserAgent(with bundleIdentifier: Swift.String) -> Swift.String
   @objc deinit
 }
+public protocol JourneyTracker : AnyObject {
+  func requestLocation()
+  func trackEvent(forScreen screen: Swift.String, step: Swift.String, action: Swift.String)
+  func uploadDeviceInfoAndLocation(appKey: Swift.String, autoClose: Swift.Bool, provider: Swift.String)
+  func uploadDeviceBehavior(with appKey: Swift.String, autoClose: Swift.Bool, provider: Swift.String)
+}
 @_hasMissingDesignatedInitializers final public class SecurityManager {
   @objc deinit
-  public static func session(for sessionIdentifier: Swift.String, environment: CertifaceNetwork.Environment) -> CertifaceSecurity.SecurityManager
-  final public func requestLocation()
-  final public func trackEvent(forScreen screen: Swift.String, step: Swift.String, action: Swift.String)
-  final public func uploadDeviceInfoAndLocation(appKey: Swift.String, autoClose: Swift.Bool = true, provider: Swift.String, options: [CertifaceSecurity.PersistenceOption : Swift.String] = [:], completion: ((Swift.String?) -> Swift.Void)? = nil)
-  final public func uploadDeviceBehavior(with appKey: Swift.String, autoClose: Swift.Bool = true, provider: Swift.String, options: [CertifaceSecurity.PersistenceOption : Swift.String] = [:], completion: ((Swift.String?) -> Swift.Void)? = nil)
+  public static func session(for sessionIdentifier: Swift.String, environment: CertifaceNetwork.Environment) -> Self
 }
 extension CertifaceSecurity.SecurityManager : Swift.Hashable {
   public static func == (lhs: CertifaceSecurity.SecurityManager, rhs: CertifaceSecurity.SecurityManager) -> Swift.Bool
@@ -80,6 +82,12 @@ extension CertifaceSecurity.SecurityManager : Swift.Hashable {
   final public var hashValue: Swift.Int {
     get
   }
+}
+extension CertifaceSecurity.SecurityManager : CertifaceSecurity.JourneyTracker {
+  final public func requestLocation()
+  final public func trackEvent(forScreen screen: Swift.String, step: Swift.String, action: Swift.String)
+  final public func uploadDeviceInfoAndLocation(appKey: Swift.String, autoClose: Swift.Bool, provider: Swift.String)
+  final public func uploadDeviceBehavior(with appKey: Swift.String, autoClose: Swift.Bool, provider: Swift.String)
 }
 public struct SecurityPayload {
 }
