@@ -14,11 +14,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		/yIS6MuJ2MeF4pcOlFAvuU3wlHM=
+		j40Zb0arOwoLbAX7Zv9MiIz2wUA=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		RBm9ZYo1d2RsQanIgv2dwf3zZR0=
+		B36S3Ci4vgSZQ/5IOtPTMbRxx8I=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		9xzpiFvLBq58pVhHVSwD6QtXzZc=
+		WhNkHyI58gBZO6kNtmLh5bvcSnY=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		RBm9ZYo1d2RsQanIgv2dwf3zZR0=
+		B36S3Ci4vgSZQ/5IOtPTMbRxx8I=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		hcNuDRdALpgcIPlb83lEXBer/Bs=
+		maneQ/xDN36wx72+CiQOmEYwghE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -81,7 +81,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zIHgw0vCko99ixffVIvXlgBHnqLFcanwIBviwp547/0=
+			s5V1vLREO8a3XPZh52lzyq1GRHOwJqGytknC73FRYSM=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -109,14 +109,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NMkPDRH/hclv87uZlc/K64Zc3hYVSGaArhdVTSj3tWI=
+			DeHPbwQYxunE1Y1v3BoORKNKWyf8XH28XuAMQq6c7wc=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zIHgw0vCko99ixffVIvXlgBHnqLFcanwIBviwp547/0=
+			s5V1vLREO8a3XPZh52lzyq1GRHOwJqGytknC73FRYSM=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -144,7 +144,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			efh1MwnZlDKDRWmbLGept48zISGAR/udTfe+869Ldrg=
+			24/bcqzbJDFVaItLpqgYxv/yqbHEjPTR/RrzgaiYV9U=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		TihRXq190S33jX/T2EHc4eF6Bhw=
+		bFckG8ZKwMI+bAkVFMw+/dqL81Y=
 		</data>
 		<key>Headers/CertifaceFacetec-Swift.h</key>
 		<data>
@@ -14,15 +14,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		oOE9v8aEAtMhvAoDGiGgTGxZ8Mo=
+		RDsdH1cInrGrm2+ZFzFsa6RpckA=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		lTFTqOIXnerezsD+bWEpajrtUFc=
+		5OUs6HIssJJu9QffLBL5iXmVksU=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		dtPslcz77rFaSySXG1Dt7kzMlX4=
+		MZmVOmNJqU3ps90owyHgFU4WA84=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -30,19 +30,19 @@
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		BBSAhjNa/oF4dJSS3KMQuDerEsw=
+		TDuue9UhsVOP/JcDg4zvKLAxtvA=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ojtriRciOJ+TGqaq4bKCxxF7o50=
+		xMGvJQBYE366SqDNUsThi1pMTQU=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		lTFTqOIXnerezsD+bWEpajrtUFc=
+		5OUs6HIssJJu9QffLBL5iXmVksU=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		ZI4AEzw0bUgIbUXzCN4d7xup1sw=
+		k6ESZDx1JRu1S0ETlrtCU1ww704=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,11 +50,11 @@
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		IZ7iOTNslkjOsHiFHoSr8g8/x8s=
+		TsWfKx9xXFyKf1dTDkIl3ii5tWc=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		y2qK56+6sI3JBBhMxPZJbA56cjo=
+		cpr/a3dhh7HWM3dx+Ek8QoCviYI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -111,7 +111,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+fcawv8og8m2E4jMWSCB/NXgerEnZ7mbL791V3QbSfQ=
+			j/GrktQjtXIJW/x5cy51ORxK2D5uG4o4A4jUTGa3Lwo=
 			</data>
 		</dict>
 		<key>Headers/CertifaceFacetec-Swift.h</key>
@@ -125,14 +125,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KYHGutMsPVDJVwcCmlM1jk/Q/gZyrrAEsrQ2unSEGX0=
+			xe1dEjMcNsnEsbhwwys5puYMiBnEjAy1WnAvNTlDFjw=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			k5V/kWZEeS6tjPEOvC15UwZN4HfFnb0eVe8DIFyhDac=
+			RmVAIY4ManplIychk+wzUIRQ1eZMmqMyVq4WdQnjwYc=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -146,28 +146,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/10Useq0pmBFoIOxJHAqbJ9MQ3cbiG8Jdm22UApanMU=
+			0kwIIxSexkcwo970iwRB6aGxe9ngSC03ehzn4sgvO7c=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NHOt1b1C/L7PXelS8P7xJmVPrrNBExwemGbgEgo3/KU=
+			8LlQs5YVJdHibFAVh68TDvdcp+V01hM/Ng/yUf22o2Q=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KYHGutMsPVDJVwcCmlM1jk/Q/gZyrrAEsrQ2unSEGX0=
+			xe1dEjMcNsnEsbhwwys5puYMiBnEjAy1WnAvNTlDFjw=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rfYAzy2gTZLw6UaYfIVbaUV7KTtVC37ldp99EivyXp8=
+			OcqkS4on/io7KF3pFGyODrR8VOaCNbMqQaIbrrBiQ5g=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -181,14 +181,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7oooANkocrGHSsErYkuG9KTnJKOv0KfFzy1eUT5SIzw=
+			iS5UIXDM6jdIGKqsW6fOWAtyuI4BTAg/H1Wl0dD4sCE=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6TJd+6Y83CAE1StCPU2bW6XkKp0x7rTR6sZTDQI2zUI=
+			eTJ08USIMwXj/pE0J3k0HUSgTsCwexCNg+Enu/1terk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

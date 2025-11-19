@@ -92,7 +92,7 @@ extension CertifaceFacetec.Liveness3DStarterData {
     final public func setLowLightTheme(_ theme: CertifaceFacetec.Liveness3DTheme?) -> Self
     final public func setTexts(_ texts: [CertifaceFacetec.Liveness3DTextKey : Swift.String]?) -> Self
     final public func setText(_ text: Swift.String, forKey key: CertifaceFacetec.Liveness3DTextKey) -> Self
-    final public func setTracker(_ tracker: CertifaceSecurity.SecurityManager?) -> Self
+    final public func setTracker(_ tracker: (any CertifaceSecurity.JourneyTracker)?) -> Self
     final public func build() -> CertifaceFacetec.Liveness3DStarterData
     @objc deinit
   }
