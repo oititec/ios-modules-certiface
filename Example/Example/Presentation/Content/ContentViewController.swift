@@ -13,6 +13,7 @@ final class ContentViewController: UIViewController {
     private let provider: LivenessProvider = .iproov
     private let appKey = "APP_KEY"
     private let environment: Environment = .hml
+    private let showInstructionsScreen = true
 
     override func loadView() {
         view = customView
@@ -71,6 +72,7 @@ final class ContentViewController: UIViewController {
     private func createJourney(with providerBuilder: @escaping ProviderBuilderClosure) {
         let builder = LivenessManagerOptions
             .builder(appKey: appKey, environment: environment)
+            .setShowInstructionsScreen(showInstructionsScreen)
         let options = providerBuilder(builder)
 
         let manager = CertifaceSDKFactory.createLivenessManager(for: provider)

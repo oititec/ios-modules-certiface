@@ -1,5 +1,5 @@
 PODS:
-  - CertifaceSDK (1.1.0):
+  - CertifaceSDK (1.2.0):
     - iProov (= 12.5.0)
     - OILiveness3D_FT (= 9.7.91)
   - iProov (12.5.0)
@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CertifaceSDK: c3cb65487f4b36c7a71cac153a10fb38b75704d2
+  CertifaceSDK: 2b1a4ff8568d5a977ec521e9afaa103b96a3b25a
   iProov: 17b75b5b2ceb6615cf6f7e835f30a773f28b1644
   OILiveness3D_FT: fb827fff1c66a1b01d08ce52220bca7d911689a1
 
