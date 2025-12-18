@@ -32,10 +32,6 @@ public protocol CustomResultAnimationDelegate {
   func createActivityIndicatorView() -> UIKit.UIView?
   func createSuccessAnimationView() -> UIKit.UIView?
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class HybridLiveness3DViewController : CertifaceFacetec.Liveness3DViewController {
-  @_Concurrency.MainActor @preconcurrency public init(liveness3DUser: CertifaceFacetec.Liveness3DUser, delegate: any CertifaceFacetec.Liveness3DDelegate, customAppearance: CertifaceComponents.HybridViewAppearance?)
-  @objc deinit
-}
 public struct ImageAnimationAppearance {
   public init(image: UIKit.UIImage?, rotationInterval: Swift.Int32, checkmarkForegroundColor: UIKit.UIColor, checkmarkBackgroundColor: UIKit.UIColor)
 }
@@ -67,18 +63,11 @@ public enum Liveness3DErrorCode : Swift.Int, Swift.Error {
     get
   }
 }
-public struct Liveness3DLoadingCustomization {
-  public var backgroundColor: UIKit.UIColor
-  public var spinnerColor: UIKit.UIColor
-  public var spinnerWidth: CoreFoundation.CGFloat
-  public var spinnerScaleFactor: Swift.Int
-  public init()
-}
 public struct Liveness3DShadow {
   public init(color: UIKit.UIColor, opacity: Swift.Float, radius: Swift.Float, offset: CoreFoundation.CGSize, insets: UIKit.UIEdgeInsets)
 }
 public enum Liveness3DStarter {
-  public static func start(at rootViewController: UIKit.UIViewController, with starterData: CertifaceFacetec.Liveness3DStarterData)
+  public static func start(at rootViewController: UIKit.UIViewController, with starterData: CertifaceFacetec.Liveness3DStarterData) async throws
 }
 public struct Liveness3DStarterData {
 }
@@ -87,7 +76,6 @@ extension CertifaceFacetec.Liveness3DStarterData {
   @_hasMissingDesignatedInitializers final public class Builder {
     final public func setTicket(_ ticket: Swift.String) -> Self
     final public func setTotp(_ totp: Swift.String?) -> Self
-    final public func setLoadingCustomization(_ customization: CertifaceFacetec.Liveness3DLoadingCustomization) -> Self
     final public func setDefaultTheme(_ theme: CertifaceFacetec.Liveness3DTheme?) -> Self
     final public func setLowLightTheme(_ theme: CertifaceFacetec.Liveness3DTheme?) -> Self
     final public func setTexts(_ texts: [CertifaceFacetec.Liveness3DTextKey : Swift.String]?) -> Self
@@ -323,14 +311,6 @@ public struct Liveness3DTheme {
 }
 public struct Liveness3DUser {
   public init(appKey: Swift.String, ticket: Swift.String? = nil, environment: CertifaceFacetec.Environment, defaultTheme: CertifaceFacetec.Liveness3DTheme? = nil, lowLightTheme: CertifaceFacetec.Liveness3DTheme? = nil, texts: [CertifaceFacetec.Liveness3DTextKey : Swift.String]? = nil)
-}
-@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class Liveness3DViewController : UIKit.UINavigationController {
-  @_Concurrency.MainActor @preconcurrency weak public var liveness3DDelegate: (any CertifaceFacetec.Liveness3DDelegate)?
-  @_Concurrency.MainActor @preconcurrency convenience public init(liveness3DUser: CertifaceFacetec.Liveness3DUser, delegate: any CertifaceFacetec.Liveness3DDelegate, customInstructionView: (any CertifaceFacetec.Liveness3DCustomInstructionView)? = nil, customPermissionView: (any CertifaceFacetec.CustomCameraPermissionView)? = nil)
-  @objc deinit
-}
-extension CertifaceFacetec.Liveness3DViewController : UIKit.UIGestureRecognizerDelegate {
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
 }
 public enum VocalGuidanceMode : Swift.Int {
   case noVocalGuidance

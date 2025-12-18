@@ -10,19 +10,19 @@
 		</data>
 		<key>Headers/CertifaceFacetec-Swift.h</key>
 		<data>
-		+lAiNCqaoKDBjfdvfzuUB7BjP7w=
+		3N2vVSPCA9UQTJiVRHeCgMTzBPU=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		RDsdH1cInrGrm2+ZFzFsa6RpckA=
+		X2qjkkvGkYMqFAd+ZkeTTA3IXUc=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		5OUs6HIssJJu9QffLBL5iXmVksU=
+		CRAaN3qaK/1fHCjHqGJX1BR90i4=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		MZmVOmNJqU3ps90owyHgFU4WA84=
+		f4qDmgZUef7JrX+KNPygeXdvH/o=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -30,19 +30,19 @@
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		TDuue9UhsVOP/JcDg4zvKLAxtvA=
+		ocDeBJL/0v2EyVmTATB2c3Vp564=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		xMGvJQBYE366SqDNUsThi1pMTQU=
+		0DkOXeXcxZKMi0jEU1pLOweqWro=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		5OUs6HIssJJu9QffLBL5iXmVksU=
+		CRAaN3qaK/1fHCjHqGJX1BR90i4=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		k6ESZDx1JRu1S0ETlrtCU1ww704=
+		Ers82e/C9bCrSzmiFKvRJEKLnKw=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,11 +50,11 @@
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		TsWfKx9xXFyKf1dTDkIl3ii5tWc=
+		uoZHmWOBNZNj/M9MUibNC74qerM=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		cpr/a3dhh7HWM3dx+Ek8QoCviYI=
+		3VMfm9Opo8BlLiOJVNUtPOy7qYo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -118,21 +118,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1sDX3tTF7luLU+SBprRsYYsRoODP2H1ygzihhg3RGjc=
+			ZVP5SL8Y5APP2WLQvzyLigbeHjnWMPW9A9B7sGgv7uA=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xe1dEjMcNsnEsbhwwys5puYMiBnEjAy1WnAvNTlDFjw=
+			jSli4WQ1KYIIApG38BujfejNhoN9HcHuIxtOcUw2f5E=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RmVAIY4ManplIychk+wzUIRQ1eZMmqMyVq4WdQnjwYc=
+			838HHqbRdALzPTiKaCSOzUHELcZolrdYwISH/7C+BK0=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -146,28 +146,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0kwIIxSexkcwo970iwRB6aGxe9ngSC03ehzn4sgvO7c=
+			5S0urZyRxapyMbWRn/ujfYIEYWP5i4Wd9cp7EtoPpgc=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8LlQs5YVJdHibFAVh68TDvdcp+V01hM/Ng/yUf22o2Q=
+			JGFwQJKPiO1ypsyvrb39uQy0t78n6F/8BV3b5vDMiKA=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xe1dEjMcNsnEsbhwwys5puYMiBnEjAy1WnAvNTlDFjw=
+			jSli4WQ1KYIIApG38BujfejNhoN9HcHuIxtOcUw2f5E=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OcqkS4on/io7KF3pFGyODrR8VOaCNbMqQaIbrrBiQ5g=
+			IWVfRoSfzrDNebpxPr5IVcL6MNmJeAaLTlzpKncpXj0=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -181,14 +181,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			iS5UIXDM6jdIGKqsW6fOWAtyuI4BTAg/H1Wl0dD4sCE=
+			4uAXRTEfpMtGn8FtFbEmSIUaE1bnZrV/OyI4m/HgamU=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			eTJ08USIMwXj/pE0J3k0HUSgTsCwexCNg+Enu/1terk=
+			v9w0sCNsWj8qyWqo8qSG5Hp5Yj9V9FU78J17Y6bflsE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
