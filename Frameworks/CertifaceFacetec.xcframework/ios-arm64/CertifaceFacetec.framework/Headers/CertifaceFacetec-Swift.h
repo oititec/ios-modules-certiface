@@ -280,7 +280,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
-@import UIKit;
 #endif
 
 #endif
@@ -302,33 +301,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
-@class NSCoder;
-@class UIViewController;
-@class NSString;
-@class NSBundle;
-
-SWIFT_CLASS("_TtC16CertifaceFacetec24Liveness3DViewController")
-@interface Liveness3DViewController : UINavigationController
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
-- (nonnull instancetype)initWithNavigationBarClass:(Class _Nullable)navigationBarClass toolbarClass:(Class _Nullable)toolbarClass SWIFT_UNAVAILABLE;
-- (nonnull instancetype)initWithRootViewController:(UIViewController * _Nonnull)rootViewController SWIFT_UNAVAILABLE;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
-@end
-
-
-SWIFT_CLASS("_TtC16CertifaceFacetec30HybridLiveness3DViewController")
-@interface HybridLiveness3DViewController : Liveness3DViewController
-@end
-
-
-
-
-@class UIGestureRecognizer;
-
-@interface Liveness3DViewController (SWIFT_EXTENSION(CertifaceFacetec)) <UIGestureRecognizerDelegate>
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer * _Nonnull)gestureRecognizer SWIFT_WARN_UNUSED_RESULT;
-@end
-
 
 
 #endif

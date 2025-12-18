@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name            = 'CertifaceSDK'
-  s.version         = '1.1.0'
+  s.version         = '1.2.0'
   s.summary         = 'Framework CertifaceSDK para iOS.'
   s.homepage        = 'https://www.oititec.com.br/'
   s.license         = { :type => 'Copyright', :text => 'Copyright © 2025 Oiti. All rights reserved.' }
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.platform        = :ios, '13.0'
   s.swift_version   = '5.0'
   s.source          = { 
-    :git => 'https://github.com/oititec/ios-modules-oitisdk.git', 
+    :git => 'https://github.com/oititec/ios-modules-certiface.git', 
     :tag => s.version.to_s 
   }
   s.vendored_frameworks = [

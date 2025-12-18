@@ -10,19 +10,19 @@
 		</data>
 		<key>Headers/CertifaceSDK-Swift.h</key>
 		<data>
-		AXYzeHcwvXfpY3SWv56Fg3OjoG4=
+		N2sFYV3wq65nKMEfrITy87EGpN0=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		j40Zb0arOwoLbAX7Zv9MiIz2wUA=
+		On7nVPVftl1EElxtr9X7T/fkChA=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		B36S3Ci4vgSZQ/5IOtPTMbRxx8I=
+		Y/F5a239vA3do+z02kzOJYAOuWI=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		dIH9uPuRqCzZLeIn2N5IKKl+svY=
+		sphfcsIK3MyySYovNUWcU+QpktA=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -30,19 +30,19 @@
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		ekqMSyNfAuLO+dYCHKMmrZvUqdo=
+		k/A6e/xvxBi1fOA+4z6wOjhhrx4=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		WhNkHyI58gBZO6kNtmLh5bvcSnY=
+		YVfEHEjAhCA3ygzPjAZwJ7IyKPM=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		B36S3Ci4vgSZQ/5IOtPTMbRxx8I=
+		Y/F5a239vA3do+z02kzOJYAOuWI=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		x79WRzhxFwC5Kl+qQ60CC7nSXN0=
+		cTdmQHcFJtEEQBrh6fHkagwM3QI=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,11 +50,11 @@
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		vH7uWKOziCBqdGvT4WkS8m1xB5Q=
+		kXiWM+xeW3Ox4987EzQOt0ip5kQ=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		maneQ/xDN36wx72+CiQOmEYwghE=
+		dSX1PgBdP/vXuBJ3UDfNT6YYods=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -74,21 +74,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DKTpx0aTEp0meve4X0FZDWYEubRHlCKocHBqw/s9ij8=
+			4hAw28WsJXF4rs5B5AS5b/sCobUNaimt6NzcaKkj0bY=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			s5V1vLREO8a3XPZh52lzyq1GRHOwJqGytknC73FRYSM=
+			ftbr6xh2GlCj3HO0l6GKEipzWGUp8JnvOYWxGFruHxY=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			exVQmi0a3AF7h+vW2bOQRzYPJP/llbwRV1MI48knMNc=
+			lQN6OWTixoQwBKtT21PPJMqiXu1neVxlt0Dwofv7r4E=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -102,28 +102,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Y+khu/tcpKH0NTvjg2gBBbg/zet4NQ5BH8JVMVikMgo=
+			adUydMklIckgQj8ZenjsmXztRYOFxivCCeTDpsV2JE8=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DeHPbwQYxunE1Y1v3BoORKNKWyf8XH28XuAMQq6c7wc=
+			FPqkFM6Gzag8bmMD1HRnxz62QvUU1jxReDyFceSdTpY=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			s5V1vLREO8a3XPZh52lzyq1GRHOwJqGytknC73FRYSM=
+			ftbr6xh2GlCj3HO0l6GKEipzWGUp8JnvOYWxGFruHxY=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XU36d/dquKAI/9P+7nRMaolFNpas5baAYlUOJ4hMuSs=
+			uFUPdjJ/A5GzM87lbPFZJLBSH85x+15Goi1/He8w/eI=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -137,14 +137,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			E4g0JqWgS4NoElgl8gQsa5teWVxMTFlhNQ1BRZZFFd8=
+			ALJc7pL/MPVinJbO3u6TzqvjZDNdUNNj7q+E/PdA3bE=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			24/bcqzbJDFVaItLpqgYxv/yqbHEjPTR/RrzgaiYV9U=
+			D576IsY2JfcOIcxbA3uUXIXA9Zw132R0NpAsmcI5pPI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

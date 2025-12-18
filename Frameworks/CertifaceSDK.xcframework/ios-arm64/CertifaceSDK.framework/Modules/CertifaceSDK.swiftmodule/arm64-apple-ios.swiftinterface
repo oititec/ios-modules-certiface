@@ -111,6 +111,7 @@ public typealias Liveness3DTextKey = CertifaceFacetec.Liveness3DTextKey
 public enum CertifaceSDKFactory {
   public static func createLivenessManager(for provider: CertifaceSDK.LivenessProvider) -> any CertifaceSDK.LivenessManager
 }
+public typealias CustomLoadingView = UIKit.UIView
 public enum Environment {
   case hml, prd
   public static func == (a: CertifaceSDK.Environment, b: CertifaceSDK.Environment) -> Swift.Bool
@@ -129,7 +130,7 @@ public struct FacetecCustomization {
   @discardableResult
   final public func setCameraPermissionCustomization(_ builderHandler: @escaping (_ cameraPermissionBuilder: CertifaceSDK.CameraPermissionCustomizationBuilder) -> CertifaceSDK.CameraPermissionCustomizationBuilder) -> Self
   @discardableResult
-  final public func setLoadingCustomization(_ builderHandler: @escaping (_ loadingBuilder: CertifaceSDK.FacetecLoadingCustomizationBuilder) -> CertifaceSDK.FacetecLoadingCustomizationBuilder) -> Self
+  final public func setLoadingCustomization(_ builderHandler: @escaping (_ loadingBuilder: CertifaceSDK.LoadingCustomizationBuilder) -> CertifaceSDK.LoadingCustomizationBuilder) -> Self
   @discardableResult
   final public func setLivenessDefaultTheme(_ builderHandler: @escaping (_ defaultThemeBuilder: CertifaceSDK.Liveness3DThemeBuilder) -> CertifaceSDK.Liveness3DThemeBuilder) -> Self
   @discardableResult
@@ -140,17 +141,8 @@ public struct FacetecCustomization {
   final public func setCustomInstructionView(_ customView: any CertifaceSDK.LivenessCustomInstructionView) -> Self
   @discardableResult
   final public func setCustomCameraPermissionView(_ customView: any CertifaceSDK.CustomCameraPermissionView) -> Self
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers final public class FacetecLoadingCustomizationBuilder {
   @discardableResult
-  final public func setBackgroundColor(_ color: UIKit.UIColor) -> Self
-  @discardableResult
-  final public func setSpinnerColor(_ color: UIKit.UIColor) -> Self
-  @discardableResult
-  final public func setSpinnerWidth(_ width: CoreFoundation.CGFloat) -> Self
-  @discardableResult
-  final public func setSpinnerScaleFactor(_ scaleFactor: Swift.Int) -> Self
+  final public func setCustomLoadingView(_ customView: CertifaceSDK.CustomLoadingView) -> Self
   @objc deinit
 }
 public struct IProovCustomization {
@@ -163,9 +155,9 @@ public struct IProovCustomization {
   @discardableResult
   final public func setCameraPermissionCustomization(_ builderHandler: @escaping (_ cameraPermissionBuilder: CertifaceSDK.CameraPermissionCustomizationBuilder) -> CertifaceSDK.CameraPermissionCustomizationBuilder) -> Self
   @discardableResult
-  final public func setLivenessCustomization(_ builderHandler: @escaping (_ livenessBuilder: CertifaceIProov.IProovLivenessCustomizationBuilder) -> CertifaceIProov.IProovLivenessCustomizationBuilder) -> Self
+  final public func setLoadingCustomization(_ builderHandler: @escaping (_ loadingBuilder: CertifaceSDK.LoadingCustomizationBuilder) -> CertifaceSDK.LoadingCustomizationBuilder) -> Self
   @discardableResult
-  final public func setLoadingCustomization(_ builderHandler: @escaping (_ loadingBuilder: CertifaceIProov.IProovLoadingCustomizationBuilder) -> CertifaceIProov.IProovLoadingCustomizationBuilder) -> Self
+  final public func setLivenessCustomization(_ builderHandler: @escaping (_ livenessBuilder: CertifaceIProov.IProovLivenessCustomizationBuilder) -> CertifaceIProov.IProovLivenessCustomizationBuilder) -> Self
   @discardableResult
   final public func setResultCustomization(_ builderHandler: @escaping (_ resultBuilder: CertifaceIProov.IProovResultCustomizationBuilder) -> CertifaceIProov.IProovResultCustomizationBuilder) -> Self
   @discardableResult
@@ -277,6 +269,7 @@ public struct LivenessManagerOptions {
 extension CertifaceSDK.LivenessManagerOptions {
   public static func builder(appKey: Swift.String, environment: CertifaceSDK.Environment) -> CertifaceSDK.LivenessManagerOptions.Builder
   @_hasMissingDesignatedInitializers final public class Builder {
+    final public func setShowInstructionsScreen(_ enabled: Swift.Bool) -> Self
     final public func setIProovCustomization(_ customization: CertifaceSDK.IProovCustomization) -> Self
     final public func setFacetecCustomization(_ customization: CertifaceSDK.FacetecCustomization) -> Self
     final public func build() -> CertifaceSDK.LivenessManagerOptions
@@ -289,6 +282,19 @@ public struct LivenessResult {
   public var cause: Swift.String?
   public var `protocol`: Swift.String
   public var scanResultBlob: Swift.String?
+}
+public struct LoadingCustomization {
+}
+@_hasMissingDesignatedInitializers final public class LoadingCustomizationBuilder {
+  @discardableResult
+  final public func setBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setSpinnerColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setSpinnerWidth(_ width: CoreFoundation.CGFloat) -> Self
+  @discardableResult
+  final public func setSpinnerScaleFactor(_ scaleFactor: Swift.Int) -> Self
+  @objc deinit
 }
 public enum LivenessProvider : Swift.String {
   case iproov
