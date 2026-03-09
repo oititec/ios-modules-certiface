@@ -14,15 +14,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		On7nVPVftl1EElxtr9X7T/fkChA=
+		lJ+v8SCMpYOxxJ4f4TzuAQx0iwQ=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		Y/F5a239vA3do+z02kzOJYAOuWI=
+		+66Bbcx0xg07wcVCSs63S41+MMA=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		sphfcsIK3MyySYovNUWcU+QpktA=
+		lf2zqOO8Xj3jc3uZENhJLdGmdXM=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -30,19 +30,19 @@
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		k/A6e/xvxBi1fOA+4z6wOjhhrx4=
+		x7S44+kqxoJ9Q/OljsxkMxNQb6s=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		YVfEHEjAhCA3ygzPjAZwJ7IyKPM=
+		5zVMC9vIo55xLEhqzShwUg7o7W8=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		Y/F5a239vA3do+z02kzOJYAOuWI=
+		+66Bbcx0xg07wcVCSs63S41+MMA=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		cTdmQHcFJtEEQBrh6fHkagwM3QI=
+		JByxw7+OKqIch/KBAqrAv2wLs3M=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,11 +50,11 @@
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		kXiWM+xeW3Ox4987EzQOt0ip5kQ=
+		DbiLvefkoMfXesXAPcYLHoetfuQ=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		dSX1PgBdP/vXuBJ3UDfNT6YYods=
+		JoDYDaH/dyFXKarUe/zz5D8/F1Q=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -81,14 +81,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ftbr6xh2GlCj3HO0l6GKEipzWGUp8JnvOYWxGFruHxY=
+			d0JcBiwZmto72Nk5jiGThlAYrvcI8xLteN7YEzVmWBQ=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lQN6OWTixoQwBKtT21PPJMqiXu1neVxlt0Dwofv7r4E=
+			dceJbOfgPBudSO+PHPOI72nmLg0HkKtfwbvB0YAqkhQ=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -102,28 +102,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			adUydMklIckgQj8ZenjsmXztRYOFxivCCeTDpsV2JE8=
+			11B+HZxwQJW8+sCNm0lxFp7gb9OoJQXW4mauL/bwiYc=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FPqkFM6Gzag8bmMD1HRnxz62QvUU1jxReDyFceSdTpY=
+			uWRtW57CKnLURhPR2cE48eUFAdXtIbXPG2C06Wgv8WU=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ftbr6xh2GlCj3HO0l6GKEipzWGUp8JnvOYWxGFruHxY=
+			d0JcBiwZmto72Nk5jiGThlAYrvcI8xLteN7YEzVmWBQ=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uFUPdjJ/A5GzM87lbPFZJLBSH85x+15Goi1/He8w/eI=
+			OddBv9Vn3jHm+qDjnykVDtpkHfEEQhY24u3GXBGbg0M=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -137,14 +137,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ALJc7pL/MPVinJbO3u6TzqvjZDNdUNNj7q+E/PdA3bE=
+			jN3GZYG8mW41woJoXz5EqFvLInduTNyG6vm2SlKkLC0=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			D576IsY2JfcOIcxbA3uUXIXA9Zw132R0NpAsmcI5pPI=
+			WVdiRyAo47tBkGzwKsl+PAoDmfiGBh8uSwsv6e0sdq4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

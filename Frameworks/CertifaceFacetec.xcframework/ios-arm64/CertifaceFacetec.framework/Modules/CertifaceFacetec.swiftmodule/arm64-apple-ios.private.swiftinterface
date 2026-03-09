@@ -67,7 +67,7 @@ public struct Liveness3DShadow {
   public init(color: UIKit.UIColor, opacity: Swift.Float, radius: Swift.Float, offset: CoreFoundation.CGSize, insets: UIKit.UIEdgeInsets)
 }
 public enum Liveness3DStarter {
-  public static func start(at rootViewController: UIKit.UIViewController, with starterData: CertifaceFacetec.Liveness3DStarterData) async throws
+  public static func start(at rootViewController: UIKit.UINavigationController, with starterData: CertifaceFacetec.Liveness3DStarterData) async throws
 }
 public struct Liveness3DStarterData {
 }

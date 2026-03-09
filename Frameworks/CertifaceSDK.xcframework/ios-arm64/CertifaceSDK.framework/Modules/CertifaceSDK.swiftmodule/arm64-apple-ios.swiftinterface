@@ -165,9 +165,9 @@ public struct IProovCustomization {
   @discardableResult
   final public func setCustomCameraPermissionView(_ customView: any CertifaceSDK.CustomCameraPermissionView) -> Self
   @discardableResult
-  final public func setLoadingView(_ customView: CertifaceSDK.IProovCustomLoadingView) -> Self
+  final public func setCustomLoadingView(_ customView: CertifaceSDK.IProovCustomLoadingView) -> Self
   @discardableResult
-  final public func setResultView(_ customView: any CertifaceSDK.IProovCustomResultView) -> Self
+  final public func setCustomResultView(_ customView: any CertifaceSDK.IProovCustomResultView) -> Self
   @objc deinit
 }
 public struct InstructionCustomization {
