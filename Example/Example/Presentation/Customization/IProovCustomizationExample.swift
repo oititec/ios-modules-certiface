@@ -142,8 +142,8 @@ enum IProovCustomizationExample {
         let customization = IProovCustomization.builder()
             .setCustomInstructionView(CustomInstructionView())
             .setCustomCameraPermissionView(CustomCameraPermissionViewImpl())
-            .setLoadingView(CustomIProovLoadingView())
-            .setResultView(CustomIProovResultView())
+            .setCustomLoadingView(CustomIProovLoadingView())
+            .setCustomResultView(CustomIProovResultView())
             .build()
 
         return setCustomization(customization, in: builder)

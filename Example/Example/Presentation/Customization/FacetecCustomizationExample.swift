@@ -255,6 +255,10 @@ enum FacetecCustomizationExample {
             .setCancelButtonIcon(UIImage(systemName: "pencil"))
             .setCancelButtonLocation(.topRight)
 
+        // Vocal guidance
+        themeBuilder
+            .setVocalGuidanceMode(.noVocalGuidance)
+
         return themeBuilder
     }
 }
