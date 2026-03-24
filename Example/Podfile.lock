@@ -1,9 +1,9 @@
 PODS:
-  - CertifaceSDK (1.3.0):
+  - CertifaceSDK (1.4.0):
     - iProov (= 12.5.0)
-    - OILiveness3D_FT (= 9.7.91)
+    - OILiveness3D_FT (= 9.7.110)
   - iProov (12.5.0)
-  - OILiveness3D_FT (9.7.91)
+  - OILiveness3D_FT (9.7.110)
 
 DEPENDENCIES:
   - CertifaceSDK (from `../`)
@@ -19,9 +19,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CertifaceSDK: a0d0c6de1c6f52bfb4e12ad3ac24bba18a293edd
+  CertifaceSDK: f74071ea377420880cbc14b15fb59619270475e8
   iProov: 17b75b5b2ceb6615cf6f7e835f30a773f28b1644
-  OILiveness3D_FT: fb827fff1c66a1b01d08ce52220bca7d911689a1
+  OILiveness3D_FT: b5ce81463120c54dde2d5f9975b00b0116a798db
 
 PODFILE CHECKSUM: 41b30c137e1dd3265111c8552a4cc0d8e25be2fe
 

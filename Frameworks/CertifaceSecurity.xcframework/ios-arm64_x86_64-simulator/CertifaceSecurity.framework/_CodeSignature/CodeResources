@@ -6,51 +6,51 @@
 	<dict>
 		<key>Headers/CertifaceSecurity-Swift.h</key>
 		<data>
-		CAnSzvb+m50fAh0+MvvjrTwVC4A=
+		Vx61jNhxcOVUmlLKdKAhCy2gc3U=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		9qIvsVXNGtZzQ5PM+yaE8eoAVbc=
+		Vno5CIl0azdTfQ9ZK0AblG//WSA=
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		O3NFEHD+7JhqsEcVM6l2FkWIVFc=
+		DMLoqaJiBe1PD2jNa0DiLsAtHso=
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		1y5pyNIdWJgckngDzLSmna3gq5A=
+		LWqZoO6Ul7r9NKqdDnAyjeDwuRM=
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		EslBODxM6luRfpDZv0j2tgYhII0=
+		LwWOOYXZRHW+WKcHGMQTGwo03DI=
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		1y5pyNIdWJgckngDzLSmna3gq5A=
+		LWqZoO6Ul7r9NKqdDnAyjeDwuRM=
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Zis6SWi07uOubgkMN8NiTDLvJnM=
+		d0SXGohJRKhrkYflLA80b2nVvBc=
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		O3NFEHD+7JhqsEcVM6l2FkWIVFc=
+		DMLoqaJiBe1PD2jNa0DiLsAtHso=
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		kHQs19087V1sLU0xc9hlQLsGSTQ=
+		hrU8H5rArGlVJrMyPYNCd5YHw74=
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		MpDCx38/i3yoZgJe3DaPtTlR2NA=
+		PMnNbSQr2ZwU01MkLWIcmuCUwz4=
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		kHQs19087V1sLU0xc9hlQLsGSTQ=
+		hrU8H5rArGlVJrMyPYNCd5YHw74=
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		y4xWgKriO4EEpSy7VDVRCW09bAo=
+		c1Zmns90rK8r91/+NPICpWnnEQc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -67,77 +67,77 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			f97sP86eLOScNAWXnnLj8GRdSQpiXKSNfrkh4v3JYTg=
+			yi03VWLsiZdQTTXyWFQCEofMMkTm2y4TIuGPlHs+WEI=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSecurity.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pLiy8B+SlUHwV4hASCBq/YGibg3erriN5UhoVKC0bkY=
+			JCZocGb03it6LVvWaqDjgMnFRsmyUGnLssjNn+QsrLo=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSecurity.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			t2sZBlu3kOflacYxWKEeglSgi9+21OJtuwGsVoVJidU=
+			ArTRHqytLn/Hw245r3r9eBIf/l7G0O5X08LlufIHMvw=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSecurity.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			V2mmX98BJ5x9U5izg760JW2reZ9wTZyTYqg4YT59R+s=
+			4H9sxCt2ki9QCFN6XV3UG8h3IAy2mv0jFB0MnCQQV1Q=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSecurity.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			t2sZBlu3kOflacYxWKEeglSgi9+21OJtuwGsVoVJidU=
+			ArTRHqytLn/Hw245r3r9eBIf/l7G0O5X08LlufIHMvw=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSecurity.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HoajElZ1wFhfyMsF56ona3D2tuhovzZOh7COBR171aI=
+			z9MEmukcxESqpbMzyd9MbN6mm15bwYMB/a+hi1oLQHI=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pLiy8B+SlUHwV4hASCBq/YGibg3erriN5UhoVKC0bkY=
+			JCZocGb03it6LVvWaqDjgMnFRsmyUGnLssjNn+QsrLo=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ig9d1ySJwvO8ypX6Xn1YiA7fWL5E6IjFZ6wSwMYHo9w=
+			LkFQPVp7cHY7bVXD/5vLSOUAlJadTFikChkQFZrmCS0=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NcctyvL0Uv7MAAiOy4Hc6CJArY+dfB3Lfmpo+jokZtc=
+			4Ah1fL6mCBzu7Z5IT298xqZuuA66LGZf9C/gHhLhkl8=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ig9d1ySJwvO8ypX6Xn1YiA7fWL5E6IjFZ6wSwMYHo9w=
+			LkFQPVp7cHY7bVXD/5vLSOUAlJadTFikChkQFZrmCS0=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fgeZtFVXDBlJmV4c8lQp/QiouuuSMjdwMKQHf0CiJdk=
+			OJx0MRZCIjr8bX8yzFzHQgXbZl76oUr39wfofF30wFY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

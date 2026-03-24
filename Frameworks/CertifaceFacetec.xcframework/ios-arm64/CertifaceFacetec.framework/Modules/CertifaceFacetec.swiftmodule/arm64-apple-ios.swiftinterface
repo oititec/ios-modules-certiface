@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
-// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name CertifaceFacetec
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name CertifaceFacetec
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
 import AVFoundation
 import CertifaceComponents
 import CertifaceNetwork
@@ -29,15 +29,25 @@ public struct BlobAnimationAppearance {
   public init(blobColor: UIKit.UIColor, checkmarkForegroundColor: UIKit.UIColor, checkmarkBackgroundColor: UIKit.UIColor)
 }
 public protocol CustomResultAnimationDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
   func createActivityIndicatorView() -> UIKit.UIView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func createSuccessAnimationView() -> UIKit.UIView?
+  #endif
 }
 public struct ImageAnimationAppearance {
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(image: UIKit.UIImage?, rotationInterval: Swift.Int32, checkmarkForegroundColor: UIKit.UIColor, checkmarkBackgroundColor: UIKit.UIColor)
+  #endif
 }
 public protocol Liveness3DCustomInstructionView : UIKit.UIView {
+  #if compiler(>=5.3) && $NonescapableTypes
   var backButton: UIKit.UIButton! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   var continueButton: UIKit.UIButton! { get }
+  #endif
   func changeLoadingVisibility(to visibility: CertifaceFacetec.Visibility)
 }
 public protocol Liveness3DDelegate : AnyObject {
@@ -57,7 +67,9 @@ public enum Liveness3DErrorCode : Swift.Int, Swift.Error {
   case livenessNotInitialized
   case transactionNotCompleted
   case genericException
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -75,12 +87,22 @@ extension CertifaceFacetec.Liveness3DStarterData {
   public static func builder(withAppKey appKey: Swift.String, token sessionToken: Swift.String, environment: CertifaceFacetec.Environment, delegate: any CertifaceFacetec.Liveness3DDelegate) -> CertifaceFacetec.Liveness3DStarterData.Builder
   @_hasMissingDesignatedInitializers final public class Builder {
     final public func setTicket(_ ticket: Swift.String) -> Self
+    #if compiler(>=5.3) && $NonescapableTypes
     final public func setTotp(_ totp: Swift.String?) -> Self
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     final public func setDefaultTheme(_ theme: CertifaceFacetec.Liveness3DTheme?) -> Self
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     final public func setLowLightTheme(_ theme: CertifaceFacetec.Liveness3DTheme?) -> Self
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     final public func setTexts(_ texts: [CertifaceFacetec.Liveness3DTextKey : Swift.String]?) -> Self
+    #endif
     final public func setText(_ text: Swift.String, forKey key: CertifaceFacetec.Liveness3DTextKey) -> Self
+    #if compiler(>=5.3) && $NonescapableTypes
     final public func setTracker(_ tracker: (any CertifaceSecurity.JourneyTracker)?) -> Self
+    #endif
     final public func build() -> CertifaceFacetec.Liveness3DStarterData
     @objc deinit
   }
@@ -128,7 +150,9 @@ public enum Liveness3DTextKey {
 public struct Liveness3DTheme {
   public enum CancelButtonLocation : Swift.Int {
     case topLeft, topRight, disabled
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
@@ -136,7 +160,9 @@ public struct Liveness3DTheme {
   }
   public enum ThemeType : Swift.Int {
     case light, dark
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
@@ -289,8 +315,10 @@ public struct Liveness3DTheme {
   final public func setOvalProgressOffset(_ offset: Swift.Int) -> Self
   @discardableResult
   final public func setOverlayBackgroundColor(_ color: UIKit.UIColor) -> Self
+  #if compiler(>=5.3) && $NonescapableTypes
   @discardableResult
   final public func setOverlayBrandImage(_ image: UIKit.UIImage?) -> Self
+  #endif
   @discardableResult
   final public func setFeedbackMessageColor(_ color: UIKit.UIColor) -> Self
   @discardableResult
@@ -301,8 +329,10 @@ public struct Liveness3DTheme {
   final public func setFeedbackBarCornerRadius(_ radius: Swift.Int) -> Self
   @discardableResult
   final public func setFeedbackBarShadow(_ shadow: CertifaceFacetec.Liveness3DShadow) -> Self
+  #if compiler(>=5.3) && $NonescapableTypes
   @discardableResult
   final public func setCancelButtonIcon(_ icon: UIKit.UIImage?) -> Self
+  #endif
   @discardableResult
   final public func setCancelButtonLocation(_ location: CertifaceFacetec.Liveness3DTheme.CancelButtonLocation) -> Self
   @discardableResult
@@ -310,13 +340,17 @@ public struct Liveness3DTheme {
   @objc deinit
 }
 public struct Liveness3DUser {
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(appKey: Swift.String, ticket: Swift.String? = nil, environment: CertifaceFacetec.Environment, defaultTheme: CertifaceFacetec.Liveness3DTheme? = nil, lowLightTheme: CertifaceFacetec.Liveness3DTheme? = nil, texts: [CertifaceFacetec.Liveness3DTextKey : Swift.String]? = nil)
+  #endif
 }
 public enum VocalGuidanceMode : Swift.Int {
   case noVocalGuidance
   case minimalVocalGuidance
   case fullVocalGuidance
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get

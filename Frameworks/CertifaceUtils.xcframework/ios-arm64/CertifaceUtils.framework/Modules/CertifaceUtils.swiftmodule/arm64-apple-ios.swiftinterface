@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
-// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name CertifaceUtils
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name CertifaceUtils
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
 import AVFoundation
 import CommonCrypto
 import Foundation
@@ -11,7 +11,7 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 extension Foundation.Data {
-  public var bytes: [Swift.UInt8] {
+  public var arrBytes: [Swift.UInt8] {
     get
   }
 }
@@ -29,10 +29,18 @@ public enum HardwareStatusManager {
   public static func isConnectedToNetwork() -> Swift.Bool
 }
 extension Swift.String {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func addingPercentEncodingForURLQueryValue() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func base64Encoded() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func base64Decoded() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func encodeURIComponent() -> Swift.String?
+  #endif
 }
 extension Swift.Dictionary {
   public func stringFromHttpParameters() -> Swift.String

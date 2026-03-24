@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
-// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name CertifaceComponents
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name CertifaceComponents
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
 import AVFoundation
 import CoreGraphics
 import CoreText
@@ -35,10 +35,18 @@ public enum ButtonComponentType {
   }
 }
 public protocol CustomCameraPermissionView : UIKit.UIView {
+  #if compiler(>=5.3) && $NonescapableTypes
   var backButton: UIKit.UIButton! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   var checkPermissionButton: UIKit.UIButton! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   var openSettingsButton: UIKit.UIButton! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   var closeButton: UIKit.UIButton! { get }
+  #endif
   func showBottomSheet(visibility: CertifaceComponents.Visibility)
 }
 public struct HybridViewAppearance {
@@ -51,7 +59,9 @@ public protocol LoadingViewConfigurationProtocol {
 extension CertifaceComponents.ViewBuilder {
   public struct ImageView {
     public static func create(for imageName: Swift.String, bundle: Foundation.Bundle = .main) -> CertifaceComponents.ViewBuilder.ImageView
+    #if compiler(>=5.3) && $NonescapableTypes
     public static func create(with image: UIKit.UIImage? = nil) -> CertifaceComponents.ViewBuilder.ImageView
+    #endif
     public func build() -> UIKit.UIImageView
     public func tintColor(_ color: UIKit.UIColor) -> CertifaceComponents.ViewBuilder.ImageView
     public func contentMode(_ mode: UIKit.UIView.ContentMode) -> CertifaceComponents.ViewBuilder.ImageView
@@ -67,7 +77,9 @@ public enum ViewBuilder {
 public enum Visibility : Swift.Int, Swift.CaseIterable {
   case displayed
   case hidden
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias AllCases = [CertifaceComponents.Visibility]
   public typealias RawValue = Swift.Int
   nonisolated public static var allCases: [CertifaceComponents.Visibility] {

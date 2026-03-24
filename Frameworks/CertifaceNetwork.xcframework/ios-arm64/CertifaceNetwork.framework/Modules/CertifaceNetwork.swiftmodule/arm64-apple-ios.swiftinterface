@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
-// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name CertifaceNetwork
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name CertifaceNetwork
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
 import CommonCrypto
 import Foundation
 import Swift
@@ -12,7 +12,9 @@ import _SwiftConcurrencyShims
 public enum Environment : Swift.String, Swift.CaseIterable {
   case HML
   case PRD
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias AllCases = [CertifaceNetwork.Environment]
   public typealias RawValue = Swift.String
   nonisolated public static var allCases: [CertifaceNetwork.Environment] {
@@ -39,14 +41,18 @@ public struct FCBaseModel {
   public var p: Swift.String?
   public static let K_APP_KEY: Swift.String
   public static let K_P: Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(appkey: Swift.String? = nil, fcvarUrlbase: Swift.String? = nil, p: Swift.String? = nil)
+  #endif
 }
 public struct FCCaptchaModel : Swift.Decodable {
   public var appkey: Swift.String?
   public var chkey: Swift.String?
   public var images: Swift.String?
   public var fcvarUrlbase: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(appkey: Swift.String? = nil, chkey: Swift.String? = nil, images: Swift.String? = nil, fcvarUrlbase: Swift.String? = nil)
+  #endif
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct FCChallengeModel : Swift.Decodable {
@@ -71,12 +77,20 @@ extension CertifaceNetwork.FCManager : CertifaceNetwork.FCManagerProtocol {
   public func verifyLiveness3D(consumerKey: Swift.String, userAgent: Swift.String, appkey: Swift.String, faceScan: Swift.String, image auditTrailImage: Swift.String, lowQualityImage lowQualityAuditTrailImage: Swift.String, sessionId: Swift.String, baseUrl fcvarUrlbase: Swift.String, completion: @escaping CertifaceNetwork.FCManager3DLivenessResultCallback)
   public func postSDKStatus(of payload: Foundation.Data, with baseUrl: Swift.String, consumerKey: Swift.String)
   public func postPayload(_ payload: Foundation.Data, endpoint: Swift.String, baseUrl: Swift.String, consumerKey: Swift.String, completion: @escaping CertifaceNetwork.FCManagerPayloadCallback)
+  #if compiler(>=5.3) && $NonescapableTypes
   public func deviceIntelligenceToken(consumerKey: Swift.String, from baseUrl: Swift.String, withAppKey appKey: Swift.String, completion: @escaping (Swift.Result<Swift.String, any Swift.Error>, Swift.Int) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func deviceIntelligenceEventData(consumerKey: Swift.String, from baseUrl: Swift.String, withToken deviceToken: Swift.String, save eventsData: Foundation.Data, completion: @escaping (Swift.Result<Swift.String, any Swift.Error>, Swift.Int) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func deviceIntelligenceClose(consumerKey: Swift.String, from baseUrl: Swift.String, withToken deviceToken: Swift.String, completion: @escaping (Swift.Result<Swift.String, any Swift.Error>, Swift.Int) -> Swift.Void)
+  #endif
   public func credential(consumerKey: Swift.String, user: Swift.String, passcode: Swift.String, completion: @escaping CertifaceNetwork.FCManagerResultCallback)
   public func generateAppkey(consumerKey: Swift.String, user: Swift.String, token: Swift.String, cpf: Swift.String, name: Swift.String, birthdate: Swift.String, completion: @escaping CertifaceNetwork.FCManagerResultCallback)
+  #if compiler(>=5.3) && $NonescapableTypes
   public func generateAppkey(consumerKey: Swift.String, user userProvided: Swift.String? = nil, passcode passcodeProvided: Swift.String? = nil, cpf: Swift.String, name: Swift.String, birthdate: Swift.String, completion: @escaping CertifaceNetwork.FCManagerAppKeyCallback)
+  #endif
 }
 public typealias FCManagerChallengeResultCallback = (_ value: CertifaceNetwork.FCResultModel?, _ errorDetail: CertifaceNetwork.ErrorDetail?) -> Swift.Void
 public typealias FCManagerValidResultCallback = (_ value: CertifaceNetwork.FCValidCaptchaModel?, _ errorDetail: CertifaceNetwork.ErrorDetail?) -> Swift.Void
@@ -99,12 +113,20 @@ public protocol FCManagerProtocol {
   func verifyLiveness3D(consumerKey: Swift.String, userAgent: Swift.String, appkey: Swift.String, faceScan: Swift.String, image auditTrailImage: Swift.String, lowQualityImage lowQualityAuditTrailImage: Swift.String, sessionId: Swift.String, baseUrl fcvarUrlbase: Swift.String, completion: @escaping CertifaceNetwork.FCManager3DLivenessResultCallback)
   func postSDKStatus(of payload: Foundation.Data, with baseUrl: Swift.String, consumerKey: Swift.String)
   func postPayload(_ payload: Foundation.Data, endpoint: Swift.String, baseUrl: Swift.String, consumerKey: Swift.String, completion: @escaping CertifaceNetwork.FCManagerPayloadCallback)
+  #if compiler(>=5.3) && $NonescapableTypes
   func deviceIntelligenceToken(consumerKey: Swift.String, from baseUrl: Swift.String, withAppKey appKey: Swift.String, completion: @escaping (Swift.Result<Swift.String, any Swift.Error>, Swift.Int) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func deviceIntelligenceEventData(consumerKey: Swift.String, from baseUrl: Swift.String, withToken deviceToken: Swift.String, save eventsData: Foundation.Data, completion: @escaping (Swift.Result<Swift.String, any Swift.Error>, Swift.Int) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func deviceIntelligenceClose(consumerKey: Swift.String, from baseUrl: Swift.String, withToken deviceToken: Swift.String, completion: @escaping (Swift.Result<Swift.String, any Swift.Error>, Swift.Int) -> Swift.Void)
+  #endif
   func credential(consumerKey: Swift.String, user: Swift.String, passcode: Swift.String, completion: @escaping CertifaceNetwork.FCManagerResultCallback)
   func generateAppkey(consumerKey: Swift.String, user: Swift.String, token: Swift.String, cpf: Swift.String, name: Swift.String, birthdate: Swift.String, completion: @escaping CertifaceNetwork.FCManagerResultCallback)
+  #if compiler(>=5.3) && $NonescapableTypes
   func generateAppkey(consumerKey: Swift.String, user userProvided: Swift.String?, passcode passcodeProvided: Swift.String?, cpf: Swift.String, name: Swift.String, birthdate: Swift.String, completion: @escaping CertifaceNetwork.FCManagerAppKeyCallback)
+  #endif
 }
 public struct FCPrivateKeyModel {
   public var token: Swift.String?
@@ -143,7 +165,9 @@ public struct FCUserModel {
   public var birth: Swift.String?
   public var privateKey: Swift.String?
   public var image: UIKit.UIImage?
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(_ user: Swift.String, _ pass: Swift.String, _ cpf: Swift.String, _ name: Swift.String, _ birth: Swift.String, _ overlapImage: UIKit.UIImage? = nil)
+  #endif
 }
 public struct FCValidCaptchaModel : Swift.Decodable {
   public var valid: Swift.Bool?
