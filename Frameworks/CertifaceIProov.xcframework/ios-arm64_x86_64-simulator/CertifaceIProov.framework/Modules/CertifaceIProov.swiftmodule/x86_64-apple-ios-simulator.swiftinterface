@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
-// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-bare-slash-regex -module-name CertifaceIProov
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name CertifaceIProov
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
 import CertifaceComponents
 import CertifaceNetwork
 import CertifaceSecurity
@@ -32,8 +32,12 @@ public enum IProovResultLayoutType {
   }
 }
 public protocol IProovCustomResultView : UIKit.UIView {
+  #if compiler(>=5.3) && $NonescapableTypes
   var retryButton: UIKit.UIButton! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func display(for resultType: CertifaceIProov.IProovResultLayoutType, retryReason: Swift.String?)
+  #endif
   func changeLoadingVisibility(to visibility: CertifaceComponents.Visibility)
 }
 public enum IProovError : Swift.Int, Swift.Error {
@@ -51,7 +55,9 @@ public enum IProovError : Swift.Int, Swift.Error {
   public var message: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -155,12 +161,18 @@ public struct IProovResultCustomization {
   final public func setErrorBackgroundColor(_ color: UIKit.UIColor) -> Self
   @discardableResult
   final public func setRetryBackgroundColor(_ color: UIKit.UIColor) -> Self
+  #if compiler(>=5.3) && $NonescapableTypes
   @discardableResult
   final public func setSuccessImage(_ image: UIKit.UIImage?) -> Self
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @discardableResult
   final public func setErrorImage(_ image: UIKit.UIImage?) -> Self
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @discardableResult
   final public func setRetryImage(_ image: UIKit.UIImage?) -> Self
+  #endif
   @discardableResult
   final public func setMessageFont(_ font: UIKit.UIFont) -> Self
   @discardableResult
@@ -190,8 +202,12 @@ public struct IProovResultCustomization {
   @objc deinit
 }
 extension CertifaceIProov.IProovStarter {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc final public func present(iProovViewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc final public func dismiss(iProovViewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+  #endif
 }
 public struct IProovStarterData {
 }
@@ -199,14 +215,24 @@ extension CertifaceIProov.IProovStarterData {
   public static func builder(withAppKey appKey: Swift.String, environment: CertifaceNetwork.Environment, url sessionUrl: Swift.String, token sessionToken: Swift.String, livenessType: Swift.String) -> CertifaceIProov.IProovStarterData.Builder
   @_hasMissingDesignatedInitializers final public class Builder {
     final public func setTicket(_ ticket: Swift.String) -> Self
+    #if compiler(>=5.3) && $NonescapableTypes
     final public func setTotp(_ totp: Swift.String?) -> Self
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     final public func setCallback(_ callback: (any CertifaceIProov.IProovCallback)?) -> Self
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     final public func setTracker(_ tracker: (any CertifaceSecurity.JourneyTracker)?) -> Self
+    #endif
     final public func setLivenessCustomization(_ customization: CertifaceIProov.IProovLivenessCustomizationBuilder) -> Self
     final public func setLoadingCustomization(_ customization: CertifaceIProov.IProovLoadingCustomizationBuilder) -> Self
     final public func setResultCustomization(_ customization: CertifaceIProov.IProovResultCustomizationBuilder) -> Self
+    #if compiler(>=5.3) && $NonescapableTypes
     final public func setLoadingView(_ customView: CertifaceIProov.IProovCustomLoadingView?) -> Self
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     final public func setResultView(_ customView: (any CertifaceIProov.IProovCustomResultView)?) -> Self
+    #endif
     final public func build() -> CertifaceIProov.IProovStarterData
     @objc deinit
   }

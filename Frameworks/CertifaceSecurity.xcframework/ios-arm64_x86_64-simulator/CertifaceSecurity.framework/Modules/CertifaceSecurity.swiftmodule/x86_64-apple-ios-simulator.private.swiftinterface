@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
-// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-bare-slash-regex -module-name CertifaceSecurity
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name CertifaceSecurity
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
 import CertifaceNetwork
 import CertifaceUtils
 import CommonCrypto
@@ -18,8 +18,12 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 public struct CryptoManager {
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func encrypt(_ value: Foundation.NSData, withKey secretKey: Swift.String) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func decrypt(_ value: Swift.String, withKey secretKey: Swift.String) -> Foundation.Data?
+  #endif
 }
 @_hasMissingDesignatedInitializers public class DLCoordinate {
   final public let latitude: Swift.Double
@@ -27,12 +31,18 @@ public struct CryptoManager {
   @objc deinit
 }
 public protocol DebugLoggerProtocol {
+  #if compiler(>=5.3) && $NonescapableTypes
   func logData(forStep step: Swift.String, totp: Swift.String?, provider: Swift.String)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   func logData(forStep step: Swift.String, totp: Swift.String?, errorDetail: CertifaceNetwork.ErrorDetail, provider: Swift.String)
+  #endif
 }
 @_hasMissingDesignatedInitializers final public class ExceptionHandler {
   public static let shared: CertifaceSecurity.ExceptionHandler
+  #if compiler(>=5.3) && $NonescapableTypes
   final public func configure(withTicket ticket: Swift.String? = nil, appKey: Swift.String, environment: CertifaceNetwork.Environment, debugMode debugModeEnabled: Swift.Bool = false)
+  #endif
   final public func updateProvider(_ provider: Swift.String)
   @objc deinit
 }
@@ -40,8 +50,12 @@ public struct ExceptionPayload : Swift.Error {
 }
 @_hasMissingDesignatedInitializers final public class FaceCaptchaDebugLogger : CertifaceSecurity.DebugLoggerProtocol {
   convenience public init(appKey: Swift.String, environment: CertifaceNetwork.Environment)
+  #if compiler(>=5.3) && $NonescapableTypes
   final public func logData(forStep step: Swift.String, totp: Swift.String?, provider: Swift.String)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   final public func logData(forStep step: Swift.String, totp: Swift.String?, errorDetail: CertifaceNetwork.ErrorDetail, provider: Swift.String)
+  #endif
   @objc deinit
 }
 @_hasMissingDesignatedInitializers final public class LegacyExceptionHandler {
@@ -52,7 +66,9 @@ public struct ExceptionPayload : Swift.Error {
 public enum PersistenceOption : Swift.String {
   case index
   case collectionID
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get

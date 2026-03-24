@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
-// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-bare-slash-regex -module-name CertifaceSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name CertifaceSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
 import AVFoundation
 import CertifaceComponents
 import CertifaceFacetec
@@ -25,7 +25,9 @@ public protocol CustomCameraPermissionView : CertifaceComponents.CustomCameraPer
 public typealias IProovCustomLoadingView = CertifaceIProov.IProovCustomLoadingView
 public typealias IProovResultLayoutType = CertifaceIProov.IProovResultLayoutType
 public protocol IProovCustomResultView : CertifaceIProov.IProovCustomResultView {
+  #if compiler(>=5.3) && $NonescapableTypes
   override func display(for resultType: CertifaceSDK.IProovResultLayoutType, retryReason: Swift.String?)
+  #endif
   override func changeLoadingVisibility(to visibility: CertifaceSDK.Visibility)
 }
 public typealias BlobAnimationAppearance = CertifaceFacetec.BlobAnimationAppearance
@@ -34,16 +36,20 @@ public typealias Liveness3DTheme = CertifaceFacetec.Liveness3DTheme
 public typealias Liveness3DThemeBuilder = CertifaceFacetec.Liveness3DThemeBuilder
 public typealias Liveness3DTextKey = CertifaceFacetec.Liveness3DTextKey
 @_hasMissingDesignatedInitializers final public class CameraPermissionCustomizationBuilder {
+  #if compiler(>=5.3) && $NonescapableTypes
   @discardableResult
   final public func setBackButtonIcon(_ icon: UIKit.UIImage?) -> Self
+  #endif
   @discardableResult
   final public func setBackButtonIconColor(_ color: UIKit.UIColor) -> Self
   @discardableResult
   final public func setBackButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
   @discardableResult
   final public func setBackButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  #if compiler(>=5.3) && $NonescapableTypes
   @discardableResult
   final public func setCameraImage(_ image: UIKit.UIImage?) -> Self
+  #endif
   @discardableResult
   final public func setCameraImageColor(_ color: UIKit.UIColor) -> Self
   @discardableResult
@@ -235,8 +241,12 @@ public protocol LivenessCallback : AnyObject {
   func onError(_ error: CertifaceSDK.LivenessError)
 }
 public protocol LivenessCustomInstructionView : UIKit.UIView {
+  #if compiler(>=5.3) && $NonescapableTypes
   var backButton: UIKit.UIButton! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   var continueButton: UIKit.UIButton! { get }
+  #endif
   func changeLoadingVisibility(to visibility: CertifaceSDK.Visibility)
 }
 public enum LivenessError : Swift.Int, Swift.Error {
@@ -255,7 +265,9 @@ public enum LivenessError : Swift.Int, Swift.Error {
   public var message: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -299,7 +311,9 @@ public struct LoadingCustomization {
 public enum LivenessProvider : Swift.String {
   case iproov
   case facetec
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
