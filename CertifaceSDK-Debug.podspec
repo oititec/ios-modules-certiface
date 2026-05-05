@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name            = 'CertifaceSDK'
+  s.name            = 'CertifaceSDK-Debug'
   s.version         = '1.6.0'
   s.summary         = 'Framework CertifaceSDK para iOS.'
   s.homepage        = 'https://www.oititec.com.br/'
