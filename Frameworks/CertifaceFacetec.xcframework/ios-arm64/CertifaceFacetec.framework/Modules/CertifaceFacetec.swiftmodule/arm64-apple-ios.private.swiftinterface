@@ -21,7 +21,6 @@ import _StringProcessing
 import _SwiftConcurrencyShims
 public typealias Environment = CertifaceNetwork.Environment
 public typealias Visibility = CertifaceComponents.Visibility
-public typealias Liveness3DSuccess = CertifaceNetwork.Liveness3DSuccess
 public protocol CustomCameraPermissionView : CertifaceComponents.CustomCameraPermissionView {
   override func showBottomSheet(visibility: CertifaceFacetec.Visibility)
 }
@@ -364,6 +363,13 @@ public enum ResultAnimationStyle {
 }
 public struct SpinnerAnimationAppearance {
   public init(spinnerColor: UIKit.UIColor, checkmarkForegroundColor: UIKit.UIColor, checkmarkBackgroundColor: UIKit.UIColor)
+}
+public struct Liveness3DSuccess {
+  public var valid: Swift.Bool?
+  public var codID: Swift.Double?
+  public var cause: Swift.String?
+  public var protocolo: Swift.String?
+  public var scanResultBlob: Swift.String?
 }
 extension CertifaceFacetec.Liveness3DErrorCode : Swift.Equatable {}
 extension CertifaceFacetec.Liveness3DErrorCode : Swift.Hashable {}

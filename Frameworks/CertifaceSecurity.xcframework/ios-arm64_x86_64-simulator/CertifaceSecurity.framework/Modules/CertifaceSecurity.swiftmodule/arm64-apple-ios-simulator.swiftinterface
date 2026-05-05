@@ -38,11 +38,16 @@ public protocol DebugLoggerProtocol {
   func logData(forStep step: Swift.String, totp: Swift.String?, errorDetail: CertifaceNetwork.ErrorDetail, provider: Swift.String)
   #endif
 }
+public protocol DeviceHelperSimpleProtocol {
+  func getRawSystemVersion() -> Swift.String
+  func getDeviceModel() -> Swift.String
+}
+public enum DeviceHelperDI {
+  public static func getInstance() -> any CertifaceSecurity.DeviceHelperSimpleProtocol
+}
 @_hasMissingDesignatedInitializers final public class ExceptionHandler {
   public static let shared: CertifaceSecurity.ExceptionHandler
-  #if compiler(>=5.3) && $NonescapableTypes
-  final public func configure(withTicket ticket: Swift.String? = nil, appKey: Swift.String, environment: CertifaceNetwork.Environment, debugMode debugModeEnabled: Swift.Bool = false)
-  #endif
+  final public func configure(appKey: Swift.String, environment: CertifaceNetwork.Environment, debugMode debugModeEnabled: Swift.Bool = false)
   final public func updateProvider(_ provider: Swift.String)
   @objc deinit
 }

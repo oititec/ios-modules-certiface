@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
-  s.name            = 'CertifaceSDK'
+  s.name            = 'CertifaceModules'
   s.version         = '1.6.0'
-  s.summary         = 'Framework CertifaceSDK para iOS.'
+  s.summary         = 'Certiface required modules'
   s.homepage        = 'https://www.oititec.com.br/'
   s.license         = { :type => 'Copyright', :text => 'Copyright © 2025 Oiti. All rights reserved.' }
   s.author          = 'Oititec'
@@ -12,12 +12,9 @@ Pod::Spec.new do |s|
     :tag => s.name.to_s + '-' + s.version.to_s
   }
   s.vendored_frameworks = [
-    'Frameworks/CertifaceIProov.xcframework',
-    'Frameworks/CertifaceFacetec.xcframework',
-    'Frameworks/CertifaceSDK.xcframework'
+    'Frameworks/CertifaceComponents.xcframework',
+    'Frameworks/CertifaceUtils.xcframework',
+    'Frameworks/CertifaceNetwork.xcframework',
+    'Frameworks/CertifaceSecurity.xcframework'
   ]
-
-  s.dependency 'CertifaceModules', '1.6.0'
-  s.dependency 'iProov', '12.5.0'
-  s.dependency 'OILiveness3D_FT', '10.0.44'
 end

@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		KZBIbPmGOQdlWoSslHd0+i+lQ2A=
+		0NVVykTSkqa5dknqhC/DSmmXMac=
 		</data>
 		<key>Inter-Bold.otf</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/CertifaceComponents.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		qVSaq0dv9Uso24S7J9Vy9uddSvY=
+		gZnJg7T2CPwwe0eJy8PY/6FwFu0=
 		</data>
 		<key>Modules/CertifaceComponents.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/CertifaceComponents.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		XjKUrzWE/+u/UEEjsEa4pTbEIH4=
+		cDJtiXwLUPTF5DIqoloDy2OJYFs=
 		</data>
 		<key>Modules/CertifaceComponents.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		qVSaq0dv9Uso24S7J9Vy9uddSvY=
+		gZnJg7T2CPwwe0eJy8PY/6FwFu0=
 		</data>
 		<key>Modules/CertifaceComponents.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Modules/CertifaceComponents.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Mwenrb/IEjc9MUPuE7ocZiSksKI=
+		4YlKzIRmOnRZZul0Su2vHoe1FNc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -126,7 +126,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QJ3bIX1wSq7NHHZlr/l6R7V/Nibug9IzFyv57xv+s9c=
+			bBSmqn615Dby8z5VC7moWHYq03BmaboWgsI9pXj7BUI=
 			</data>
 		</dict>
 		<key>Modules/CertifaceComponents.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -154,14 +154,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FNbbpg8x7geRXRbaBrsw5mbv1NjIerbfEgc/dOpTZxE=
+			zBkqs1KeCdY8KYOjfSNU9ecxn12fmx8lvLACCfFaMhI=
 			</data>
 		</dict>
 		<key>Modules/CertifaceComponents.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QJ3bIX1wSq7NHHZlr/l6R7V/Nibug9IzFyv57xv+s9c=
+			bBSmqn615Dby8z5VC7moWHYq03BmaboWgsI9pXj7BUI=
 			</data>
 		</dict>
 		<key>Modules/CertifaceComponents.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -189,7 +189,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aT9SFXEo9ku5azFewwvLHLRyo4Vxh+CvXcQMIzRn3CU=
+			AkPGzGBuyYKkyCRpQ3XqCuooZvXXR0rLCXQmZTLAZG0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

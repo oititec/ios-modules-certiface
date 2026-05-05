@@ -14,11 +14,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		3FkPE/s3U+Zgveo3vGagHZ7fvzU=
+		wZ8GFa2CM/cP71zWOzzTB1lSEVo=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		HUwobXOtEaemN/I2/bnLWn0bjtw=
+		6wyed13wtlvG50iMxtDVioxjJ7A=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		xZE/nmwWKtSjtR8VzcFtug0GjvE=
+		s6ekbRYOcNlLB0EAFNkMMUjnCLc=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		HUwobXOtEaemN/I2/bnLWn0bjtw=
+		6wyed13wtlvG50iMxtDVioxjJ7A=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		X+hr8YGzy+DirN9ObP+pO7Jw70c=
+		mI8KPOmsbI81L7nSlcd54A9iDEU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -81,7 +81,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			K9HS2fDgQVuAcG/2Ho6xDKGr2v1GsLuxJe8j0y9GSLU=
+			rcxSe4u7F6x/XfHQaMcKRHEGJcrroIjMyHJ/BD01f/I=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -109,14 +109,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nR9A3B6oFYHJ44P5HmvKKODKc/Cnm1FZw8P5UsWPGCU=
+			GIwq2bZF7cEF14f2OhVHRACkZ4Rcjh4xN6AHz4tHmK8=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			K9HS2fDgQVuAcG/2Ho6xDKGr2v1GsLuxJe8j0y9GSLU=
+			rcxSe4u7F6x/XfHQaMcKRHEGJcrroIjMyHJ/BD01f/I=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -144,7 +144,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/KyMZHVfWV0C/HxdylfwZJbUOcLEHNNybTcJsYyk7jo=
+			zITxy2/IcsA4n1Hg80yOfoVF8WCZ1HSoRAicc4kQiB0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
