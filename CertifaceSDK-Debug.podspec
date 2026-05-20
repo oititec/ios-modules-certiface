@@ -19,5 +19,5 @@ Pod::Spec.new do |s|
 
   s.dependency 'CertifaceModules', '1.5.0'
   s.dependency 'iProov', '12.5.0'
-  s.dependency 'OILiveness3D_FT-Debug', '9.7.110'
+  s.dependency 'OILiveness3D_FT/Debug', '9.7.112'
 end

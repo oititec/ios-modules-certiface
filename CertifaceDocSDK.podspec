@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
     :tag => s.name.to_s + '-' + s.version.to_s
   }
   s.vendored_frameworks = [
-    'Output/CertifaceDocSDK.xcframework'
+    'Frameworks/CertifaceDocSDK.xcframework'
   ]
 
   s.dependency 'CertifaceModules', '1.5.0'
