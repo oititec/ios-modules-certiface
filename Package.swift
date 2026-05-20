@@ -15,13 +15,7 @@ let package = Package(
         .library(
             name: "CertifaceDocSDK",
             targets: ["CertifaceDocSDKWrapper"]
-        ),
-
-        // Shared modules
-        .library(name: "CertifaceComponents", targets: ["CertifaceComponents"]),
-        .library(name: "CertifaceUtils", targets: ["CertifaceUtils"]),
-        .library(name: "CertifaceNetwork", targets: ["CertifaceNetwork"]),
-        .library(name: "CertifaceSecurity", targets: ["CertifaceSecurity"])
+        )
     ],
     dependencies: [
         .package(
