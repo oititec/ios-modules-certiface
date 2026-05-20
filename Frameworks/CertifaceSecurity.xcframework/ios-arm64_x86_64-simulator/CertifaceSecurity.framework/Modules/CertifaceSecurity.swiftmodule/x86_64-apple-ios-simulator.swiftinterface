@@ -40,9 +40,7 @@ public protocol DebugLoggerProtocol {
 }
 @_hasMissingDesignatedInitializers final public class ExceptionHandler {
   public static let shared: CertifaceSecurity.ExceptionHandler
-  #if compiler(>=5.3) && $NonescapableTypes
-  final public func configure(withTicket ticket: Swift.String? = nil, appKey: Swift.String, environment: CertifaceNetwork.Environment, debugMode debugModeEnabled: Swift.Bool = false)
-  #endif
+  final public func configure(appKey: Swift.String, environment: CertifaceNetwork.Environment, debugMode debugModeEnabled: Swift.Bool = false)
   final public func updateProvider(_ provider: Swift.String)
   @objc deinit
 }

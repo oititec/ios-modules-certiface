@@ -1,0 +1,4 @@
+framework module CertifaceDocSDK {
+  header "CertifaceDocSDK-Swift.h"
+  requires objc
+}

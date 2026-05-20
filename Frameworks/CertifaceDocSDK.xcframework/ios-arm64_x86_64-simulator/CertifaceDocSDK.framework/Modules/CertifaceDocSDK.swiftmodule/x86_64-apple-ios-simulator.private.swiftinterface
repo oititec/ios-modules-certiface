@@ -1,0 +1,841 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name CertifaceDocSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
+import AVFoundation
+import AVKit
+@_spi(CertifaceInternal) import CertifaceComponents
+import CertifaceNetwork
+import CertifaceSecurity
+import CertifaceUtils
+import DeveloperToolsSupport
+import Foundation
+import MobileCoreServices
+import Swift
+import SwiftUI
+import UIKit.UIButton
+import UIKit.UIImage
+import UIKit
+import UIKit.UIView
+import UIKit.UIViewController
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public typealias Environment = CertifaceNetwork.Environment
+public typealias Visibility = CertifaceComponents.Visibility
+public typealias DocCoreCustomLoadingView = UIKit.UIView
+public protocol CustomCameraPermissionView : CertifaceComponents.CustomCameraPermissionView {
+  override func showBottomSheet(visibility: CertifaceDocSDK.Visibility)
+}
+public typealias DocCoreCustomCameraPermissionView = CertifaceDocSDK.CustomCameraPermissionView
+public enum CameraPosition {
+  case back, front
+  public static func == (a: CertifaceDocSDK.CameraPosition, b: CertifaceDocSDK.CameraPosition) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class CameraPreviewView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency @objc override final public class var layerClass: Swift.AnyClass {
+    @objc get
+  }
+  @objc deinit
+}
+public protocol DocumentCallback : AnyObject {
+  func onSuccess()
+  func onError(_ error: CertifaceDocSDK.DocumentError)
+}
+public protocol DocumentManager {
+  func start(at rootViewController: UIKit.UIViewController, options: CertifaceDocSDK.DocumentManagerOptions, callback: any CertifaceDocSDK.DocumentCallback)
+}
+public enum CertifaceDocSDKFactory {
+  public static func createDocumentManager() -> any CertifaceDocSDK.DocumentManager
+}
+@_hasMissingDesignatedInitializers final public class DocCoreCameraPermissionCustomizationBuilder {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setBackButtonIcon(_ icon: UIKit.UIImage?) -> Self
+  #endif
+  @discardableResult
+  final public func setBackButtonIconColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBackButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBackButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setCameraImage(_ image: UIKit.UIImage?) -> Self
+  #endif
+  @discardableResult
+  final public func setCameraImageColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setTitle(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setTitleColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setTitleFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setCaption(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setCaptionColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCaptionFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setCheckPermissionButtonText(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setCheckPermissionButtonTextFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setCheckPermissionButtonTextColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCheckPermissionButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCheckPermissionButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBottomSheetColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBottomSheetCornerRadius(_ radius: CoreFoundation.CGFloat) -> Self
+  @discardableResult
+  final public func setBottomSheetTitle(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setBottomSheetTitleColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBottomSheetTitleFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setBottomSheetCaption(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setBottomSheetCaptionColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBottomSheetCaptionFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setOpenSettingsButtonText(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setOpenSettingsButtonTextFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setOpenSettingsButtonTextColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setOpenSettingsButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setOpenSettingsButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCloseButtonText(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setCloseButtonTextFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setCloseButtonTextColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCloseButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCloseButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class DocCoreCaptureCustomizationBuilder {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setBackButtonIcon(_ icon: UIKit.UIImage?) -> Self
+  #endif
+  @discardableResult
+  final public func setBackButtonIconColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBackButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBackButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setCloseButtonIcon(_ icon: UIKit.UIImage?) -> Self
+  #endif
+  @discardableResult
+  final public func setCloseButtonIconColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCloseButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCloseButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setFrontIndicatorText(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setFrontIndicatorColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setFrontIndicatorFocusedStateTextColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setFrontIndicatorFocusedStateTextFont(_ font: UIKit.UIFont) -> Self
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setFrontIndicatorFocusedStateImage(_ image: UIKit.UIImage?) -> Self
+  #endif
+  @discardableResult
+  final public func setFrontIndicatorUnfocusedStateTextColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setFrontIndicatorUnfocusedStateTextFont(_ font: UIKit.UIFont) -> Self
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setFrontIndicatorUnfocusedStateImage(_ image: UIKit.UIImage?) -> Self
+  #endif
+  @discardableResult
+  final public func setBackIndicatorText(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setBackIndicatorColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBackIndicatorFocusedStateTextColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBackIndicatorFocusedStateTextFont(_ font: UIKit.UIFont) -> Self
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setBackIndicatorFocusedStateImage(_ image: UIKit.UIImage?) -> Self
+  #endif
+  @discardableResult
+  final public func setBackIndicatorUnfocusedStateTextColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBackIndicatorUnfocusedStateTextFont(_ font: UIKit.UIFont) -> Self
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setBackIndicatorUnfocusedStateImage(_ image: UIKit.UIImage?) -> Self
+  #endif
+  @discardableResult
+  final public func setInstructionGuideFrontText(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setInstructionGuideBackText(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setInstructionConfirmationText(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setInstructionTextColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setInstructionTextFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setPreviewCapturedBorderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setPreviewUncapturedBorderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBackgroundColor(_ color: UIKit.UIColor) -> Self
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setCaptureButtonIcon(_ icon: UIKit.UIImage?) -> Self
+  #endif
+  @discardableResult
+  final public func setCaptureButtonNormalIconColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCaptureButtonNormalBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCaptureButtonNormalBorderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCaptureButtonDisabledIconColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCaptureButtonDisabledBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCaptureButtonDisabledBorderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBottomSheetColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBottomSheetCornerRadius(_ radius: CoreFoundation.CGFloat) -> Self
+  @discardableResult
+  final public func setConfirmationMessageText(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setConfirmationMessageColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setConfirmationMessageFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setRetryButtonText(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setRetryButtonTextFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setRetryButtonTextColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setRetryButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setRetryButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setConfirmButtonText(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setConfirmButtonConfirmationText(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setConfirmButtonTextFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setConfirmButtonTextColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setConfirmButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setConfirmButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  @objc deinit
+}
+public protocol DocCoreCustomCaptureView : UIKit.UIView {
+  #if compiler(>=5.3) && $NonescapableTypes
+  var cameraPreview: CertifaceDocSDK.CameraPreviewView! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  var cameraMask: UIKit.UIView! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  var backButton: UIKit.UIButton! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  var closeButton: UIKit.UIButton! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  var instructionLabel: UIKit.UILabel! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  var cameraVisualizer: UIKit.UIView! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  var previewImageView: UIKit.UIImageView! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  var captureButton: UIKit.UIButton! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  var confirmButton: UIKit.UIButton! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  var retryButton: UIKit.UIButton! { get }
+  #endif
+  func displayConfirmationSheet(visibility: CertifaceDocSDK.Visibility, animated: Swift.Bool)
+  func setFocus(to focusElement: CertifaceDocSDK.FocusIndicator, animated: Swift.Bool)
+  func setConfirmButtonTitle(to newTitle: Swift.String)
+}
+public protocol DocCoreCustomInstructionView : UIKit.UIView {
+  #if compiler(>=5.3) && $NonescapableTypes
+  var backButton: UIKit.UIButton! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  var physicalDocumentOption: UIKit.UIView! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  var digitalDocumentOption: UIKit.UIView? { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  var uploadDocumentOption: UIKit.UIView? { get }
+  #endif
+  func changeLoadingVisibility(to visibility: CertifaceDocSDK.Visibility)
+}
+extension CertifaceDocSDK.DocCoreCustomInstructionView {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var digitalDocumentOption: UIKit.UIView? {
+    get
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var uploadDocumentOption: UIKit.UIView? {
+    get
+  }
+  #endif
+}
+public protocol DocCoreCustomQrCodeView : UIKit.UIView {
+  #if compiler(>=5.3) && $NonescapableTypes
+  var cameraPreview: CertifaceDocSDK.CameraPreviewView! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  var cameraMask: UIKit.UIView! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  var cameraVisualizer: UIKit.UIView! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  var backButton: UIKit.UIButton! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  var fileButton: UIKit.UIButton! { get }
+  #endif
+  func displayBottomSheet(animated: Swift.Bool)
+  func hideBottomSheet(animated: Swift.Bool)
+}
+public protocol DocCoreCustomResultView : UIKit.UIView {
+  #if compiler(>=5.3) && $NonescapableTypes
+  var resultButton: UIKit.UIButton! { get }
+  #endif
+  func display(for resultType: CertifaceDocSDK.DocCoreResultType)
+}
+public protocol DocCoreCustomUploadView : UIKit.UIView {
+  #if compiler(>=5.3) && $NonescapableTypes
+  var backButton: UIKit.UIButton! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  var closeButton: UIKit.UIButton! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  var uploadArea: UIKit.UIView! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  var deleteButton: UIKit.UIButton! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  var sendButton: UIKit.UIButton! { get }
+  #endif
+  func displayFileContainer(with fileName: Swift.String)
+  func hideFileContainer()
+}
+public struct DocCoreCustomViews {
+}
+extension CertifaceDocSDK.DocCoreCustomViews {
+  public static func builder() -> CertifaceDocSDK.DocCoreCustomViews.Builder
+  @_hasMissingDesignatedInitializers final public class Builder {
+    final public func build() -> CertifaceDocSDK.DocCoreCustomViews
+    final public func setInstructionView(_ view: any CertifaceDocSDK.DocCoreCustomInstructionView) -> Self
+    final public func setCameraPermissionView(_ view: any CertifaceDocSDK.CustomCameraPermissionView) -> Self
+    final public func setCaptureView(_ view: any CertifaceDocSDK.DocCoreCustomCaptureView) -> Self
+    final public func setQrCodeView(_ view: any CertifaceDocSDK.DocCoreCustomQrCodeView) -> Self
+    final public func setUploadView(_ view: any CertifaceDocSDK.DocCoreCustomUploadView) -> Self
+    final public func setLoadingView(_ view: CertifaceDocSDK.DocCoreCustomLoadingView) -> Self
+    final public func setResultView(_ view: any CertifaceDocSDK.DocCoreCustomResultView) -> Self
+    @objc deinit
+  }
+}
+public struct DocCoreCustomization {
+}
+extension CertifaceDocSDK.DocCoreCustomization {
+  public static func builder() -> CertifaceDocSDK.DocCoreCustomization.Builder
+  @_hasMissingDesignatedInitializers final public class Builder {
+    final public func build() -> CertifaceDocSDK.DocCoreCustomization
+    @discardableResult
+    final public func setInstructionCustomization(_ builderHandler: @escaping (_ instructionBuilder: CertifaceDocSDK.DocCoreInstructionCustomizationBuilder) -> CertifaceDocSDK.DocCoreInstructionCustomizationBuilder) -> Self
+    @discardableResult
+    final public func setCameraPermissionCustomization(_ builderHandler: @escaping (_ cameraPermissionBuilder: CertifaceDocSDK.DocCoreCameraPermissionCustomizationBuilder) -> CertifaceDocSDK.DocCoreCameraPermissionCustomizationBuilder) -> Self
+    @discardableResult
+    final public func setCaptureCustomization(_ builderHandler: @escaping (_ captureBuilder: CertifaceDocSDK.DocCoreCaptureCustomizationBuilder) -> CertifaceDocSDK.DocCoreCaptureCustomizationBuilder) -> Self
+    @discardableResult
+    final public func setQrCodeCustomization(_ builderHandler: @escaping (_ qrCodeBuilder: CertifaceDocSDK.DocCoreQrCodeCustomizationBuilder) -> CertifaceDocSDK.DocCoreQrCodeCustomizationBuilder) -> Self
+    @discardableResult
+    final public func setUploadCustomization(_ builderHandler: @escaping (_ uploadBuilder: CertifaceDocSDK.DocCoreUploadCustomizationBuilder) -> CertifaceDocSDK.DocCoreUploadCustomizationBuilder) -> Self
+    @discardableResult
+    final public func setLoadingCustomization(_ builderHandler: @escaping (_ loadingBuilder: CertifaceDocSDK.DocCoreLoadingCustomizationBuilder) -> CertifaceDocSDK.DocCoreLoadingCustomizationBuilder) -> Self
+    @discardableResult
+    final public func setResultCustomization(_ builderHandler: @escaping (_ resultBuilder: CertifaceDocSDK.DocCoreResultCustomizationBuilder) -> CertifaceDocSDK.DocCoreResultCustomizationBuilder) -> Self
+    @objc deinit
+  }
+}
+public protocol DocCoreDelegate : AnyObject {
+  func handleCompleted()
+  func handleError(_ error: CertifaceDocSDK.DocCoreError)
+  func handleCanceled()
+}
+public enum DocCoreError : Swift.Error {
+  case invalidAppKey
+  case certifaceOff
+  case cameraSetupFailed
+  case noCameraPermission
+  case errorCapturePicture
+  case noInternetConnection
+  case validationError
+  public static func == (a: CertifaceDocSDK.DocCoreError, b: CertifaceDocSDK.DocCoreError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers final public class DocCoreInstructionCustomizationBuilder {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setBackButtonIcon(_ icon: UIKit.UIImage?) -> Self
+  #endif
+  @discardableResult
+  final public func setBackButtonIconColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBackButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBackButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBackgroundColor(_ color: UIKit.UIColor) -> Self
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setContextImage(_ image: UIKit.UIImage?) -> Self
+  #endif
+  @discardableResult
+  final public func setLoadingColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBottomSheetColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBottomSheetCornerRadius(_ radius: CoreFoundation.CGFloat) -> Self
+  @discardableResult
+  final public func setTitle(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setTitleColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setTitleFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setCaption(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setCaptionColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCaptionFont(_ font: UIKit.UIFont) -> Self
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setPhysicalDocumentOptionImage(_ image: UIKit.UIImage?) -> Self
+  #endif
+  @discardableResult
+  final public func setPhysicalDocumentOptionTitle(_ title: Swift.String) -> Self
+  @discardableResult
+  final public func setPhysicalDocumentOptionTitleColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setPhysicalDocumentOptionTitleFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setPhysicalDocumentOptionDescription(_ caption: Swift.String) -> Self
+  @discardableResult
+  final public func setPhysicalDocumentOptionDescriptionColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setPhysicalDocumentOptionDescriptionFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setPhysicalDocumentOptionBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setPhysicalDocumentOptionCircleBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setPhysicalDocumentOptionBorderRadius(_ radius: CoreFoundation.CGFloat) -> Self
+  @discardableResult
+  final public func setPhysicalDocumentOptionBorderWidth(_ width: CoreFoundation.CGFloat) -> Self
+  @discardableResult
+  final public func setPhysicalDocumentOptionBorderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setPhysicalDocumentOptionIconColor(_ color: UIKit.UIColor) -> Self
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setDigitalDocumentOptionImage(_ image: UIKit.UIImage?) -> Self
+  #endif
+  @discardableResult
+  final public func setDigitalDocumentOptionTitle(_ title: Swift.String) -> Self
+  @discardableResult
+  final public func setDigitalDocumentOptionTitleColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setDigitalDocumentOptionTitleFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setDigitalDocumentOptionDescription(_ caption: Swift.String) -> Self
+  @discardableResult
+  final public func setDigitalDocumentOptionDescriptionColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setDigitalDocumentOptionDescriptionFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setDigitalDocumentOptionBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setDigitalDocumentOptionCircleBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setDigitalDocumentOptionBorderRadius(_ radius: CoreFoundation.CGFloat) -> Self
+  @discardableResult
+  final public func setDigitalDocumentOptionBorderWidth(_ width: CoreFoundation.CGFloat) -> Self
+  @discardableResult
+  final public func setDigitalDocumentOptionBorderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setDigitalDocumentOptionIconColor(_ color: UIKit.UIColor) -> Self
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setUploadDocumentOptionImage(_ image: UIKit.UIImage?) -> Self
+  #endif
+  @discardableResult
+  final public func setUploadDocumentOptionTitle(_ title: Swift.String) -> Self
+  @discardableResult
+  final public func setUploadDocumentOptionTitleColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setUploadDocumentOptionTitleFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setUploadDocumentOptionDescription(_ caption: Swift.String) -> Self
+  @discardableResult
+  final public func setUploadDocumentOptionDescriptionColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setUploadDocumentOptionDescriptionFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setUploadDocumentOptionBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setUploadDocumentOptionCircleBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setUploadDocumentOptionBorderRadius(_ radius: CoreFoundation.CGFloat) -> Self
+  @discardableResult
+  final public func setUploadDocumentOptionBorderWidth(_ width: CoreFoundation.CGFloat) -> Self
+  @discardableResult
+  final public func setUploadDocumentOptionBorderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setUploadDocumentOptionIconColor(_ color: UIKit.UIColor) -> Self
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class DocCoreLoadingCustomizationBuilder {
+  @discardableResult
+  final public func setBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setSpinnerColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setSpinnerWidth(_ width: CoreFoundation.CGFloat) -> Self
+  @discardableResult
+  final public func setSpinnerScaleFactor(_ scaleFactor: Swift.Int) -> Self
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class DocCoreQrCodeCustomizationBuilder {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setBackButtonIcon(_ icon: UIKit.UIImage?) -> Self
+  #endif
+  @discardableResult
+  final public func setBackButtonIconColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBackButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBackButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setSquareTargetColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBottomSheetColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBottomSheetCornerRadius(_ radius: CoreFoundation.CGFloat) -> Self
+  @discardableResult
+  final public func setTitle(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setTitleColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setTitleFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setCaption(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setCaptionColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCaptionFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setFileButtonText(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setFileButtonTextFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setFileButtonTextColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setFileButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setFileButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class DocCoreResultCustomizationBuilder {
+  @discardableResult
+  final public func setSuccessBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setErrorBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setRetryBackgroundColor(_ color: UIKit.UIColor) -> Self
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setSuccessImage(_ image: UIKit.UIImage?) -> Self
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setErrorImage(_ image: UIKit.UIImage?) -> Self
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setRetryImage(_ image: UIKit.UIImage?) -> Self
+  #endif
+  @discardableResult
+  final public func setMessageFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setSuccessMessage(_ message: Swift.String) -> Self
+  @discardableResult
+  final public func setErrorMessage(_ message: Swift.String) -> Self
+  @discardableResult
+  final public func setRetryMessage(_ message: Swift.String) -> Self
+  @discardableResult
+  final public func setSuccessMessageColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setErrorMessageColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setRetryMessageColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setRetryButtonText(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setRetryButtonTextFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setRetryButtonTextColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setRetryButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setRetryButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  @objc deinit
+}
+public enum DocCoreResultType {
+  case success
+  case retry
+  case error(CertifaceDocSDK.DocCoreError)
+}
+@_hasMissingDesignatedInitializers final public class DocCoreUploadCustomizationBuilder {
+  @discardableResult
+  final public func setBackgroundColor(_ color: UIKit.UIColor) -> Self
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setBackButtonIcon(_ icon: UIKit.UIImage?) -> Self
+  #endif
+  @discardableResult
+  final public func setBackButtonIconColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBackButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setBackButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setCloseButtonIcon(_ icon: UIKit.UIImage?) -> Self
+  #endif
+  @discardableResult
+  final public func setCloseButtonIconColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCloseButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCloseButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setFileTitle(_ title: Swift.String) -> Self
+  @discardableResult
+  final public func setFileTitleFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setFileTitleColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setFileDescription(_ description: Swift.String) -> Self
+  @discardableResult
+  final public func setFileDescriptionFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setFileDescriptionColor(_ color: UIKit.UIColor) -> Self
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setUploadAreaIcon(_ icon: UIKit.UIImage?) -> Self
+  #endif
+  @discardableResult
+  final public func setUploadAreaIconUnselectedColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setUploadAreaIconSelectedColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setUploadAreaCallout(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setUploadAreaCalloutFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setUploadAreaTitle(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setUploadAreaTitleFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setUploadAreaTextColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setUploadAreaBackgroundUnselectedColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setUploadAreaBackgroundSelectedColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setUploadAreaBorderUnselectedColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setUploadAreaBorderSelectedColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setUploadAreaBorderWidth(_ width: CoreFoundation.CGFloat) -> Self
+  @discardableResult
+  final public func setUploadAreaBorderRadius(_ radius: CoreFoundation.CGFloat) -> Self
+  @discardableResult
+  final public func setFilenameColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setFilenameFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setFilenameBackgroundColor(_ color: UIKit.UIColor) -> Self
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setDeleteButtonIcon(_ icon: UIKit.UIImage?) -> Self
+  #endif
+  @discardableResult
+  final public func setDeleteButtonIconColor(_ color: UIKit.UIColor) -> Self
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setFeedbackImage(_ image: UIKit.UIImage?) -> Self
+  #endif
+  @discardableResult
+  final public func setFeedbackTitle(_ title: Swift.String) -> Self
+  @discardableResult
+  final public func setFeedbackTitleFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setFeedbackTitleColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setSendButtonText(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setSendButtonTextFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setSendButtonNormalTextColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setSendButtonNormalBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setSendButtonNormalBorderColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setSendButtonDisabledTextColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setSendButtonDisabledBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setSendButtonDisabledBorderColor(_ color: UIKit.UIColor) -> Self
+  @objc deinit
+}
+public enum AdditionalDocumentOption : Swift.Hashable {
+  case digitalDocument
+  case uploadDocument
+  public static func == (a: CertifaceDocSDK.AdditionalDocumentOption, b: CertifaceDocSDK.AdditionalDocumentOption) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class DocCoreViewController : UIKit.UINavigationController {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency convenience public init(appKey: Swift.String, environment: CertifaceDocSDK.Environment, delegate: any CertifaceDocSDK.DocCoreDelegate, additionalOptions: Swift.Set<CertifaceDocSDK.AdditionalDocumentOption> = .init(), showFeedback: Swift.Bool = true, customViews: CertifaceDocSDK.DocCoreCustomViews? = nil, customization: CertifaceDocSDK.DocCoreCustomization? = nil)
+  #endif
+  @objc deinit
+}
+extension CertifaceDocSDK.DocCoreViewController : UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+}
+public enum DocumentError : Swift.Int, Swift.Error {
+  case invalidAppKey
+  case certifaceOff
+  case cameraSetupFailed
+  case noCameraPermission
+  case errorCapturePicture
+  case noInternetConnection
+  case validationError
+  case userCancelled
+  public var code: Swift.Int {
+    get
+  }
+  public var message: Swift.String {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct DocumentManagerOptions {
+}
+extension CertifaceDocSDK.DocumentManagerOptions {
+  public static func builder(appKey: Swift.String, environment: CertifaceDocSDK.Environment) -> CertifaceDocSDK.DocumentManagerOptions.Builder
+  @_hasMissingDesignatedInitializers final public class Builder {
+    final public func setAdditionalOptions(_ options: Swift.Set<CertifaceDocSDK.AdditionalDocumentOption>) -> Self
+    final public func setShowFeedback(_ enabled: Swift.Bool) -> Self
+    final public func setDocCoreCustomization(_ customization: CertifaceDocSDK.DocCoreCustomization) -> Self
+    final public func setDocCoreCustomViews(_ customViews: CertifaceDocSDK.DocCoreCustomViews) -> Self
+    final public func build() -> CertifaceDocSDK.DocumentManagerOptions
+    @objc deinit
+  }
+}
+public enum FocusIndicator {
+  case front
+  case back
+  public static func == (a: CertifaceDocSDK.FocusIndicator, b: CertifaceDocSDK.FocusIndicator) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct HybridDocCoreCustomization {
+  public static func builder() -> CertifaceDocSDK.HybridDocCoreCustomizationBuilder
+}
+@_hasMissingDesignatedInitializers final public class HybridDocCoreCustomizationBuilder {
+  @discardableResult
+  final public func setLoadingCustomization(_ builderHandler: @escaping (_ loadingBuilder: CertifaceDocSDK.DocCoreLoadingCustomizationBuilder) -> CertifaceDocSDK.DocCoreLoadingCustomizationBuilder) -> Self
+  @discardableResult
+  final public func setNativeCustomization(_ customization: CertifaceDocSDK.DocCoreCustomization) -> Self
+  final public func build() -> CertifaceDocSDK.HybridDocCoreCustomization
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class HybridDocCoreViewController : CertifaceDocSDK.DocCoreViewController {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public init(appKey: Swift.String, environment: CertifaceDocSDK.Environment, delegate: any CertifaceDocSDK.DocCoreDelegate, showFeedback: Swift.Bool = true, customization hybridCustomization: CertifaceDocSDK.HybridDocCoreCustomization? = nil)
+  #endif
+  @objc deinit
+}
+extension CertifaceDocSDK.CameraPosition : Swift.Equatable {}
+extension CertifaceDocSDK.CameraPosition : Swift.Hashable {}
+extension CertifaceDocSDK.DocCoreError : Swift.Equatable {}
+extension CertifaceDocSDK.DocCoreError : Swift.Hashable {}
+extension CertifaceDocSDK.DocumentError : Swift.Equatable {}
+extension CertifaceDocSDK.DocumentError : Swift.Hashable {}
+extension CertifaceDocSDK.DocumentError : Swift.RawRepresentable {}
+extension CertifaceDocSDK.FocusIndicator : Swift.Equatable {}
+extension CertifaceDocSDK.FocusIndicator : Swift.Hashable {}
