@@ -30,7 +30,7 @@ let package = Package(
         ),
         .package(
             url: "https://github.com/oititec/ios-liveness3d-ft.git",
-            exact: "9.7.110"
+            exact: "9.7.112"
         )
     ],
     targets: [
