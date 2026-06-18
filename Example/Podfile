@@ -7,5 +7,6 @@ target 'Example' do
   use_frameworks!
 
   # Pods
+  pod 'CertifaceModules', path: '../'
   pod 'CertifaceSDK', path: '../'
 end

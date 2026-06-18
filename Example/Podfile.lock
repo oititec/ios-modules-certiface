@@ -1,11 +1,14 @@
 PODS:
-  - CertifaceSDK (1.4.0):
+  - CertifaceModules (1.7.0)
+  - CertifaceSDK (1.7.0):
+    - CertifaceModules (= 1.7.0)
     - iProov (= 12.5.0)
-    - OILiveness3D_FT (= 9.7.110)
+    - OILiveness3D_FT (= 9.7.121)
   - iProov (12.5.0)
-  - OILiveness3D_FT (9.7.110)
+  - OILiveness3D_FT (9.7.121)
 
 DEPENDENCIES:
+  - CertifaceModules (from `../`)
   - CertifaceSDK (from `../`)
 
 SPEC REPOS:
@@ -15,14 +18,17 @@ SPEC REPOS:
     - iProov
 
 EXTERNAL SOURCES:
+  CertifaceModules:
+    :path: "../"
   CertifaceSDK:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CertifaceSDK: f74071ea377420880cbc14b15fb59619270475e8
+  CertifaceModules: 6a9b5e8c2955ce48616e74f220c22dd98d74019a
+  CertifaceSDK: 1fa773b755d4e22a578f7c656af9c08c571daf12
   iProov: 17b75b5b2ceb6615cf6f7e835f30a773f28b1644
-  OILiveness3D_FT: b5ce81463120c54dde2d5f9975b00b0116a798db
+  OILiveness3D_FT: 6ceb05be7e1574d8918d6f633e5e3e14ab889c89
 
-PODFILE CHECKSUM: 41b30c137e1dd3265111c8552a4cc0d8e25be2fe
+PODFILE CHECKSUM: c3166dbefdd14d1988f75dd03b5322af387ee56e
 
 COCOAPODS: 1.16.2
