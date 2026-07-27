@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name            = 'CertifaceSDK-Debug'
-  s.version         = '1.7.0'
+  s.version         = '1.8.0'
   s.summary         = 'Framework CertifaceSDK para iOS.'
   s.homepage        = 'https://www.oititec.com.br/'
   s.license         = { :type => 'Copyright', :text => 'Copyright © 2025 Oiti. All rights reserved.' }
@@ -19,5 +19,5 @@ Pod::Spec.new do |s|
 
   s.dependency 'CertifaceModules', '1.7.0'
   s.dependency 'iProov', '12.5.0'
-  s.dependency 'OILiveness3D_FT-Debug', '9.7.121'
+  s.dependency 'OILiveness3D_FT-Debug', '9.7.130'
 end
