@@ -41,6 +41,61 @@ public struct ImageAnimationAppearance {
   public init(image: UIKit.UIImage?, rotationInterval: Swift.Int32, checkmarkForegroundColor: UIKit.UIColor, checkmarkBackgroundColor: UIKit.UIColor)
   #endif
 }
+public protocol Liveness3DCaptureDelegate : AnyObject {
+  func verifyLiveness3DCapture(_ capture: CertifaceFacetec.Liveness3DCaptureResult) async -> CertifaceFacetec.Liveness3DCaptureVerificationOutcome
+  func handleSuccess(_ successModel: CertifaceFacetec.Liveness3DCaptureVerificationSuccess)
+  func handleError(_ error: CertifaceFacetec.Liveness3DError)
+}
+public struct Liveness3DCaptureResult {
+  public let sessionId: Swift.String
+  public let faceScanBase64: Swift.String
+  public let auditTrailImage: Swift.String
+  public let lowQualityAuditTrailImage: Swift.String
+  public let userAgent: Swift.String
+}
+public enum Liveness3DCaptureStarter {
+  public static func start(at rootViewController: UIKit.UINavigationController, with starterData: CertifaceFacetec.Liveness3DCaptureStarterData) async throws
+}
+public struct Liveness3DCaptureStarterData {
+}
+extension CertifaceFacetec.Liveness3DCaptureStarterData {
+  public static func builder(productionKey: Swift.String, sessionToken: Swift.String, delegate: any CertifaceFacetec.Liveness3DCaptureDelegate) -> CertifaceFacetec.Liveness3DCaptureStarterData.Builder
+  @_hasMissingDesignatedInitializers final public class Builder {
+    #if compiler(>=5.3) && $NonescapableTypes
+    final public func setDefaultTheme(_ theme: CertifaceFacetec.Liveness3DTheme?) -> Self
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
+    final public func setLowLightTheme(_ theme: CertifaceFacetec.Liveness3DTheme?) -> Self
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
+    final public func setTexts(_ texts: [CertifaceFacetec.Liveness3DTextKey : Swift.String]?) -> Self
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
+    final public func setTracker(_ tracker: (any CertifaceSecurity.JourneyTracker)?) -> Self
+    #endif
+    final public func build() -> CertifaceFacetec.Liveness3DCaptureStarterData
+    @objc deinit
+  }
+}
+public struct Liveness3DCaptureUser {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(productionKey: Swift.String, defaultTheme: CertifaceFacetec.Liveness3DTheme? = nil, lowLightTheme: CertifaceFacetec.Liveness3DTheme? = nil, texts: [CertifaceFacetec.Liveness3DTextKey : Swift.String]? = nil)
+  #endif
+}
+public enum Liveness3DCaptureVerificationOutcome {
+  case success(CertifaceFacetec.Liveness3DCaptureVerificationSuccess)
+  case failure(CertifaceFacetec.Liveness3DErrorCode)
+}
+public struct Liveness3DCaptureVerificationSuccess {
+  public var valid: Swift.Bool
+  public var codId: Swift.Double
+  public var cause: Swift.String?
+  public var journeyId: Swift.String
+  public var scanResultBlob: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(valid: Swift.Bool, codId: Swift.Double, cause: Swift.String?, journeyId: Swift.String, scanResultBlob: Swift.String?)
+  #endif
+}
 public protocol Liveness3DCustomInstructionView : UIKit.UIView {
   #if compiler(>=5.3) && $NonescapableTypes
   var backButton: UIKit.UIButton! { get }

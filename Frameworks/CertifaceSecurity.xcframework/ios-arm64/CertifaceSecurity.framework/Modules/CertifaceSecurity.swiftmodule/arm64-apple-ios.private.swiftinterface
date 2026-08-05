@@ -72,6 +72,22 @@ public enum PersistenceOption : Swift.String {
     get
   }
 }
+public struct PreciseLocationData {
+  public let latitude: Swift.Double
+  public let longitude: Swift.Double
+  public let accuracy: Swift.Double
+  public let altitude: Swift.Double?
+  public let altitudeAccuracy: Swift.Double?
+}
+public enum PreciseLocationError : Swift.Error {
+  case permissionDenied
+  case unavailable
+  public static func == (a: CertifaceSecurity.PreciseLocationError, b: CertifaceSecurity.PreciseLocationError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 public protocol RequestHelper {
   func generateUserAgent(with bundleIdentifier: Swift.String) -> Swift.String
 }
@@ -85,6 +101,9 @@ public protocol JourneyTracker : AnyObject {
   func trackEvent(forScreen screen: Swift.String, step: Swift.String, action: Swift.String)
   func uploadDeviceInfoAndLocation(appKey: Swift.String, autoClose: Swift.Bool, provider: Swift.String)
   func uploadDeviceBehavior(with appKey: Swift.String, autoClose: Swift.Bool, provider: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
+  func retrievePreciseLocation(completion: @escaping (Swift.Result<CertifaceSecurity.PreciseLocationData, CertifaceSecurity.PreciseLocationError>) -> Swift.Void)
+  #endif
 }
 @_hasMissingDesignatedInitializers final public class SecurityManager {
   @objc deinit
@@ -102,6 +121,9 @@ extension CertifaceSecurity.SecurityManager : CertifaceSecurity.JourneyTracker {
   final public func trackEvent(forScreen screen: Swift.String, step: Swift.String, action: Swift.String)
   final public func uploadDeviceInfoAndLocation(appKey: Swift.String, autoClose: Swift.Bool, provider: Swift.String)
   final public func uploadDeviceBehavior(with appKey: Swift.String, autoClose: Swift.Bool, provider: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func retrievePreciseLocation(completion: @escaping (Swift.Result<CertifaceSecurity.PreciseLocationData, CertifaceSecurity.PreciseLocationError>) -> Swift.Void)
+  #endif
 }
 public struct SecurityPayload {
 }
@@ -110,3 +132,5 @@ public struct SecurityEvent {
 extension CertifaceSecurity.PersistenceOption : Swift.Equatable {}
 extension CertifaceSecurity.PersistenceOption : Swift.Hashable {}
 extension CertifaceSecurity.PersistenceOption : Swift.RawRepresentable {}
+extension CertifaceSecurity.PreciseLocationError : Swift.Equatable {}
+extension CertifaceSecurity.PreciseLocationError : Swift.Hashable {}

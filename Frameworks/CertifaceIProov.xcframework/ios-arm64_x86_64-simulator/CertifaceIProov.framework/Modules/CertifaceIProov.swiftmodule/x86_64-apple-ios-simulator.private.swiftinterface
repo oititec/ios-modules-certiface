@@ -36,9 +36,18 @@ public protocol IProovCustomResultView : UIKit.UIView {
   var retryButton: UIKit.UIButton! { get }
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
+  func display(for resultType: CertifaceIProov.IProovResultLayoutType, userFeedback: [Swift.String]?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @available(*, deprecated, renamed: "display(for:userFeedback:)")
   func display(for resultType: CertifaceIProov.IProovResultLayoutType, retryReason: Swift.String?)
   #endif
   func changeLoadingVisibility(to visibility: CertifaceComponents.Visibility)
+}
+extension CertifaceIProov.IProovCustomResultView {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func display(for resultType: CertifaceIProov.IProovResultLayoutType, userFeedback: [Swift.String]?)
+  #endif
 }
 public enum IProovError : Swift.Int, Swift.Error {
   case invalidAppKey
@@ -185,6 +194,8 @@ public struct IProovResultCustomization {
   final public func setErrorMessageColor(_ color: UIKit.UIColor) -> Self
   @discardableResult
   final public func setRetryMessageColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setRetryUserFeedbackInterval(_ interval: Foundation.TimeInterval) -> Self
   @discardableResult
   final public func setRetryButtonText(_ text: Swift.String) -> Self
   @discardableResult
