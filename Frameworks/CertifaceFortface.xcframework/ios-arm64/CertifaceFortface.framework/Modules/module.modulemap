@@ -1,0 +1,4 @@
+framework module CertifaceFortface {
+  header "CertifaceFortface-Swift.h"
+  requires objc
+}

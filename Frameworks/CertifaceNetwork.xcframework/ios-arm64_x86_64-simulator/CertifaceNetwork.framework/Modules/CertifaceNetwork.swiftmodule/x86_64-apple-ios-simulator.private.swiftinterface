@@ -27,6 +27,7 @@ public enum Environment : Swift.String, Swift.CaseIterable {
 public enum EnvironmentManager {
   public static func facecaptchaBaseUrl(from environment: CertifaceNetwork.Environment) -> Swift.String
   public static func certifaceBaseUrl(from environment: CertifaceNetwork.Environment) -> Swift.String
+  public static func saasBaseUrl(from environment: CertifaceNetwork.Environment) -> Swift.String
 }
 public struct ErrorDetail {
   public let error: any Swift.Error
@@ -187,6 +188,202 @@ public struct Liveness3DSuccess : Swift.Decodable {
   public var scanResultBlob: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
 }
+final public class SaasManager : CertifaceNetwork.SaasManagerProtocol {
+  public static let shared: CertifaceNetwork.SaasManager
+  public init(session: Foundation.URLSession = URLSession(configuration: .default))
+  final public func getTokenStatus(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasTokenStatusModel
+  final public func getTokenResult(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasTokenResultModel
+  final public func resolveLivenessProvider(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasResolveModel
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func initializeLiveness<Payload>(tokenUuid: Swift.String, payload: Payload?, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasInitializeModel where Payload : Swift.Encodable
+  #endif
+  final public func verifyLiveness<Payload>(tokenUuid: Swift.String, payload: Payload, geolocation: CertifaceNetwork.SaasGeolocation, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasVerifyModel where Payload : Swift.Encodable
+  @objc deinit
+}
+public protocol SaasManagerProtocol {
+  func getTokenStatus(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasTokenStatusModel
+  func resolveLivenessProvider(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasResolveModel
+  #if compiler(>=5.3) && $NonescapableTypes
+  func initializeLiveness<Payload>(tokenUuid: Swift.String, payload: Payload?, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasInitializeModel where Payload : Swift.Encodable
+  #endif
+  func verifyLiveness<Payload>(tokenUuid: Swift.String, payload: Payload, geolocation: CertifaceNetwork.SaasGeolocation, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasVerifyModel where Payload : Swift.Encodable
+  func getTokenResult(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasTokenResultModel
+}
+public struct SaasTokenStatusModel : Swift.Decodable {
+  public let valid: Swift.Bool
+  public let status: CertifaceNetwork.SaasTokenStatusValue
+  public let expiresAt: Swift.String?
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum SaasTokenStatusValue : Swift.String, Swift.Decodable {
+  case pending
+  case expired
+  case cancelled
+  case completed
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum SaasLivenessProvider {
+  case facetec
+  case fortface
+  public static func == (a: CertifaceNetwork.SaasLivenessProvider, b: CertifaceNetwork.SaasLivenessProvider) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension CertifaceNetwork.SaasLivenessProvider : Swift.Decodable {
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SaasResolveModel : Swift.Decodable {
+  public let provider: CertifaceNetwork.SaasLivenessProvider
+  public let sdk: Swift.String?
+  public let resolvedBy: Swift.String?
+  public let resolutionReason: Swift.String?
+  public let resolutionRuleId: Swift.Int?
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum SaasInitializeStatus : Swift.String, Swift.Decodable {
+  case initialized
+  case waitingClientPreparation
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct SaasInitializeModel : Swift.Decodable {
+  public let sdk: Swift.String?
+  public let provider: CertifaceNetwork.SaasLivenessProvider?
+  public let resolvedBy: Swift.String?
+  public let status: CertifaceNetwork.SaasInitializeStatus
+  public let nextStep: Swift.String?
+  public let requiredFields: [Swift.String]?
+  public let payload: CertifaceNetwork.SaasInitializePayload?
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SaasInitializePayload : Swift.Decodable {
+  public let appKey: Swift.String?
+  public let sessionToken: Swift.String?
+  public let productionKey: Swift.String?
+  public let initialize: CertifaceNetwork.SaasFaceTecInitializeDetails?
+  public let session: CertifaceNetwork.SaasSessionDetails?
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SaasFaceTecInitializeDetails : Swift.Decodable {
+  public let deviceKeyIdentifier: Swift.String?
+  public let publicFaceScanEncryptionKey: Swift.String?
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SaasSessionDetails : Swift.Decodable {
+  public let sessionId: Swift.String?
+  public let sessionKey: Swift.String?
+  public let sessionToken: Swift.String?
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SaasGeolocation : Swift.Encodable {
+  public let latitude: Swift.Double
+  public let longitude: Swift.Double
+  public let accuracy: Swift.Double
+  public let altitude: Swift.Double?
+  public let altitudeAccuracy: Swift.Double?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(latitude: Swift.Double, longitude: Swift.Double, accuracy: Swift.Double, altitude: Swift.Double? = nil, altitudeAccuracy: Swift.Double? = nil)
+  #endif
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public enum SaasLivenessStatus : Swift.String, Swift.Decodable {
+  case approved
+  case retryable
+  case rejected
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct SaasLivenessVerifyResult : Swift.Decodable {
+  public let valid: Swift.Bool
+  public let status: CertifaceNetwork.SaasLivenessStatus
+  public let reason: Swift.String?
+  public let canRetry: Swift.Bool
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SaasAttempts : Swift.Decodable {
+  public let step: Swift.String?
+  public let max: Swift.Int?
+  public let used: Swift.Int?
+  public let remaining: Swift.Int?
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SaasFlow : Swift.Decodable {
+  public let status: Swift.String
+  public let currentStep: Swift.String?
+  public let nextAction: Swift.String
+  public let finished: Swift.Bool
+  public let attempts: CertifaceNetwork.SaasAttempts?
+  public let returnUrl: Swift.String?
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SaasVerifyModel : Swift.Decodable {
+  public let liveness: CertifaceNetwork.SaasLivenessVerifyResult
+  public let flow: CertifaceNetwork.SaasFlow
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SaasTokenResultModel : Swift.Decodable {
+  public let token: Swift.String?
+  public let documentNumber: Swift.String?
+  public let birthDate: Swift.String?
+  public let fullName: Swift.String?
+  public let phone: Swift.String?
+  public let status: Swift.Bool?
+  public let result: Swift.Bool?
+  public let expirationDate: Swift.String?
+  public let createDate: Swift.String?
+  public let phones: [Swift.String]?
+  public let processType: Swift.String?
+  public let results: [CertifaceNetwork.SaasTokenResultItem]?
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SaasTokenResultItem : Swift.Decodable {
+  public let `protocol`: Swift.String?
+  public let dateTime: Swift.String?
+  public let step: Swift.String?
+  public let cause: Swift.String?
+  public let valid: Swift.Bool?
+  public let score: Swift.Double?
+  public let result: Swift.Double?
+  public let ip: Swift.String?
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum SaasNetworkError : Swift.Error {
+  case noInternetConnection
+  case malformedRequest
+  case badRequest
+  case invalidStatusCode(Swift.Int)
+  case decodeFailed
+  case noContent
+}
 extension CertifaceNetwork.Environment : Swift.Equatable {}
 extension CertifaceNetwork.Environment : Swift.Hashable {}
 extension CertifaceNetwork.Environment : Swift.RawRepresentable {}
+extension CertifaceNetwork.SaasTokenStatusValue : Swift.Equatable {}
+extension CertifaceNetwork.SaasTokenStatusValue : Swift.Hashable {}
+extension CertifaceNetwork.SaasTokenStatusValue : Swift.RawRepresentable {}
+extension CertifaceNetwork.SaasLivenessProvider : Swift.Equatable {}
+extension CertifaceNetwork.SaasLivenessProvider : Swift.Hashable {}
+extension CertifaceNetwork.SaasInitializeStatus : Swift.Equatable {}
+extension CertifaceNetwork.SaasInitializeStatus : Swift.Hashable {}
+extension CertifaceNetwork.SaasInitializeStatus : Swift.RawRepresentable {}
+extension CertifaceNetwork.SaasLivenessStatus : Swift.Equatable {}
+extension CertifaceNetwork.SaasLivenessStatus : Swift.Hashable {}
+extension CertifaceNetwork.SaasLivenessStatus : Swift.RawRepresentable {}
