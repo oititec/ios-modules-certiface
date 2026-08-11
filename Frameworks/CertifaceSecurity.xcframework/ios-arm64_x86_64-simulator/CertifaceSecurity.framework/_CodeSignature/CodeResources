@@ -10,11 +10,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Q4tQT5uf5mPgIyHhPw3rUa1EPfg=
+		S8xkYSf/fIQq6VMi7M4PhCCDefE=
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		Y+QcFgiVZkyVu5Xgdkk0EptWfBU=
+		K3TX+XHvZx9ktXR5JozabjVGWMw=
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		4pP9jVE6WdiZ2URCd+eUbv4L0z8=
+		1zjzuIGHF1HYgqB9FKGKNIN8VD4=
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		Y+QcFgiVZkyVu5Xgdkk0EptWfBU=
+		K3TX+XHvZx9ktXR5JozabjVGWMw=
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		NQl1HuslkatnMRlImCX+husQXqA=
+		NI6GkfJH8Cywc4Y7n69ABNgdNSA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -74,7 +74,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9uyBKANHDEVPBt+idV/p6tGuU7OxNxhHAqw+Ps8b1YY=
+			U9KkltjlIoCa8xBQy+QBrTaSDmTL+qGfud3VtWSB/Mk=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSecurity.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -102,14 +102,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fDHW+C2D4L1kiwpiRn+f05OOakf1Mwg1+KKgTyd+QAs=
+			iYjvadTxI/4320EziR5ncuB5O01WNp7jwCfuRpk5Ag8=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9uyBKANHDEVPBt+idV/p6tGuU7OxNxhHAqw+Ps8b1YY=
+			U9KkltjlIoCa8xBQy+QBrTaSDmTL+qGfud3VtWSB/Mk=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -137,7 +137,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DElKkjMMIyxVAE97c121t8b07ODrBvcgOBlWh1R+J38=
+			fkYVu6ZkL71b0+k8mx2X98Lfuc8imTvmV1qhB4s1AJA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
