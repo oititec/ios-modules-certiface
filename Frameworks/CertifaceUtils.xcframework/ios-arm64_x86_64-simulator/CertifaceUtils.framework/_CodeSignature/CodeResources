@@ -10,7 +10,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		mYZq9i2gtl93vYegOdo7uEPG38E=
+		aaEgJGrMRIMMEpqxINRi2cDZ2w8=
 		</data>
 		<key>Modules/CertifaceUtils.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/CertifaceUtils.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		LZA+yvCi2gFuiSOPtYhBHimKclM=
+		kSKD0BhpL/60tGFdgtWVy1kXghM=
 		</data>
 		<key>Modules/CertifaceUtils.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/CertifaceUtils.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		37VzYRszQKkYzmgjo8/ntUiiMdU=
+		Mb1fBzAdTLgqEcW5Nwj8MvXGgS4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -98,7 +98,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FTrfORFte1wuPfj0Uo0sNQ0wJCyV27CGIipmxDLMFpA=
+			W2ClrYUWFkhpAJbMLicfDrIEq/7nPSvV5O4o4EYtmbw=
 			</data>
 		</dict>
 		<key>Modules/CertifaceUtils.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -133,7 +133,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KouPzdlSxFSwf8EyuEtqifQso/dA7jOBjGeohpic1aU=
+			v1+UKJX1KxuMBcGz6asjf3uZ4egBDc3EcVFvdGqSzI4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
