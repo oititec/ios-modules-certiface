@@ -14,11 +14,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ivRhodotZpgCLQbNeHOU0k5w8u0=
+		FTaO/7RriGuBg+ZhQXhFBFqgtxg=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		9IvcrlLpgSpPX0n8KjzNXzd7SYM=
+		g4an8mE75vK4S7yIGCJy6mKZZxU=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		GN/9dw8DUOvS8ueElKD4acZfzuQ=
+		mE7LbUXMXCulUCecs6LcSKRJ6/8=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		9IvcrlLpgSpPX0n8KjzNXzd7SYM=
+		g4an8mE75vK4S7yIGCJy6mKZZxU=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		4wVGqWI1vZ5z7O5u8AU4dmtXNtE=
+		AO45RfL3mvpDRnkVQ8uJaNhUwqw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -81,7 +81,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8A3IaRv87uw01TLDWOzHdK6Ux/QKC49+SmOkfZfx3TA=
+			dYkDwrRCch4wAulMWt38xIIH5G4EOuaDHC1DfLnAFLY=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -109,14 +109,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			PO9C3+HK0OG+zdUoADizDXW6OZz8szTgy24qtraNoYI=
+			YFHFPWmF+M5n/J+XVwlu5Y1AWZFQZu2b4PVR/Bd/vxo=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8A3IaRv87uw01TLDWOzHdK6Ux/QKC49+SmOkfZfx3TA=
+			dYkDwrRCch4wAulMWt38xIIH5G4EOuaDHC1DfLnAFLY=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -144,7 +144,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1uhbWVtSguFDic5aoo5QAcwBigw6wkv38w0I+tsZOlc=
+			qFTpR+ytimAZQn0YR3ixSmYN1FtyxpTsJ5Y8C5tPhpA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
