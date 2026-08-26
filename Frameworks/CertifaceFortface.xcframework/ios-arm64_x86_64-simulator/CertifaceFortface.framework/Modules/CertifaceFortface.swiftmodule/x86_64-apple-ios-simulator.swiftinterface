@@ -26,7 +26,6 @@ public protocol FortfaceCustomResultView : UIKit.UIView {
   var retryButton: UIKit.UIButton! { get }
   #endif
   func display(for resultType: CertifaceFortface.FortfaceResultType)
-  func changeLoadingVisibility(to visibility: CertifaceComponents.Visibility)
 }
 public struct FortfaceCustomization {
   public static func builder() -> CertifaceFortface.FortfaceCustomizationBuilder
@@ -34,21 +33,17 @@ public struct FortfaceCustomization {
 final public class FortfaceCustomizationBuilder {
   public init()
   @discardableResult
-  final public func setCancelButton(_ cancelButton: CertifaceFortface.FortfaceCancelButton) -> Self
+  final public func setCancelButtonEnabled(_ enabled: Swift.Bool) -> Self
+  @discardableResult
+  final public func setCancelButtonIcon(_ image: UIKit.UIImage) -> Self
+  @discardableResult
+  final public func setCancelButtonIconColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCancelButtonPosition(_ position: CertifaceFortface.FortfaceCancelButtonPosition) -> Self
   @discardableResult
   final public func setScreenMode(_ screenMode: CertifaceFortface.FortfaceScreenMode) -> Self
   @discardableResult
   final public func setScreenOrientation(_ screenOrientation: CertifaceFortface.FortfaceScreenOrientation) -> Self
-  @discardableResult
-  final public func setInstructionsIcon(_ instructionsIcon: CertifaceFortface.FortfaceInstructionsIcon) -> Self
-  @discardableResult
-  final public func setInstructionsButton(_ instructionsButton: CertifaceFortface.FortfaceInstructionsButton) -> Self
-  @discardableResult
-  final public func setInstructionsMessages(_ instructionsMessages: CertifaceFortface.FortfaceInstructionsMessages) -> Self
-  @discardableResult
-  final public func setInstructionsBackground(_ instructionsBackground: CertifaceFortface.FortfaceInstructionsBackground) -> Self
-  @discardableResult
-  final public func setInstructionMessageColor(_ instructionMessageColor: CertifaceFortface.FortfaceInstructionMessageColor) -> Self
   @discardableResult
   final public func setCameraTimeout(_ timeout: Swift.Double) -> Self
   @discardableResult
@@ -56,17 +51,37 @@ final public class FortfaceCustomizationBuilder {
   @discardableResult
   final public func setCameraMinStabilizationTime(_ time: Swift.Double) -> Self
   @discardableResult
+  final public func setCameraFrameVisible(_ visible: Swift.Bool) -> Self
+  @discardableResult
+  final public func setCameraBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCameraNeutralColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCameraAlertColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCameraSuccessColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCameraBrightnessColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCameraBrightnessBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCameraLoadingStrokeColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCameraLoadingBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCameraIcon(_ icon: UIKit.UIImage) -> Self
+  @discardableResult
+  final public func setCameraSmallIcon(_ icon: UIKit.UIImage) -> Self
+  @discardableResult
+  final public func setCameraMessageColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCameraMessageFont(_ fontName: Swift.String) -> Self
+  @discardableResult
+  final public func setCameraMessages(_ messages: [CertifaceFortface.FortfaceTextKey : Swift.String]) -> Self
+  @discardableResult
+  final public func setCameraAccessibilityLabels(_ labels: [CertifaceFortface.FortfaceAccessibilityKey : Swift.String]) -> Self
+  @discardableResult
   final public func setBrightnessMessageTimeout(_ timeout: Swift.Double) -> Self
-  @discardableResult
-  final public func setCameraBackground(_ cameraBackground: CertifaceFortface.FortfaceCameraBackground) -> Self
-  @discardableResult
-  final public func setCameraColor(_ cameraColor: CertifaceFortface.FortfaceCameraColor) -> Self
-  @discardableResult
-  final public func setCameraFrameText(_ cameraFrameText: CertifaceFortface.FortfaceCameraFrameText) -> Self
-  @discardableResult
-  final public func setCameraMessages(_ messages: CertifaceFortface.FortfaceCameraMessages) -> Self
-  @discardableResult
-  final public func setCameraLogo(_ cameraLogo: CertifaceFortface.FortfaceCameraLogo) -> Self
   final public func build() -> CertifaceFortface.FortfaceCustomization
   @objc deinit
 }
@@ -98,119 +113,45 @@ public enum FortfaceScreenOrientation {
     get
   }
 }
-public struct FortfaceCancelButton {
-  public var icon: UIKit.UIImage?
-  public var position: CertifaceFortface.FortfaceCancelButtonPosition?
-  public var enable: Swift.Bool?
-  public var iconColor: UIKit.UIColor?
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init(icon: UIKit.UIImage? = nil, position: CertifaceFortface.FortfaceCancelButtonPosition? = nil, enable: Swift.Bool? = nil, iconColor: UIKit.UIColor? = nil)
-  #endif
+public enum FortfaceTextKey {
+  case positioned
+  case noFace
+  case faceNear
+  case faceFar
+  case noFaceYaw
+  case noFaceYawIpad
+  case facePitchIsUp
+  case facePitchIsDown
+  case highBrightness
+  case lowBrightness
+  case faceCenterLeft
+  case faceCenterRight
+  case faceCenterUp
+  case faceCenterDown
+  case faceRollRight
+  case faceRollLeft
+  case noFaceRoll
+  public static func == (a: CertifaceFortface.FortfaceTextKey, b: CertifaceFortface.FortfaceTextKey) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
 }
-public struct FortfaceInstructionsIcon {
-  public var color: UIKit.UIColor?
-  public var background: UIKit.UIColor?
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init(color: UIKit.UIColor? = nil, background: UIKit.UIColor? = nil)
-  #endif
-}
-public struct FortfaceInstructionsButton {
-  public var color: UIKit.UIColor?
-  public var textColor: UIKit.UIColor?
-  public var radius: CoreFoundation.CGFloat?
-  public var textLabel: Swift.String?
-  public var familyFont: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init(color: UIKit.UIColor? = nil, textColor: UIKit.UIColor? = nil, radius: CoreFoundation.CGFloat? = nil, textLabel: Swift.String? = nil, familyFont: Swift.String? = nil)
-  #endif
-}
-public struct FortfaceInstructionsMessages {
-  public var familyFont: Swift.String?
-  public var title: Swift.String?
-  public var noItems: Swift.String?
-  public var place: Swift.String?
-  public var expression: Swift.String?
-  public var position: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init(familyFont: Swift.String? = nil, title: Swift.String? = nil, noItems: Swift.String? = nil, place: Swift.String? = nil, expression: Swift.String? = nil, position: Swift.String? = nil)
-  #endif
-}
-public struct FortfaceInstructionsBackground {
-  public var color: UIKit.UIColor?
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init(color: UIKit.UIColor? = nil)
-  #endif
-}
-public struct FortfaceInstructionMessageColor {
-  public var headerTextColorResource: UIKit.UIColor?
-  public var messageTextColorResource: UIKit.UIColor?
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init(headerTextColorResource: UIKit.UIColor? = nil, messageTextColorResource: UIKit.UIColor? = nil)
-  #endif
-}
-public struct FortfaceCameraBackground {
-  public var color: UIKit.UIColor?
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init(color: UIKit.UIColor? = nil)
-  #endif
-}
-public struct FortfaceCameraColor {
-  public var neutral: UIKit.UIColor?
-  public var alert: UIKit.UIColor?
-  public var success: UIKit.UIColor?
-  public var brightness: UIKit.UIColor?
-  public var brightnessBackground: UIKit.UIColor?
-  public var loadingBackground: UIKit.UIColor?
-  public var loadingStroke: UIKit.UIColor?
-  public var messageTextColorResource: UIKit.UIColor?
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init(neutral: UIKit.UIColor? = nil, alert: UIKit.UIColor? = nil, success: UIKit.UIColor? = nil, brightness: UIKit.UIColor? = nil, brightnessBackground: UIKit.UIColor? = nil, loadingBackground: UIKit.UIColor? = nil, loadingStroke: UIKit.UIColor? = nil, messageTextColorResource: UIKit.UIColor? = nil)
-  #endif
-}
-public struct FortfaceCameraFrameText {
-  public var visible: Swift.Bool?
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init(visible: Swift.Bool? = nil)
-  #endif
-}
-public struct FortfaceCameraMessages {
-  public var familyFont: Swift.String?
-  public var positioned: Swift.String?
-  public var noFace: Swift.String?
-  public var faceNear: Swift.String?
-  public var faceFar: Swift.String?
-  public var noFaceYaw: Swift.String?
-  public var noFaceYawIpad: Swift.String?
-  public var facePitchIsUp: Swift.String?
-  public var facePitchIsDown: Swift.String?
-  public var highBrightness: Swift.String?
-  public var lowBrightness: Swift.String?
-  public var faceCenterLeft: Swift.String?
-  public var faceCenterRight: Swift.String?
-  public var faceCenterUp: Swift.String?
-  public var faceCenterDown: Swift.String?
-  public var faceRollRight: Swift.String?
-  public var faceRollLeft: Swift.String?
-  public var noFaceRoll: Swift.String?
-  public var positionedAccessibility: Swift.String?
-  public var faceCenterLeftAccessibility: Swift.String?
-  public var faceCenterRightAccessibility: Swift.String?
-  public var faceCenterUpAccessibility: Swift.String?
-  public var faceCenterDownAccessibility: Swift.String?
-  public var faceRollRightAccessibility: Swift.String?
-  public var faceRollLeftAccessibility: Swift.String?
-  public var highBrightnessAccessibility: Swift.String?
-  public var lowBrightnessAccessibility: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init(familyFont: Swift.String? = nil, positioned: Swift.String? = nil, noFace: Swift.String? = nil, faceNear: Swift.String? = nil, faceFar: Swift.String? = nil, noFaceYaw: Swift.String? = nil, noFaceYawIpad: Swift.String? = nil, facePitchIsUp: Swift.String? = nil, facePitchIsDown: Swift.String? = nil, highBrightness: Swift.String? = nil, lowBrightness: Swift.String? = nil, faceCenterLeft: Swift.String? = nil, faceCenterRight: Swift.String? = nil, faceCenterUp: Swift.String? = nil, faceCenterDown: Swift.String? = nil, faceRollRight: Swift.String? = nil, faceRollLeft: Swift.String? = nil, noFaceRoll: Swift.String? = nil, positionedAccessibility: Swift.String? = nil, faceCenterLeftAccessibility: Swift.String? = nil, faceCenterRightAccessibility: Swift.String? = nil, faceCenterUpAccessibility: Swift.String? = nil, faceCenterDownAccessibility: Swift.String? = nil, faceRollRightAccessibility: Swift.String? = nil, faceRollLeftAccessibility: Swift.String? = nil, highBrightnessAccessibility: Swift.String? = nil, lowBrightnessAccessibility: Swift.String? = nil)
-  #endif
-}
-public struct FortfaceCameraLogo {
-  public var icon: UIKit.UIImage?
-  public var iconSmall: UIKit.UIImage?
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init(icon: UIKit.UIImage? = nil, iconSmall: UIKit.UIImage? = nil)
-  #endif
+public enum FortfaceAccessibilityKey {
+  case positioned
+  case faceCenterLeft
+  case faceCenterRight
+  case faceCenterUp
+  case faceCenterDown
+  case faceRollRight
+  case faceRollLeft
+  case highBrightness
+  case lowBrightness
+  public static func == (a: CertifaceFortface.FortfaceAccessibilityKey, b: CertifaceFortface.FortfaceAccessibilityKey) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
 }
 public enum FortfaceError : Swift.Int, Swift.Error {
   case invalidAppKey
@@ -291,7 +232,7 @@ final public class FortfaceResultCustomizationBuilder {
   @objc deinit
 }
 public protocol FortfaceResultDelegate : AnyObject {
-  func fortfaceResultViewController(_ viewController: CertifaceFortface.FortfaceResultViewController, didFinishWith resultType: CertifaceFortface.FortfaceResultType)
+  func didFinish(with resultType: CertifaceFortface.FortfaceResultType)
 }
 public enum FortfaceResultType {
   case success
@@ -348,6 +289,10 @@ extension CertifaceFortface.FortfaceScreenMode : Swift.Equatable {}
 extension CertifaceFortface.FortfaceScreenMode : Swift.Hashable {}
 extension CertifaceFortface.FortfaceScreenOrientation : Swift.Equatable {}
 extension CertifaceFortface.FortfaceScreenOrientation : Swift.Hashable {}
+extension CertifaceFortface.FortfaceTextKey : Swift.Equatable {}
+extension CertifaceFortface.FortfaceTextKey : Swift.Hashable {}
+extension CertifaceFortface.FortfaceAccessibilityKey : Swift.Equatable {}
+extension CertifaceFortface.FortfaceAccessibilityKey : Swift.Hashable {}
 extension CertifaceFortface.FortfaceError : Swift.Equatable {}
 extension CertifaceFortface.FortfaceError : Swift.Hashable {}
 extension CertifaceFortface.FortfaceError : Swift.RawRepresentable {}
