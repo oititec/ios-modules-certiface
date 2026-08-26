@@ -39,23 +39,13 @@ public typealias Liveness3DTextKey = CertifaceFacetec.Liveness3DTextKey
 public typealias FortfaceCancelButtonPosition = CertifaceFortface.FortfaceCancelButtonPosition
 public typealias FortfaceScreenMode = CertifaceFortface.FortfaceScreenMode
 public typealias FortfaceScreenOrientation = CertifaceFortface.FortfaceScreenOrientation
-public typealias FortfaceCancelButton = CertifaceFortface.FortfaceCancelButton
-public typealias FortfaceInstructionsIcon = CertifaceFortface.FortfaceInstructionsIcon
-public typealias FortfaceInstructionsButton = CertifaceFortface.FortfaceInstructionsButton
-public typealias FortfaceInstructionsMessages = CertifaceFortface.FortfaceInstructionsMessages
-public typealias FortfaceInstructionsBackground = CertifaceFortface.FortfaceInstructionsBackground
-public typealias FortfaceInstructionMessageColor = CertifaceFortface.FortfaceInstructionMessageColor
-public typealias FortfaceCameraBackground = CertifaceFortface.FortfaceCameraBackground
-public typealias FortfaceCameraColor = CertifaceFortface.FortfaceCameraColor
-public typealias FortfaceCameraFrameText = CertifaceFortface.FortfaceCameraFrameText
-public typealias FortfaceCameraMessages = CertifaceFortface.FortfaceCameraMessages
-public typealias FortfaceCameraLogo = CertifaceFortface.FortfaceCameraLogo
+public typealias FortfaceTextKey = CertifaceFortface.FortfaceTextKey
+public typealias FortfaceAccessibilityKey = CertifaceFortface.FortfaceAccessibilityKey
 public typealias FortfaceResultType = CertifaceFortface.FortfaceResultType
 public typealias FortfaceResultCustomization = CertifaceFortface.FortfaceResultCustomization
 public typealias FortfaceResultCustomizationBuilder = CertifaceFortface.FortfaceResultCustomizationBuilder
 public protocol FortfaceCustomResultView : CertifaceFortface.FortfaceCustomResultView {
   override func display(for resultType: CertifaceSDK.FortfaceResultType)
-  override func changeLoadingVisibility(to visibility: CertifaceSDK.Visibility)
 }
 @_hasMissingDesignatedInitializers final public class CameraPermissionCustomizationBuilder {
   #if compiler(>=5.3) && $NonescapableTypes
