@@ -2,7 +2,7 @@
 
 import PackageDescription
 
-let version = "3.0.1"
+let version = "3.0.2"
 
 let package = Package(
     name: "CertifaceSDK",

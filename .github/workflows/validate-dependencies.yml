@@ -101,4 +101,5 @@ jobs:
           pod lib lint "${{ matrix.podspec }}" \
             --allow-warnings \
             --platforms=ios \
+            --include-podspecs='CertifaceModules.podspec' \
             --sources='https://github.com/oititec/ios-artifactory.git,https://cdn.cocoapods.org'

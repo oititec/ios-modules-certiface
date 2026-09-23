@@ -22,6 +22,12 @@ final class ContentView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    lazy var providerControl: UISegmentedControl = {
+        let control = UISegmentedControl(items: ["IPROOV", "SAAS"])
+        control.selectedSegmentIndex = 0
+        control.translatesAutoresizingMaskIntoConstraints = false
+        return control
+    }()
     lazy var defaultButton: UIButton = createButton(withTitle: "Padrão")
     lazy var customAppearanceButton: UIButton = createButton(withTitle: "Aparência customizada")
     lazy var customViewsButton: UIButton = createButton(withTitle: "Views customizadas")
@@ -30,6 +36,7 @@ final class ContentView: UIView {
         super.init(frame: frame)
 
         addSubview(titleLabel)
+        addSubview(providerControl)
         addSubview(providerLabel)
         addSubview(defaultButton)
         addSubview(customAppearanceButton)
@@ -49,9 +56,13 @@ final class ContentView: UIView {
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
 
+            providerControl.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            providerControl.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+            providerControl.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
+
             providerLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             providerLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-            providerLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
+            providerLabel.topAnchor.constraint(equalTo: providerControl.bottomAnchor, constant: 16),
 
             defaultButton.leadingAnchor.constraint(equalTo: providerLabel.leadingAnchor),
             defaultButton.trailingAnchor.constraint(equalTo: providerLabel.trailingAnchor),

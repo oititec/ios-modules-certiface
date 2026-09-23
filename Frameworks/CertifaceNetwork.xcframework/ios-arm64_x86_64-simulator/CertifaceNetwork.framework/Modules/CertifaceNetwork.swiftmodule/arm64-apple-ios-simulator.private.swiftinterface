@@ -77,6 +77,7 @@ extension CertifaceNetwork.FCManager : CertifaceNetwork.FCManagerProtocol {
   public func verifyLiveness3D(consumerKey: Swift.String, userAgent: Swift.String, appkey: Swift.String, faceScan: Swift.String, image auditTrailImage: Swift.String, lowQualityImage lowQualityAuditTrailImage: Swift.String, sessionId: Swift.String, baseUrl fcvarUrlbase: Swift.String, completion: @escaping CertifaceNetwork.FCManager3DLivenessResultCallback)
   public func postSDKStatus(of payload: Foundation.Data, with baseUrl: Swift.String, consumerKey: Swift.String)
   public func postPayload(_ payload: Foundation.Data, endpoint: Swift.String, baseUrl: Swift.String, consumerKey: Swift.String, completion: @escaping CertifaceNetwork.FCManagerPayloadCallback)
+  public func getTotp(consumerKey: Swift.String, appKey: Swift.String, baseUrl: Swift.String, completion: @escaping CertifaceNetwork.FCManagerTotpResultCallback)
   #if compiler(>=5.3) && $NonescapableTypes
   public func deviceIntelligenceToken(consumerKey: Swift.String, from baseUrl: Swift.String, withAppKey appKey: Swift.String, completion: @escaping (Swift.Result<Swift.String, any Swift.Error>, Swift.Int) -> Swift.Void)
   #endif
@@ -101,6 +102,7 @@ public typealias FCManager3DLivenessResultCallback = (_ value: CertifaceNetwork.
 public typealias FCManagerPayloadCallback = (_ value: Swift.String?, _ errorDetail: CertifaceNetwork.ErrorDetail?) -> Swift.Void
 public typealias FCManagerResultCallback = (_ value: Swift.String?, _ error: (any Swift.Error)?) -> Swift.Void
 public typealias FCManagerAppKeyCallback = (_ appKey: Swift.String?) -> Swift.Void
+public typealias FCManagerTotpResultCallback = (_ value: CertifaceNetwork.FCTotpModel?, _ errorDetail: CertifaceNetwork.ErrorDetail?) -> Swift.Void
 public protocol FCManagerProtocol {
   func verifyCertifaceOnline(consumerKey: Swift.String, baseUrl fcvarUrlbase: Swift.String, completion: @escaping CertifaceNetwork.FCManagerSuccessCallback)
   func verifyAppKey(consumerKey: Swift.String, appKey: Swift.String, baseUrl fcvarUrlbase: Swift.String, completion: @escaping CertifaceNetwork.FCManagerSuccessCallback)
@@ -112,6 +114,7 @@ public protocol FCManagerProtocol {
   func verifyLiveness3D(consumerKey: Swift.String, userAgent: Swift.String, appkey: Swift.String, faceScan: Swift.String, image auditTrailImage: Swift.String, lowQualityImage lowQualityAuditTrailImage: Swift.String, sessionId: Swift.String, baseUrl fcvarUrlbase: Swift.String, completion: @escaping CertifaceNetwork.FCManager3DLivenessResultCallback)
   func postSDKStatus(of payload: Foundation.Data, with baseUrl: Swift.String, consumerKey: Swift.String)
   func postPayload(_ payload: Foundation.Data, endpoint: Swift.String, baseUrl: Swift.String, consumerKey: Swift.String, completion: @escaping CertifaceNetwork.FCManagerPayloadCallback)
+  func getTotp(consumerKey: Swift.String, appKey: Swift.String, baseUrl: Swift.String, completion: @escaping CertifaceNetwork.FCManagerTotpResultCallback)
   #if compiler(>=5.3) && $NonescapableTypes
   func deviceIntelligenceToken(consumerKey: Swift.String, from baseUrl: Swift.String, withAppKey appKey: Swift.String, completion: @escaping (Swift.Result<Swift.String, any Swift.Error>, Swift.Int) -> Swift.Void)
   #endif
@@ -149,6 +152,13 @@ public struct FCSession3DModel : Swift.Decodable {
 }
 public struct FCInitializationModel : Swift.Decodable {
   public var productionKey: Swift.String?
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct FCTotpModel : Swift.Decodable {
+  public let name: Swift.String
+  public let fieldName: Swift.String
+  public let fieldValue: Swift.String
+  public init(name: Swift.String, fieldName: Swift.String, fieldValue: Swift.String)
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct FCTypeFaceModel : Swift.Decodable {
