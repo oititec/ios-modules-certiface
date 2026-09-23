@@ -1,0 +1,104 @@
+name: Validate xcframework dependencies
+
+on:
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: validate-dependencies-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+env:
+  # "latest-stable" evita que o pipeline fique preso a uma versao de Xcode
+  # que pode deixar de existir no runner. Fixe uma versao especifica (ex.: "16.2")
+  # se o time precisar de reprodutibilidade estrita.
+  XCODE_VERSION: "latest-stable"
+
+jobs:
+  # Checagem rapida e estrutural: todo .xcframework vendorizado num .podspec
+  # precisa ter um binaryTarget equivalente no Package.swift (e vice-versa).
+  # E o que teria pego, por exemplo, a falta do CertifaceFortface/CFFortface
+  # como dependencia do Package.swift.
+  consistency-check:
+    name: Podspec ↔ Package.swift consistency
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode ${{ env.XCODE_VERSION }}
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: ${{ env.XCODE_VERSION }}
+
+      - name: Run consistency check
+        run: ruby Scripts/ci/check_dependency_consistency.rb
+
+  # Valida que o Package.swift resolve e que cada produto da lib compila
+  # tanto para dispositivo (ios-arm64) quanto para simulador
+  # (ios-arm64_x86_64-simulator), os mesmos slices publicados nos xcframeworks.
+  spm-build:
+    name: Swift Package Manager install
+    needs: consistency-check
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        product: [CertifaceSDK, CertifaceDocSDK]
+        destination:
+          - "generic/platform=iOS"
+          - "generic/platform=iOS Simulator"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode ${{ env.XCODE_VERSION }}
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: ${{ env.XCODE_VERSION }}
+
+      - name: Resolve Swift Package dependencies
+        run: swift package resolve
+
+      - name: Validate Package.swift structure
+        run: swift package dump-package > /dev/null
+
+      - name: Build ${{ matrix.product }} for ${{ matrix.destination }}
+        run: |
+          xcodebuild build \
+            -scheme "${{ matrix.product }}" \
+            -destination "${{ matrix.destination }}" \
+            -derivedDataPath .build/derivedData \
+            CODE_SIGNING_ALLOWED=NO
+
+  # Valida que cada .podspec instala corretamente via CocoaPods, incluindo a
+  # resolucao de todas as dependencias externas (CFFortfaceSDK, OILiveness3D_FT,
+  # iProov, etc) a partir dos spec repos usados pelo projeto.
+  cocoapods-lint:
+    name: CocoaPods lint (${{ matrix.podspec }})
+    needs: consistency-check
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        podspec:
+          - CertifaceModules.podspec
+          - CertifaceDocSDK.podspec
+          - CertifaceSDK.podspec
+          - CertifaceSDK-Debug.podspec
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode ${{ env.XCODE_VERSION }}
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: ${{ env.XCODE_VERSION }}
+
+      - name: Lint ${{ matrix.podspec }}
+        run: |
+          pod lib lint "${{ matrix.podspec }}" \
+            --allow-warnings \
+            --platforms=ios \
+            --sources='https://github.com/oititec/ios-artifactory.git,https://cdn.cocoapods.org'
