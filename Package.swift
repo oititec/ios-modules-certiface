@@ -2,7 +2,7 @@
 
 import PackageDescription
 
-let version = "3.0.0"
+let version = "3.0.1"
 
 let package = Package(
     name: "CertifaceSDK",
@@ -27,6 +27,10 @@ let package = Package(
         .package(
             url: "https://github.com/oititec/ios-liveness3d-ft.git",
             exact: "9.7.130"
+        ),
+        .package(
+            url: "https://github.com/oititec/ios-certiface-fortface.git",
+            exact: "1.9.0"
         )
     ],
     targets: [
@@ -42,6 +46,7 @@ let package = Package(
 
                 .product(name: "iProov", package: "ios"),
                 .product(name: "FaceTecSDK", package: "ios-liveness3d-ft"),
+                .product(name: "Fortface", package: "ios-certiface-fortface"),
 
                 .target(name: "CertifaceComponents"),
                 .target(name: "CertifaceUtils"),
@@ -84,6 +89,11 @@ let package = Package(
         .binaryTarget(
             name: "CertifaceFacetec",
             path: "Frameworks/CertifaceFacetec.xcframework"
+        ),
+
+        .binaryTarget(
+            name: "CertifaceFortface",
+            path: "Frameworks/CertifaceFortface.xcframework"
         ),
 
         // MARK: - Shared Modules
