@@ -1,18 +1,21 @@
 PODS:
-  - CertifaceModules (1.7.0)
-  - CertifaceSDK (1.7.0):
-    - CertifaceModules (= 1.7.0)
+  - CertifaceModules (2.0.2)
+  - CertifaceSDK (3.0.2):
+    - CertifaceModules (= 2.0.2)
+    - CFFortfaceSDK (= 1.9.0)
     - iProov (= 12.5.0)
-    - OILiveness3D_FT (= 9.7.121)
+    - OILiveness3D_FT (= 9.7.130)
+  - CFFortfaceSDK (1.9.0)
   - iProov (12.5.0)
-  - OILiveness3D_FT (9.7.121)
+  - OILiveness3D_FT (9.7.130)
 
 DEPENDENCIES:
   - CertifaceModules (from `../`)
   - CertifaceSDK (from `../`)
 
 SPEC REPOS:
-  https://github.com/oititec/ios-artifactory:
+  https://github.com/oititec/ios-artifactory.git:
+    - CFFortfaceSDK
     - OILiveness3D_FT
   trunk:
     - iProov
@@ -24,10 +27,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CertifaceModules: 6a9b5e8c2955ce48616e74f220c22dd98d74019a
-  CertifaceSDK: 1fa773b755d4e22a578f7c656af9c08c571daf12
+  CertifaceModules: f86733638445705575b49c7b60e857aa4917a676
+  CertifaceSDK: 7c7fc8d37c84d240c5c34f6448f1621545a2edc8
+  CFFortfaceSDK: eadd8a4a9c664c1d4e01a70dcea18dc0996263bf
   iProov: 17b75b5b2ceb6615cf6f7e835f30a773f28b1644
-  OILiveness3D_FT: 6ceb05be7e1574d8918d6f633e5e3e14ab889c89
+  OILiveness3D_FT: 9d2ed98ef288de2a8f08a32e52638c3f19d2f64a
 
 PODFILE CHECKSUM: c3166dbefdd14d1988f75dd03b5322af387ee56e
 

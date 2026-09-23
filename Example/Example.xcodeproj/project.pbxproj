@@ -10,6 +10,7 @@
 		13BDC6D8233AC7373A3335E6 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB7E537A26268B249A0DCD7 /* Pods_Example.framework */; };
 		50D3BE272EA295CA0079AE8F /* FacetecCustomizationExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D3BE262EA295CA0079AE8F /* FacetecCustomizationExample.swift */; };
 		50D3BE292EA2BB060079AE8F /* IProovCustomizationExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D3BE282EA2BB060079AE8F /* IProovCustomizationExample.swift */; };
+		D6564A1774A84C2781F5E926 /* SaasCustomizationExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEF8165A52D449E99078D62 /* SaasCustomizationExample.swift */; };
 		50DE834F2E14199000A1EB8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE834E2E14199000A1EB8E /* AppDelegate.swift */; };
 		50DE83582E14199100A1EB8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DE83572E14199100A1EB8E /* Assets.xcassets */; };
 		50DE835B2E14199100A1EB8E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 50DE835A2E14199100A1EB8E /* Base */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		50D3BE262EA295CA0079AE8F /* FacetecCustomizationExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacetecCustomizationExample.swift; sourceTree = "<group>"; };
 		50D3BE282EA2BB060079AE8F /* IProovCustomizationExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IProovCustomizationExample.swift; sourceTree = "<group>"; };
+		BDEF8165A52D449E99078D62 /* SaasCustomizationExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaasCustomizationExample.swift; sourceTree = "<group>"; };
 		50DE834B2E14199000A1EB8E /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DE834E2E14199000A1EB8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50DE83572E14199100A1EB8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			children = (
 				50D3BE262EA295CA0079AE8F /* FacetecCustomizationExample.swift */,
 				50D3BE282EA2BB060079AE8F /* IProovCustomizationExample.swift */,
+				BDEF8165A52D449E99078D62 /* SaasCustomizationExample.swift */,
 			);
 			path = Customization;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				50DE83782E1567DE00A1EB8E /* CustomIProovLoadingView.swift in Sources */,
 				50D3BE292EA2BB060079AE8F /* IProovCustomizationExample.swift in Sources */,
 				50D3BE272EA295CA0079AE8F /* FacetecCustomizationExample.swift in Sources */,
+				D6564A1774A84C2781F5E926 /* SaasCustomizationExample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,11 +10,12 @@ final class ContentViewController: UIViewController {
     typealias ProviderBuilderClosure = (LivenessManagerOptions.Builder) -> LivenessManagerOptions
 
     private let customView = ContentView()
-    private let provider: LivenessProvider = .iproov
+    private var provider: LivenessProvider = .iproov
     private let appKey = "APP_KEY"
+    private let token = "TOKEN"
     private let environment: Environment = .hml
     private let showInstructionsScreen = true
-
+    
     override func loadView() {
         view = customView
     }
@@ -28,9 +29,16 @@ final class ContentViewController: UIViewController {
 
     private func configureElements() {
         customView.providerLabel.text = provider.rawValue.uppercased()
+        customView.providerControl.addTarget(self, action: #selector(providerChanged(_:)), for: .valueChanged)
         customView.defaultButton.addTarget(self, action: #selector(defaultJourney), for: .touchUpInside)
         customView.customAppearanceButton.addTarget(self, action: #selector(customAppearanceJourney), for: .touchUpInside)
         customView.customViewsButton.addTarget(self, action: #selector(customViewsJourney), for: .touchUpInside)
+    }
+
+    @objc
+    private func providerChanged(_ sender: UISegmentedControl) {
+        provider = sender.selectedSegmentIndex == 0 ? .iproov : .saas
+        customView.providerLabel.text = provider.rawValue.uppercased()
     }
 
     @objc
@@ -38,8 +46,8 @@ final class ContentViewController: UIViewController {
         switch provider {
         case .iproov:
             createJourney(with: IProovCustomizationExample.setDefaultAppearance(in:))
-        case .facetec:
-            createJourney(with: FacetecCustomizationExample.setDefaultAppearance(in:))
+        case .saas:
+            createJourney(with: SaasCustomizationExample.setDefaultAppearance(in:))
         @unknown default:
             fatalError("Provider not implemented")
         }
@@ -50,8 +58,8 @@ final class ContentViewController: UIViewController {
         switch provider {
         case .iproov:
             createJourney(with: IProovCustomizationExample.setCustomAppearance(in:))
-        case .facetec:
-            createJourney(with: FacetecCustomizationExample.setCustomAppearance(in:))
+        case .saas:
+            createJourney(with: SaasCustomizationExample.setCustomAppearance(in:))
         @unknown default:
             fatalError("Provider not implemented")
         }
@@ -62,17 +70,21 @@ final class ContentViewController: UIViewController {
         switch provider {
         case .iproov:
             createJourney(with: IProovCustomizationExample.setCustomViews(in:))
-        case .facetec:
-            createJourney(with: FacetecCustomizationExample.setCustomViews(in:))
+        case .saas:
+            createJourney(with: SaasCustomizationExample.setCustomViews(in:))
         @unknown default:
             fatalError("Provider not implemented")
         }
     }
 
     private func createJourney(with providerBuilder: @escaping ProviderBuilderClosure) {
-        let builder = LivenessManagerOptions
-            .builder(appKey: appKey, environment: environment)
-            .setShowInstructionsScreen(showInstructionsScreen)
+        let builder: LivenessManagerOptions.Builder
+        if provider == .iproov {
+            builder = LivenessManagerOptions.builder(appKey: appKey, environment: environment)
+        } else {
+            builder = LivenessManagerOptions.builder(token: token, environment: environment)
+        }
+        _ = builder.setShowInstructionsScreen(showInstructionsScreen)
         let options = providerBuilder(builder)
 
         let manager = CertifaceSDKFactory.createLivenessManager(for: provider)
