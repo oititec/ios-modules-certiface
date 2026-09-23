@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name            = 'CertifaceDocSDK'
-  s.version         = '1.6.0'
+  s.version         = '1.6.1'
   s.summary         = 'Framework CertifaceDocSDK para iOS.'
   s.homepage        = 'https://www.oititec.com.br/'
   s.license         = { :type => 'Copyright', :text => 'Copyright © 2025 Oiti. All rights reserved.' }
@@ -15,5 +15,5 @@ Pod::Spec.new do |s|
     'Frameworks/CertifaceDocSDK.xcframework'
   ]
 
-  s.dependency 'CertifaceModules', '2.0.1'
+  s.dependency 'CertifaceModules', '2.0.2'
 end

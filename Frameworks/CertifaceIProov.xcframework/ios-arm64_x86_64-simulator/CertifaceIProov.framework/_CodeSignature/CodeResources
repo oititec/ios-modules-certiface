@@ -14,11 +14,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Otgvk2fk4uUDGrgnNP6qutIaptk=
+		rLijooM5dwwmNAnlFD+9/5LZu7k=
 		</data>
 		<key>Modules/CertifaceIProov.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		oKrrfj658Wyui/skJnjU56iZiiA=
+		iNM7tBR/ZQqA6RgRulYvaeEGaA0=
 		</data>
 		<key>Modules/CertifaceIProov.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/CertifaceIProov.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		EEcJlMtVS6oe+jpr/Yy94kk04Cw=
+		jo+ClTMThntzMC9QaYb/s/R6cL0=
 		</data>
 		<key>Modules/CertifaceIProov.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		oKrrfj658Wyui/skJnjU56iZiiA=
+		iNM7tBR/ZQqA6RgRulYvaeEGaA0=
 		</data>
 		<key>Modules/CertifaceIProov.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/CertifaceIProov.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		zY3woOaNtindVIlJICVgXcV/NNs=
+		hs4RCpsmqoAbHE1mEf6ONZxjAWI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -81,7 +81,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xSC0LI3fzeKABHyNbcgX7yAAwdbkC0d04040Ocx0pPo=
+			JxRF5m3kyvPaymFypjcZ7wVbRSFBeItTaHQ2jUtKWiM=
 			</data>
 		</dict>
 		<key>Modules/CertifaceIProov.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -109,14 +109,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LCM1LTKVCXAVyBJukHwSqD5TUD9zzqi3fNEZSm72Rk8=
+			l1JYgbv4WMemH4Jimqitxbpl2KP0QaDJis9UTZ+DsVs=
 			</data>
 		</dict>
 		<key>Modules/CertifaceIProov.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xSC0LI3fzeKABHyNbcgX7yAAwdbkC0d04040Ocx0pPo=
+			JxRF5m3kyvPaymFypjcZ7wVbRSFBeItTaHQ2jUtKWiM=
 			</data>
 		</dict>
 		<key>Modules/CertifaceIProov.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -144,7 +144,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Yqw0IKU5alhOIDpinDaf/7yJhXaJNcHnJid7Vqje+Ao=
+			/d0usrgoCo8NTC2IOtlfJyKUajeko/7XzfEJrk5985o=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

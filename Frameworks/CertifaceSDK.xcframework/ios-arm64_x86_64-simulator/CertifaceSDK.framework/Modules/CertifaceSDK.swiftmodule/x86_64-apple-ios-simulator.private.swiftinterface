@@ -295,6 +295,7 @@ public enum LivenessError : Swift.Int, Swift.Error {
   case transactionNotCompleted
   case invalidCustomization
   case invalidProvider
+  case invalidToken
   case genericException
   public var code: Swift.Int {
     get

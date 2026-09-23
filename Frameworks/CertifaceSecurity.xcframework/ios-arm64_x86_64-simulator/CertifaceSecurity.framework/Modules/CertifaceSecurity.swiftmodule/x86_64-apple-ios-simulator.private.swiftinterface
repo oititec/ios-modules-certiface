@@ -17,6 +17,13 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+final public class AppKeyBox {
+  final public var value: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(value: Swift.String? = nil)
+  #endif
+  @objc deinit
+}
 public struct CryptoManager {
   #if compiler(>=5.3) && $NonescapableTypes
   public static func encrypt(_ value: Foundation.NSData, withKey secretKey: Swift.String) -> Swift.String?
@@ -37,6 +44,9 @@ public protocol DebugLoggerProtocol {
   #if compiler(>=5.3) && $NonescapableTypes
   func logData(forStep step: Swift.String, totp: Swift.String?, errorDetail: CertifaceNetwork.ErrorDetail, provider: Swift.String)
   #endif
+}
+public enum DeviceIntelligenceBaseUrl {
+  public static func from(_ environment: CertifaceNetwork.Environment) -> Swift.String
 }
 @_hasMissingDesignatedInitializers final public class ExceptionHandler {
   public static let shared: CertifaceSecurity.ExceptionHandler
@@ -60,6 +70,72 @@ public struct ExceptionPayload : Swift.Error {
   public static var exceptionCallback: ((CertifaceSecurity.ExceptionPayload) -> Swift.Void)?
   public static func start()
   @objc deinit
+}
+final public class LoggingFCManager : CertifaceNetwork.FCManagerProtocol {
+  public init(wrapped: any CertifaceNetwork.FCManagerProtocol, environment: CertifaceNetwork.Environment, provider: Swift.String, totpProvider: CertifaceSecurity.TotpProvider = .shared, loggerFactory: @escaping (Swift.String, CertifaceNetwork.Environment) -> any CertifaceSecurity.DebugLoggerProtocol = {
+            FaceCaptchaDebugLogger(appKey: $0, environment: $1)
+        })
+  final public func verifyCertifaceOnline(consumerKey: Swift.String, baseUrl fcvarUrlbase: Swift.String, completion: @escaping CertifaceNetwork.FCManagerSuccessCallback)
+  final public func verifyAppKey(consumerKey: Swift.String, appKey: Swift.String, baseUrl fcvarUrlbase: Swift.String, completion: @escaping CertifaceNetwork.FCManagerSuccessCallback)
+  final public func fetchAllCaptchaCallenge(consumerKey: Swift.String, model: CertifaceNetwork.FCBaseModel, appkey: Swift.String, completion: @escaping CertifaceNetwork.FCManagerChallengeResultCallback)
+  final public func validateCaptchaChallenge(consumerKey: Swift.String, model: CertifaceNetwork.FCCaptchaModel, completion: @escaping CertifaceNetwork.FCManagerValidResultCallback)
+  final public func sendDocument(consumerKey: Swift.String, images: [Swift.String], appKey: Swift.String, baseUrl: Swift.String, completion: @escaping CertifaceNetwork.FCManagerSuccessCallback)
+  final public func initializeSDKLiveness(consumerKey: Swift.String, appKey: Swift.String, baseUrl fcvarUrlbase: Swift.String, completion: @escaping CertifaceNetwork.FCManagerInitializerResultCallback)
+  final public func create3DSession(consumerKey: Swift.String, appKey: Swift.String, userAgent: Swift.String, baseUrl fcvarUrlbase: Swift.String, completion: @escaping CertifaceNetwork.FCManagerSession3DResultCallback)
+  final public func verifyLiveness3D(consumerKey: Swift.String, userAgent: Swift.String, appkey: Swift.String, faceScan: Swift.String, image auditTrailImage: Swift.String, lowQualityImage lowQualityAuditTrailImage: Swift.String, sessionId: Swift.String, baseUrl fcvarUrlbase: Swift.String, completion: @escaping CertifaceNetwork.FCManager3DLivenessResultCallback)
+  final public func postSDKStatus(of payload: Foundation.Data, with baseUrl: Swift.String, consumerKey: Swift.String)
+  final public func postPayload(_ payload: Foundation.Data, endpoint: Swift.String, baseUrl: Swift.String, consumerKey: Swift.String, completion: @escaping CertifaceNetwork.FCManagerPayloadCallback)
+  final public func getTotp(consumerKey: Swift.String, appKey: Swift.String, baseUrl: Swift.String, completion: @escaping CertifaceNetwork.FCManagerTotpResultCallback)
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func deviceIntelligenceToken(consumerKey: Swift.String, from baseUrl: Swift.String, withAppKey appKey: Swift.String, completion: @escaping (Swift.Result<Swift.String, any Swift.Error>, Swift.Int) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func deviceIntelligenceEventData(consumerKey: Swift.String, from baseUrl: Swift.String, withToken deviceToken: Swift.String, save eventsData: Foundation.Data, completion: @escaping (Swift.Result<Swift.String, any Swift.Error>, Swift.Int) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func deviceIntelligenceClose(consumerKey: Swift.String, from baseUrl: Swift.String, withToken deviceToken: Swift.String, completion: @escaping (Swift.Result<Swift.String, any Swift.Error>, Swift.Int) -> Swift.Void)
+  #endif
+  final public func credential(consumerKey: Swift.String, user: Swift.String, passcode: Swift.String, completion: @escaping CertifaceNetwork.FCManagerResultCallback)
+  final public func generateAppkey(consumerKey: Swift.String, user: Swift.String, token: Swift.String, cpf: Swift.String, name: Swift.String, birthdate: Swift.String, completion: @escaping CertifaceNetwork.FCManagerResultCallback)
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func generateAppkey(consumerKey: Swift.String, user userProvided: Swift.String?, passcode passcodeProvided: Swift.String?, cpf: Swift.String, name: Swift.String, birthdate: Swift.String, completion: @escaping CertifaceNetwork.FCManagerAppKeyCallback)
+  #endif
+  @objc deinit
+}
+final public class LoggingSaasManager : CertifaceNetwork.SaasManagerProtocol {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(wrapped: any CertifaceNetwork.SaasManagerProtocol, environment: CertifaceNetwork.Environment, provider: Swift.String, appKeyProvider: @escaping () -> Swift.String?, totpProvider: CertifaceSecurity.TotpProvider = .shared, loggerFactory: @escaping (Swift.String, CertifaceNetwork.Environment) -> any CertifaceSecurity.DebugLoggerProtocol = {
+            FaceCaptchaDebugLogger(appKey: $0, environment: $1)
+        })
+  #endif
+  final public func getTokenStatus(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasTokenStatusModel
+  final public func resolveLivenessProvider(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasResolveModel
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func initializeLiveness<Payload>(tokenUuid: Swift.String, payload: Payload?, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasInitializeModel where Payload : Swift.Encodable
+  #endif
+  final public func verifyLiveness<Payload>(tokenUuid: Swift.String, payload: Payload, geolocation: CertifaceNetwork.SaasGeolocation, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasVerifyModel where Payload : Swift.Encodable
+  final public func getTokenResult(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasTokenResultModel
+  @objc deinit
+}
+public enum NetworkStep : Swift.String {
+  case getSessionToken
+  case checkAuth
+  case initializeSDKLiveness
+  case facetecLiveness
+  case iproovLiveness
+  case saasGetTokenStatus
+  case saasGetTokenResult
+  case saasLivenessResolve
+  case saasLivenessInitialize
+  case saasLivenessVerify
+  case unknown
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
 }
 public enum PersistenceOption : Swift.String {
   case index
@@ -129,6 +205,24 @@ public struct SecurityPayload {
 }
 public struct SecurityEvent {
 }
+public actor TotpProvider {
+  public static let shared: CertifaceSecurity.TotpProvider
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(networkManager: any CertifaceNetwork.FCManagerProtocol = FCManager.shared, consumerKey: Swift.String? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func totp(forAppKey appKey: Swift.String, environment: CertifaceNetwork.Environment) async -> Swift.String?
+  #endif
+  public func invalidate(appKey: Swift.String)
+  @objc deinit
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+  @_semantics("defaultActor") nonisolated final public var unownedExecutor: _Concurrency.UnownedSerialExecutor {
+    get
+  }
+}
+extension CertifaceSecurity.NetworkStep : Swift.Equatable {}
+extension CertifaceSecurity.NetworkStep : Swift.Hashable {}
+extension CertifaceSecurity.NetworkStep : Swift.RawRepresentable {}
 extension CertifaceSecurity.PersistenceOption : Swift.Equatable {}
 extension CertifaceSecurity.PersistenceOption : Swift.Hashable {}
 extension CertifaceSecurity.PersistenceOption : Swift.RawRepresentable {}
