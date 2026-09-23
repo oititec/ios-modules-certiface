@@ -1,14 +1,14 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-# Verifica se os xcframeworks declarados nos .podspec (CocoaPods) e no
-# Package.swift (Swift Package Manager) estao consistentes entre si.
+# Checks whether the xcframeworks declared in the .podspec files (CocoaPods)
+# and in Package.swift (Swift Package Manager) are consistent with each other.
 #
-# Exemplo do problema que este script detecta: um .xcframework existe em
-# Frameworks/ e e vendorizado por um .podspec (ex.: CertifaceFortface.xcframework
-# usado pelo CertifaceSDK.podspec via CFFortfaceSDK), mas nao existe um
-# binaryTarget correspondente no Package.swift -> consumidores via SPM
-# ficam sem esse framework e o build quebra.
+# Example of the problem this script detects: an .xcframework exists in
+# Frameworks/ and is vendored by a .podspec (e.g.: CertifaceFortface.xcframework
+# used by CertifaceSDK.podspec via CFFortfaceSDK), but there is no
+# corresponding binaryTarget in Package.swift -> consumers via SPM
+# end up without that framework and the build breaks.
 
 require 'json'
 require 'open3'
@@ -20,7 +20,7 @@ Dir.chdir(ROOT)
 def run!(cmd)
   stdout, stderr, status = Open3.capture3(*cmd)
   unless status.success?
-    warn "Comando falhou: #{cmd.join(' ')}"
+    warn "Command failed: #{cmd.join(' ')}"
     warn stderr
     exit 1
   end
@@ -30,11 +30,11 @@ end
 errors = []
 warnings = []
 
-# 1. Carrega todos os .podspec da raiz do repositorio ----------------------
+# 1. Load all .podspec files from the repository root -----------------------
 
 podspec_files = Dir.glob('*.podspec').sort
 if podspec_files.empty?
-  warn 'Nenhum .podspec encontrado na raiz do repositorio.'
+  warn 'No .podspec found in the repository root.'
   exit 1
 end
 
@@ -48,16 +48,16 @@ podspec_files.each do |file|
   end
 end
 
-# 2. Carrega o Package.swift -------------------------------------------------
+# 2. Load Package.swift -------------------------------------------------
 
 unless File.exist?('Package.swift')
-  warn 'Package.swift nao encontrado na raiz do repositorio.'
+  warn 'Package.swift not found in the repository root.'
   exit 1
 end
 
 package_json = JSON.parse(run!(%w[swift package dump-package]))
 
-# 'Frameworks/X.xcframework' => 'NomeDoTarget'
+# 'Frameworks/X.xcframework' => 'TargetName'
 binary_targets = {}
 target_dependencies = Hash.new { |h, k| h[k] = [] }
 
@@ -73,51 +73,50 @@ package_json.fetch('targets', []).each do |target|
 
   path = target['path']
   if path.nil? || !File.exist?(path)
-    errors << "Package.swift: o binaryTarget '#{name}' aponta para '#{path}', que nao existe em disco."
+    errors << "Package.swift: binaryTarget '#{name}' points to '#{path}', which does not exist on disk."
     next
   end
 
   binary_targets[path] = name
 end
 
-# 3. xcframeworks presentes em disco -----------------------------------------
+# 3. xcframeworks present on disk --------------------------------------------
 
 disk_frameworks = Dir.glob('Frameworks/*.xcframework').sort
 
-# 4. Checagem cruzada: disco x podspecs x Package.swift ----------------------
+# 4. Cross-check: disk x podspecs x Package.swift ----------------------------
 
 disk_frameworks.each do |fw|
   pods = podspec_by_framework[fw]
   spm_target = binary_targets[fw]
 
   if pods.empty? && spm_target.nil?
-    warnings << "'#{fw}' existe em Frameworks/, mas nao e referenciado por nenhum .podspec " \
-                'nem pelo Package.swift. Framework orfao?'
+    warnings << "'#{fw}' exists in Frameworks/, but is not referenced by any .podspec " \
+                'nor by Package.swift. Orphan framework?'
     next
   end
 
   if !pods.empty? && spm_target.nil?
-    errors << "'#{fw}' e vendorizado via CocoaPods em #{pods.join(', ')}, mas NAO existe um " \
-              'binaryTarget correspondente no Package.swift. Consumidores via Swift Package ' \
-              'Manager nao terao acesso a este framework (este e o tipo de problema que ' \
-              'aconteceu com o CertifaceFortface/CFFortface).'
+    errors << "'#{fw}' is vendored via CocoaPods in #{pods.join(', ')}, but there is NO " \
+              'corresponding binaryTarget in Package.swift. Consumers via Swift Package ' \
+              'Manager will not have access to this framework.'
   end
 
   if pods.empty? && !spm_target.nil?
-    warnings << "'#{fw}' tem um binaryTarget no Package.swift ('#{spm_target}'), mas nao e " \
-                'vendorizado por nenhum .podspec. Confirme se isso e intencional.'
+    warnings << "'#{fw}' has a binaryTarget in Package.swift ('#{spm_target}'), but is not " \
+                'vendored by any .podspec. Confirm whether this is intentional.'
   end
 end
 
-# Sentido inverso: todo vendored_framework declarado precisa existir em disco.
+# Reverse direction: every declared vendored_framework must exist on disk.
 podspec_by_framework.each do |fw, pods|
   next if File.exist?(fw)
 
-  errors << "#{pods.join(', ')} declara vendored_frameworks '#{fw}', mas o arquivo/pasta nao " \
-            'existe no repositorio.'
+  errors << "#{pods.join(', ')} declares vendored_frameworks '#{fw}', but the file/folder " \
+            'does not exist in the repository.'
 end
 
-# 5. binaryTargets declarados mas inalcancaveis a partir de algum product ----
+# 5. binaryTargets declared but unreachable from any product ----------------
 
 reachable = Set.new
 
@@ -135,27 +134,27 @@ end
 binary_targets.each do |path, name|
   next if reachable.include?(name)
 
-  warnings << "O binaryTarget '#{name}' (#{path}) esta declarado no Package.swift, mas nao e " \
-              'alcancado por nenhum product (library). Ele fica invisivel para quem consome via SPM.'
+  warnings << "binaryTarget '#{name}' (#{path}) is declared in Package.swift, but is not " \
+              'reached by any product (library). It stays invisible to consumers via SPM.'
 end
 
-# 6. Relatorio -----------------------------------------------------------------
+# 6. Report -----------------------------------------------------------------
 
-puts '== Verificacao de consistencia: Podspecs x Package.swift =='
+puts '== Consistency check: Podspecs x Package.swift =='
 puts
 
 if warnings.any?
-  puts "Avisos (#{warnings.size}):"
+  puts "Warnings (#{warnings.size}):"
   warnings.each { |w| puts "  - #{w}" }
   puts
 end
 
 if errors.any?
-  puts "Erros (#{errors.size}):"
+  puts "Errors (#{errors.size}):"
   errors.each { |e| puts "  - #{e}" }
   puts
-  puts 'FALHOU: corrija as inconsistencias acima antes de mergear na main.'
+  puts 'FAILED: fix the inconsistencies above before merging into main.'
   exit 1
 end
 
-puts 'OK: nenhuma inconsistencia critica encontrada entre os .podspec e o Package.swift.'
+puts 'OK: no critical inconsistency found between the .podspec files and Package.swift.'

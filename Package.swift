@@ -43,6 +43,7 @@ let package = Package(
                 .target(name: "CertifaceSDK"),
                 .target(name: "CertifaceIProov"),
                 .target(name: "CertifaceFacetec"),
+                .target(name: "CertifaceFortface"),
 
                 .product(name: "iProov", package: "ios"),
                 .product(name: "FaceTecSDK", package: "ios-liveness3d-ft"),
