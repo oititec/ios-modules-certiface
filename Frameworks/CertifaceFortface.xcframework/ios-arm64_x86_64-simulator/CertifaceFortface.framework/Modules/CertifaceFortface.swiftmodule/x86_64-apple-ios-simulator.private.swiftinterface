@@ -1,11 +1,10 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
-// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name CertifaceFortface
+// swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name CertifaceFortface
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
 @_spi(CertifaceInternal) import CertifaceComponents
 import CertifaceSecurity
 import DeveloperToolsSupport
-import Fortface
 import Foundation
 import Swift
 import SwiftUI
@@ -26,64 +25,6 @@ public protocol FortfaceCustomResultView : UIKit.UIView {
   var retryButton: UIKit.UIButton! { get }
   #endif
   func display(for resultType: CertifaceFortface.FortfaceResultType)
-}
-public struct FortfaceCustomization {
-  public static func builder() -> CertifaceFortface.FortfaceCustomizationBuilder
-}
-final public class FortfaceCustomizationBuilder {
-  public init()
-  @discardableResult
-  final public func setCancelButtonEnabled(_ enabled: Swift.Bool) -> Self
-  @discardableResult
-  final public func setCancelButtonIcon(_ image: UIKit.UIImage) -> Self
-  @discardableResult
-  final public func setCancelButtonIconColor(_ color: UIKit.UIColor) -> Self
-  @discardableResult
-  final public func setCancelButtonPosition(_ position: CertifaceFortface.FortfaceCancelButtonPosition) -> Self
-  @discardableResult
-  final public func setScreenMode(_ screenMode: CertifaceFortface.FortfaceScreenMode) -> Self
-  @discardableResult
-  final public func setScreenOrientation(_ screenOrientation: CertifaceFortface.FortfaceScreenOrientation) -> Self
-  @discardableResult
-  final public func setCameraTimeout(_ timeout: Swift.Double) -> Self
-  @discardableResult
-  final public func setCameraMaxStabilizationTime(_ time: Swift.Double) -> Self
-  @discardableResult
-  final public func setCameraMinStabilizationTime(_ time: Swift.Double) -> Self
-  @discardableResult
-  final public func setCameraFrameVisible(_ visible: Swift.Bool) -> Self
-  @discardableResult
-  final public func setCameraBackgroundColor(_ color: UIKit.UIColor) -> Self
-  @discardableResult
-  final public func setCameraNeutralColor(_ color: UIKit.UIColor) -> Self
-  @discardableResult
-  final public func setCameraAlertColor(_ color: UIKit.UIColor) -> Self
-  @discardableResult
-  final public func setCameraSuccessColor(_ color: UIKit.UIColor) -> Self
-  @discardableResult
-  final public func setCameraBrightnessColor(_ color: UIKit.UIColor) -> Self
-  @discardableResult
-  final public func setCameraBrightnessBackgroundColor(_ color: UIKit.UIColor) -> Self
-  @discardableResult
-  final public func setCameraLoadingStrokeColor(_ color: UIKit.UIColor) -> Self
-  @discardableResult
-  final public func setCameraLoadingBackgroundColor(_ color: UIKit.UIColor) -> Self
-  @discardableResult
-  final public func setCameraIcon(_ icon: UIKit.UIImage) -> Self
-  @discardableResult
-  final public func setCameraSmallIcon(_ icon: UIKit.UIImage) -> Self
-  @discardableResult
-  final public func setCameraMessageColor(_ color: UIKit.UIColor) -> Self
-  @discardableResult
-  final public func setCameraMessageFont(_ fontName: Swift.String) -> Self
-  @discardableResult
-  final public func setCameraMessages(_ messages: [CertifaceFortface.FortfaceTextKey : Swift.String]) -> Self
-  @discardableResult
-  final public func setCameraAccessibilityLabels(_ labels: [CertifaceFortface.FortfaceAccessibilityKey : Swift.String]) -> Self
-  @discardableResult
-  final public func setBrightnessMessageTimeout(_ timeout: Swift.Double) -> Self
-  final public func build() -> CertifaceFortface.FortfaceCustomization
-  @objc deinit
 }
 public enum FortfaceCancelButtonPosition {
   case left
@@ -174,6 +115,61 @@ public enum FortfaceError : Swift.Int, Swift.Error {
   public var rawValue: Swift.Int {
     get
   }
+}
+final public class FortfaceLivenessCustomizationBuilder {
+  public init()
+  @discardableResult
+  final public func setCancelButtonEnabled(_ enabled: Swift.Bool) -> Self
+  @discardableResult
+  final public func setCancelButtonIcon(_ image: UIKit.UIImage) -> Self
+  @discardableResult
+  final public func setCancelButtonIconColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCancelButtonPosition(_ position: CertifaceFortface.FortfaceCancelButtonPosition) -> Self
+  @discardableResult
+  final public func setScreenMode(_ screenMode: CertifaceFortface.FortfaceScreenMode) -> Self
+  @discardableResult
+  final public func setScreenOrientation(_ screenOrientation: CertifaceFortface.FortfaceScreenOrientation) -> Self
+  @discardableResult
+  final public func setCameraTimeout(_ timeout: Swift.Double) -> Self
+  @discardableResult
+  final public func setCameraMaxStabilizationTime(_ time: Swift.Double) -> Self
+  @discardableResult
+  final public func setCameraMinStabilizationTime(_ time: Swift.Double) -> Self
+  @discardableResult
+  final public func setCameraFrameVisible(_ visible: Swift.Bool) -> Self
+  @discardableResult
+  final public func setCameraBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCameraNeutralColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCameraAlertColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCameraSuccessColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCameraBrightnessColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCameraBrightnessBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCameraLoadingStrokeColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCameraLoadingBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCameraIcon(_ icon: UIKit.UIImage) -> Self
+  @discardableResult
+  final public func setCameraSmallIcon(_ icon: UIKit.UIImage) -> Self
+  @discardableResult
+  final public func setCameraMessageColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setCameraMessageFont(_ fontName: Swift.String) -> Self
+  @discardableResult
+  final public func setCameraMessages(_ messages: [CertifaceFortface.FortfaceTextKey : Swift.String]) -> Self
+  @discardableResult
+  final public func setCameraAccessibilityLabels(_ labels: [CertifaceFortface.FortfaceAccessibilityKey : Swift.String]) -> Self
+  @discardableResult
+  final public func setBrightnessMessageTimeout(_ timeout: Swift.Double) -> Self
+  final public func build() -> CertifaceFortface.FortfaceVendorCustomization
+  @objc deinit
 }
 public struct FortfaceResult {
   public let sessionId: Swift.String
@@ -278,10 +274,13 @@ extension CertifaceFortface.FortfaceStarterData {
     #if compiler(>=5.3) && $NonescapableTypes
     final public func setCallback(_ callback: (any CertifaceFortface.FortfaceCallback)?) -> Self
     #endif
-    final public func setCustomization(_ customization: CertifaceFortface.FortfaceCustomization) -> Self
+    final public func setCustomization(_ customization: CertifaceFortface.FortfaceVendorCustomization) -> Self
     final public func build() -> CertifaceFortface.FortfaceStarterData
     @objc deinit
   }
+}
+public struct FortfaceVendorCustomization {
+  public static func builder() -> CertifaceFortface.FortfaceLivenessCustomizationBuilder
 }
 extension CertifaceFortface.FortfaceCancelButtonPosition : Swift.Equatable {}
 extension CertifaceFortface.FortfaceCancelButtonPosition : Swift.Hashable {}

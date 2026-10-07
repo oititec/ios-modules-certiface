@@ -85,13 +85,6 @@ enum FacetecCustomizationExample {
                     .setCloseButtonBackgroundColor(.cyan)
                     .setCloseButtonBorderColor(.red)
             }
-            .setLoadingCustomization { loadingBuilder in
-                loadingBuilder
-                    .setBackgroundColor(.brown)
-                    .setSpinnerColor(.red)
-                    .setSpinnerWidth(10.7)
-                    .setSpinnerScaleFactor(5)
-            }
             .setLivenessDefaultTheme(customizeLivenessTheme)
             .setLivenessLowLightTheme(customizeLivenessTheme)
             .setLivenessTexts([
@@ -138,12 +131,20 @@ enum FacetecCustomizationExample {
             ])
             .build()
 
+        builder.setLoadingCustomization { loadingBuilder in
+            loadingBuilder
+                .setBackgroundColor(.brown)
+                .setSpinnerColor(.red)
+                .setSpinnerWidth(10.7)
+                .setSpinnerScaleFactor(5)
+        }
+
         return setCustomization(customization, in: builder)
     }
 
     static func setCustomViews(in builder: LivenessManagerOptions.Builder) -> LivenessManagerOptions {
         let customization = FacetecCustomization.builder()
-            .setCustomInstructionView(CustomInstructionView())
+            .setCustomInstructionView(CustomInstructionViewImpl())
             .setCustomCameraPermissionView(CustomCameraPermissionViewImpl())
             .build()
 
@@ -157,7 +158,7 @@ enum FacetecCustomizationExample {
         builder.setFacetecCustomization(customization).build()
     }
 
-    private static func customizeLivenessTheme(in themeBuilder: Liveness3DThemeBuilder) -> Liveness3DThemeBuilder {
+    private static func customizeLivenessTheme(in themeBuilder: FacetecThemeBuilder) -> FacetecThemeBuilder {
         // Ready
         themeBuilder
             .setReadyScreenHeaderColor(.green)
@@ -172,7 +173,7 @@ enum FacetecCustomizationExample {
             .setResultScreenMessageColor(.blue)
             .setResultScreenMessageFont(.systemFont(ofSize: 20, weight: .medium))
             .setResultScreenAnimationStyle(
-                .blob(appearance: BlobAnimationAppearance(
+                .blob(appearance: FacetecAnimationBlobAppearance(
                     blobColor: .blue,
                     checkmarkForegroundColor: .purple,
                     checkmarkBackgroundColor: .yellow

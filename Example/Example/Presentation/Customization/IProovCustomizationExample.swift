@@ -106,13 +106,6 @@ enum IProovCustomizationExample {
                     .setGPAOvalStrokeReadyColor(.blue)
                     .setTimeout(20)
             }
-            .setLoadingCustomization { loadingBuilder in
-                loadingBuilder
-                    .setBackgroundColor(.brown)
-                    .setSpinnerColor(.red)
-                    .setSpinnerWidth(10.7)
-                    .setSpinnerScaleFactor(5)
-            }
             .setResultCustomization { resulBuilder in
                 resulBuilder
                     .setSuccessBackgroundColor(.red)
@@ -135,16 +128,25 @@ enum IProovCustomizationExample {
             }
             .build()
 
+        builder.setLoadingCustomization { loadingBuilder in
+            loadingBuilder
+                .setBackgroundColor(.brown)
+                .setSpinnerColor(.red)
+                .setSpinnerWidth(10.7)
+                .setSpinnerScaleFactor(5)
+        }
+
         return setCustomization(customization, in: builder)
     }
 
     static func setCustomViews(in builder: LivenessManagerOptions.Builder) -> LivenessManagerOptions {
         let customization = IProovCustomization.builder()
-            .setCustomInstructionView(CustomInstructionView())
+            .setCustomInstructionView(CustomInstructionViewImpl())
             .setCustomCameraPermissionView(CustomCameraPermissionViewImpl())
-            .setCustomLoadingView(CustomIProovLoadingView())
             .setCustomResultView(CustomIProovResultView())
             .build()
+
+        builder.setCustomLoadingView(CustomLoadingViewImpl())
 
         return setCustomization(customization, in: builder)
     }

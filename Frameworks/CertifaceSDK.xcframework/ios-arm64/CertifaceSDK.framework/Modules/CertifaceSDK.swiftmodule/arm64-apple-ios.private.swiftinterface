@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
-// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name CertifaceSDK
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name CertifaceSDK
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
 import AVFoundation
 @_spi(CertifaceInternal) import CertifaceComponents
@@ -23,25 +23,33 @@ public typealias Visibility = CertifaceComponents.Visibility
 public protocol CustomCameraPermissionView : CertifaceComponents.CustomCameraPermissionView {
   override func showBottomSheet(visibility: CertifaceSDK.Visibility)
 }
-public typealias IProovCustomLoadingView = CertifaceIProov.IProovCustomLoadingView
 public typealias IProovResultLayoutType = CertifaceIProov.IProovResultLayoutType
+public typealias IProovResultCustomizationBuilder = CertifaceIProov.IProovResultCustomizationBuilder
+public typealias IProovLivenessCustomizationBuilder = CertifaceIProov.IProovLivenessCustomizationBuilder
+public typealias IProovFilterStyle = CertifaceIProov.IProovFilterStyle
 public protocol IProovCustomResultView : CertifaceIProov.IProovCustomResultView {
   #if compiler(>=5.3) && $NonescapableTypes
-  override func display(for resultType: CertifaceSDK.IProovResultLayoutType, retryReason: Swift.String?)
+  override func display(for resultType: CertifaceSDK.IProovResultLayoutType, userFeedback: [Swift.String]?)
   #endif
   override func changeLoadingVisibility(to visibility: CertifaceSDK.Visibility)
 }
-public typealias BlobAnimationAppearance = CertifaceFacetec.BlobAnimationAppearance
-public typealias Liveness3DShadow = CertifaceFacetec.Liveness3DShadow
-public typealias Liveness3DTheme = CertifaceFacetec.Liveness3DTheme
-public typealias Liveness3DThemeBuilder = CertifaceFacetec.Liveness3DThemeBuilder
-public typealias Liveness3DTextKey = CertifaceFacetec.Liveness3DTextKey
+public typealias FacetecAnimationResultStyle = CertifaceFacetec.FacetecAnimationResultStyle
+public typealias FacetecAnimationCustomDelegate = CertifaceFacetec.FacetecAnimationCustomDelegate
+public typealias FacetecAnimationBlobAppearance = CertifaceFacetec.FacetecAnimationBlobAppearance
+public typealias FacetecAnimationImageAppearance = CertifaceFacetec.FacetecAnimationImageAppearance
+public typealias FacetecAnimationSpinnerAppearance = CertifaceFacetec.FacetecAnimationSpinnerAppearance
+public typealias FacetecTheme = CertifaceFacetec.FacetecTheme
+public typealias FacetecThemeBuilder = CertifaceFacetec.FacetecThemeBuilder
+public typealias FacetecVocalGuidanceMode = CertifaceFacetec.FacetecVocalGuidanceMode
+public typealias FacetecShadow = CertifaceFacetec.FacetecShadow
+public typealias FacetecTextKey = CertifaceFacetec.FacetecTextKey
 public typealias FortfaceCancelButtonPosition = CertifaceFortface.FortfaceCancelButtonPosition
 public typealias FortfaceScreenMode = CertifaceFortface.FortfaceScreenMode
 public typealias FortfaceScreenOrientation = CertifaceFortface.FortfaceScreenOrientation
 public typealias FortfaceTextKey = CertifaceFortface.FortfaceTextKey
 public typealias FortfaceAccessibilityKey = CertifaceFortface.FortfaceAccessibilityKey
 public typealias FortfaceResultType = CertifaceFortface.FortfaceResultType
+public typealias FortfaceLivenessCustomizationBuilder = CertifaceFortface.FortfaceLivenessCustomizationBuilder
 public typealias FortfaceResultCustomization = CertifaceFortface.FortfaceResultCustomization
 public typealias FortfaceResultCustomizationBuilder = CertifaceFortface.FortfaceResultCustomizationBuilder
 public protocol FortfaceCustomResultView : CertifaceFortface.FortfaceCustomResultView {
@@ -129,7 +137,15 @@ public protocol FortfaceCustomResultView : CertifaceFortface.FortfaceCustomResul
 public enum CertifaceSDKFactory {
   public static func createLivenessManager(for provider: CertifaceSDK.LivenessProvider) -> any CertifaceSDK.LivenessManager
 }
-public typealias CustomLoadingView = UIKit.UIView
+public protocol CustomInstructionView : UIKit.UIView {
+  #if compiler(>=5.3) && $NonescapableTypes
+  var backButton: UIKit.UIButton! { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  var continueButton: UIKit.UIButton! { get }
+  #endif
+  func changeLoadingVisibility(to visibility: CertifaceSDK.Visibility)
+}
 public enum Environment {
   case hml, prd
   public static func == (a: CertifaceSDK.Environment, b: CertifaceSDK.Environment) -> Swift.Bool
@@ -148,19 +164,15 @@ public struct FacetecCustomization {
   @discardableResult
   final public func setCameraPermissionCustomization(_ builderHandler: @escaping (_ cameraPermissionBuilder: CertifaceSDK.CameraPermissionCustomizationBuilder) -> CertifaceSDK.CameraPermissionCustomizationBuilder) -> Self
   @discardableResult
-  final public func setLoadingCustomization(_ builderHandler: @escaping (_ loadingBuilder: CertifaceSDK.LoadingCustomizationBuilder) -> CertifaceSDK.LoadingCustomizationBuilder) -> Self
+  final public func setLivenessDefaultTheme(_ builderHandler: @escaping (_ defaultThemeBuilder: CertifaceSDK.FacetecThemeBuilder) -> CertifaceSDK.FacetecThemeBuilder) -> Self
   @discardableResult
-  final public func setLivenessDefaultTheme(_ builderHandler: @escaping (_ defaultThemeBuilder: CertifaceSDK.Liveness3DThemeBuilder) -> CertifaceSDK.Liveness3DThemeBuilder) -> Self
+  final public func setLivenessLowLightTheme(_ builderHandler: @escaping (_ defaultThemeBuilder: CertifaceSDK.FacetecThemeBuilder) -> CertifaceSDK.FacetecThemeBuilder) -> Self
   @discardableResult
-  final public func setLivenessLowLightTheme(_ builderHandler: @escaping (_ defaultThemeBuilder: CertifaceSDK.Liveness3DThemeBuilder) -> CertifaceSDK.Liveness3DThemeBuilder) -> Self
+  final public func setLivenessTexts(_ texts: [CertifaceSDK.FacetecTextKey : Swift.String]) -> Self
   @discardableResult
-  final public func setLivenessTexts(_ texts: [CertifaceSDK.Liveness3DTextKey : Swift.String]) -> Self
-  @discardableResult
-  final public func setCustomInstructionView(_ customView: any CertifaceSDK.LivenessCustomInstructionView) -> Self
+  final public func setCustomInstructionView(_ customView: any CertifaceSDK.CustomInstructionView) -> Self
   @discardableResult
   final public func setCustomCameraPermissionView(_ customView: any CertifaceSDK.CustomCameraPermissionView) -> Self
-  @discardableResult
-  final public func setCustomLoadingView(_ customView: CertifaceSDK.CustomLoadingView) -> Self
   @objc deinit
 }
 public struct FortfaceCustomization {
@@ -173,17 +185,13 @@ public struct FortfaceCustomization {
   @discardableResult
   final public func setCameraPermissionCustomization(_ builderHandler: @escaping (_ cameraPermissionBuilder: CertifaceSDK.CameraPermissionCustomizationBuilder) -> CertifaceSDK.CameraPermissionCustomizationBuilder) -> Self
   @discardableResult
-  final public func setLoadingCustomization(_ builderHandler: @escaping (_ loadingBuilder: CertifaceSDK.LoadingCustomizationBuilder) -> CertifaceSDK.LoadingCustomizationBuilder) -> Self
-  @discardableResult
-  final public func setVendorCustomization(_ builderHandler: @escaping (_ vendorBuilder: CertifaceFortface.FortfaceCustomizationBuilder) -> CertifaceFortface.FortfaceCustomizationBuilder) -> Self
+  final public func setLivenessCustomization(_ builderHandler: @escaping (_ vendorBuilder: CertifaceSDK.FortfaceLivenessCustomizationBuilder) -> CertifaceSDK.FortfaceLivenessCustomizationBuilder) -> Self
   @discardableResult
   final public func setResultCustomization(_ builderHandler: @escaping (_ resultBuilder: CertifaceFortface.FortfaceResultCustomizationBuilder) -> CertifaceFortface.FortfaceResultCustomizationBuilder) -> Self
   @discardableResult
-  final public func setCustomInstructionView(_ customView: any CertifaceSDK.LivenessCustomInstructionView) -> Self
+  final public func setCustomInstructionView(_ customView: any CertifaceSDK.CustomInstructionView) -> Self
   @discardableResult
   final public func setCustomCameraPermissionView(_ customView: any CertifaceSDK.CustomCameraPermissionView) -> Self
-  @discardableResult
-  final public func setCustomLoadingView(_ customView: CertifaceSDK.CustomLoadingView) -> Self
   @discardableResult
   final public func setCustomResultView(_ customView: any CertifaceSDK.FortfaceCustomResultView) -> Self
   @objc deinit
@@ -198,17 +206,13 @@ public struct IProovCustomization {
   @discardableResult
   final public func setCameraPermissionCustomization(_ builderHandler: @escaping (_ cameraPermissionBuilder: CertifaceSDK.CameraPermissionCustomizationBuilder) -> CertifaceSDK.CameraPermissionCustomizationBuilder) -> Self
   @discardableResult
-  final public func setLoadingCustomization(_ builderHandler: @escaping (_ loadingBuilder: CertifaceSDK.LoadingCustomizationBuilder) -> CertifaceSDK.LoadingCustomizationBuilder) -> Self
+  final public func setLivenessCustomization(_ builderHandler: @escaping (_ livenessBuilder: CertifaceSDK.IProovLivenessCustomizationBuilder) -> CertifaceSDK.IProovLivenessCustomizationBuilder) -> Self
   @discardableResult
-  final public func setLivenessCustomization(_ builderHandler: @escaping (_ livenessBuilder: CertifaceIProov.IProovLivenessCustomizationBuilder) -> CertifaceIProov.IProovLivenessCustomizationBuilder) -> Self
+  final public func setResultCustomization(_ builderHandler: @escaping (_ resultBuilder: CertifaceSDK.IProovResultCustomizationBuilder) -> CertifaceSDK.IProovResultCustomizationBuilder) -> Self
   @discardableResult
-  final public func setResultCustomization(_ builderHandler: @escaping (_ resultBuilder: CertifaceIProov.IProovResultCustomizationBuilder) -> CertifaceIProov.IProovResultCustomizationBuilder) -> Self
-  @discardableResult
-  final public func setCustomInstructionView(_ customView: any CertifaceSDK.LivenessCustomInstructionView) -> Self
+  final public func setCustomInstructionView(_ customView: any CertifaceSDK.CustomInstructionView) -> Self
   @discardableResult
   final public func setCustomCameraPermissionView(_ customView: any CertifaceSDK.CustomCameraPermissionView) -> Self
-  @discardableResult
-  final public func setCustomLoadingView(_ customView: CertifaceSDK.IProovCustomLoadingView) -> Self
   @discardableResult
   final public func setCustomResultView(_ customView: any CertifaceSDK.IProovCustomResultView) -> Self
   @objc deinit
@@ -277,15 +281,6 @@ public protocol LivenessCallback : AnyObject {
   func onSuccess(_ result: CertifaceSDK.LivenessResult)
   func onError(_ error: CertifaceSDK.LivenessError)
 }
-public protocol LivenessCustomInstructionView : UIKit.UIView {
-  #if compiler(>=5.3) && $NonescapableTypes
-  var backButton: UIKit.UIButton! { get }
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  var continueButton: UIKit.UIButton! { get }
-  #endif
-  func changeLoadingVisibility(to visibility: CertifaceSDK.Visibility)
-}
 public enum LivenessError : Swift.Int, Swift.Error {
   case invalidAppKey
   case noCameraPermission
@@ -324,11 +319,18 @@ extension CertifaceSDK.LivenessManagerOptions {
   public static func builder(appKey: Swift.String, environment: CertifaceSDK.Environment) -> CertifaceSDK.LivenessManagerOptions.Builder
   public static func builder(token: Swift.String, environment: CertifaceSDK.Environment) -> CertifaceSDK.LivenessManagerOptions.Builder
   @_hasMissingDesignatedInitializers final public class Builder {
+    @discardableResult
+    final public func setLoadingCustomization(_ builderHandler: @escaping (_ loadingBuilder: CertifaceSDK.LoadingCustomizationBuilder) -> CertifaceSDK.LoadingCustomizationBuilder) -> Self
+    @discardableResult
+    final public func setCustomLoadingView(_ customView: @autoclosure () -> CertifaceSDK.CustomLoadingView) -> Self
+    @discardableResult
     final public func setShowInstructionsScreen(_ enabled: Swift.Bool) -> Self
+    @discardableResult
     final public func setIProovCustomization(_ customization: CertifaceSDK.IProovCustomization) -> Self
+    @discardableResult
     final public func setFacetecCustomization(_ customization: CertifaceSDK.FacetecCustomization) -> Self
+    @discardableResult
     final public func setFortfaceCustomization(_ customization: CertifaceSDK.FortfaceCustomization) -> Self
-    final public func setSaasCustomization(_ customization: CertifaceSDK.SaasCustomization) -> Self
     final public func build() -> CertifaceSDK.LivenessManagerOptions
     @objc deinit
   }
@@ -340,6 +342,7 @@ public struct LivenessResult {
   public var `protocol`: Swift.String
   public var scanResultBlob: Swift.String?
 }
+public typealias CustomLoadingView = UIKit.UIView
 public struct LoadingCustomization {
 }
 @_hasMissingDesignatedInitializers final public class LoadingCustomizationBuilder {
@@ -363,25 +366,6 @@ public enum LivenessProvider : Swift.String {
   public var rawValue: Swift.String {
     get
   }
-}
-public struct SaasCustomization {
-  public static func builder() -> CertifaceSDK.SaasCustomizationBuilder
-}
-@_hasMissingDesignatedInitializers final public class SaasCustomizationBuilder {
-  final public func build() -> CertifaceSDK.SaasCustomization
-  @discardableResult
-  final public func setInstructionCustomization(_ builderHandler: @escaping (_ instructionBuilder: CertifaceSDK.InstructionCustomizationBuilder) -> CertifaceSDK.InstructionCustomizationBuilder) -> Self
-  @discardableResult
-  final public func setCameraPermissionCustomization(_ builderHandler: @escaping (_ cameraPermissionBuilder: CertifaceSDK.CameraPermissionCustomizationBuilder) -> CertifaceSDK.CameraPermissionCustomizationBuilder) -> Self
-  @discardableResult
-  final public func setLoadingCustomization(_ builderHandler: @escaping (_ loadingBuilder: CertifaceSDK.LoadingCustomizationBuilder) -> CertifaceSDK.LoadingCustomizationBuilder) -> Self
-  @discardableResult
-  final public func setCustomInstructionView(_ customView: any CertifaceSDK.LivenessCustomInstructionView) -> Self
-  @discardableResult
-  final public func setCustomCameraPermissionView(_ customView: any CertifaceSDK.CustomCameraPermissionView) -> Self
-  @discardableResult
-  final public func setCustomLoadingView(_ customView: CertifaceSDK.CustomLoadingView) -> Self
-  @objc deinit
 }
 extension CertifaceSDK.Environment : Swift.Equatable {}
 extension CertifaceSDK.Environment : Swift.Hashable {}

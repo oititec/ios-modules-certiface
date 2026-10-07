@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
-// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name CertifaceIProov
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name CertifaceIProov
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
 @_spi(CertifaceInternal) import CertifaceComponents
 import CertifaceNetwork
@@ -15,7 +15,6 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-import iProov
 public typealias IProovCustomLoadingView = UIKit.UIView
 public protocol IProovCallback : AnyObject {
   func onSuccess(_ result: CertifaceIProov.IProovResult)
@@ -38,16 +37,7 @@ public protocol IProovCustomResultView : UIKit.UIView {
   #if compiler(>=5.3) && $NonescapableTypes
   func display(for resultType: CertifaceIProov.IProovResultLayoutType, userFeedback: [Swift.String]?)
   #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  @available(*, deprecated, renamed: "display(for:userFeedback:)")
-  func display(for resultType: CertifaceIProov.IProovResultLayoutType, retryReason: Swift.String?)
-  #endif
   func changeLoadingVisibility(to visibility: CertifaceComponents.Visibility)
-}
-extension CertifaceIProov.IProovCustomResultView {
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func display(for resultType: CertifaceIProov.IProovResultLayoutType, userFeedback: [Swift.String]?)
-  #endif
 }
 public enum IProovError : Swift.Int, Swift.Error {
   case invalidAppKey
@@ -72,12 +62,12 @@ public enum IProovError : Swift.Int, Swift.Error {
     get
   }
 }
-public enum FilterStyle {
+public enum IProovFilterStyle {
   public enum LineDrawingStyle {
     case classic
     case shaded
     case vibrant
-    public static func == (a: CertifaceIProov.FilterStyle.LineDrawingStyle, b: CertifaceIProov.FilterStyle.LineDrawingStyle) -> Swift.Bool
+    public static func == (a: CertifaceIProov.IProovFilterStyle.LineDrawingStyle, b: CertifaceIProov.IProovFilterStyle.LineDrawingStyle) -> Swift.Bool
     public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
@@ -86,14 +76,14 @@ public enum FilterStyle {
   public enum NaturalStyle {
     case clear
     case blur
-    public static func == (a: CertifaceIProov.FilterStyle.NaturalStyle, b: CertifaceIProov.FilterStyle.NaturalStyle) -> Swift.Bool
+    public static func == (a: CertifaceIProov.IProovFilterStyle.NaturalStyle, b: CertifaceIProov.IProovFilterStyle.NaturalStyle) -> Swift.Bool
     public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
   }
-  case lineDrawing(CertifaceIProov.FilterStyle.LineDrawingStyle)
-  case natural(CertifaceIProov.FilterStyle.NaturalStyle)
+  case lineDrawing(CertifaceIProov.IProovFilterStyle.LineDrawingStyle)
+  case natural(CertifaceIProov.IProovFilterStyle.NaturalStyle)
 }
 public struct IProovLivenessCustomization {
   public static func builder() -> CertifaceIProov.IProovLivenessCustomizationBuilder
@@ -130,7 +120,7 @@ public struct IProovLivenessCustomization {
   @discardableResult
   final public func setGPAOvalStrokeReadyColor(_ color: UIKit.UIColor) -> Self
   @discardableResult
-  final public func setFilterStyle(_ style: CertifaceIProov.FilterStyle) -> Self
+  final public func setFilterStyle(_ style: CertifaceIProov.IProovFilterStyle) -> Self
   @discardableResult
   final public func setFilterLineDrawingForegroundColor(_ color: UIKit.UIColor) -> Self
   @discardableResult
@@ -253,8 +243,7 @@ extension CertifaceIProov.IProovResultLayoutType : Swift.Hashable {}
 extension CertifaceIProov.IProovError : Swift.Equatable {}
 extension CertifaceIProov.IProovError : Swift.Hashable {}
 extension CertifaceIProov.IProovError : Swift.RawRepresentable {}
-extension CertifaceIProov.FilterStyle.LineDrawingStyle : Swift.Equatable {}
-extension CertifaceIProov.FilterStyle.LineDrawingStyle : Swift.Hashable {}
-extension CertifaceIProov.FilterStyle.NaturalStyle : Swift.Equatable {}
-extension CertifaceIProov.FilterStyle.NaturalStyle : Swift.Hashable {}
-extension CertifaceIProov.IProovStarter : iProov.IProovPresentationDelegate {}
+extension CertifaceIProov.IProovFilterStyle.LineDrawingStyle : Swift.Equatable {}
+extension CertifaceIProov.IProovFilterStyle.LineDrawingStyle : Swift.Hashable {}
+extension CertifaceIProov.IProovFilterStyle.NaturalStyle : Swift.Equatable {}
+extension CertifaceIProov.IProovFilterStyle.NaturalStyle : Swift.Hashable {}

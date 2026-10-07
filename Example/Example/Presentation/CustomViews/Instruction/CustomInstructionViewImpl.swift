@@ -1,12 +1,12 @@
 //
-//  CustomIProovInstructionView.swift
+//  CustomInstructionViewImpl.swift
 //  Example
 //
 
 import CertifaceSDK
 import UIKit
 
-final class CustomInstructionView: UIView, LivenessCustomInstructionView {
+final class CustomInstructionViewImpl: UIView, CustomInstructionView {
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
