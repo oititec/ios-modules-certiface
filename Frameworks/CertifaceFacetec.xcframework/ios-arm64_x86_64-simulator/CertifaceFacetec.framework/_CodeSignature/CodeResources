@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		OS9akMvKhDQuRHty6MmjSb1v44o=
+		7MlGRg8eK48ElbsvH16R2X0Xe0I=
 		</data>
 		<key>Headers/CertifaceFacetec-Swift.h</key>
 		<data>
@@ -14,47 +14,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		1NOA4tLQdZFBofg+Ywv1+P2/DRk=
+		RgWLws+MzfqMwfZgl2QDkYaXiv0=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		C45Uzc6T6k3S6CRZaKGHEgl8tA8=
+		TnIllLzcOCbt7EIMBhiQrmn+80s=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		/bX51nr6vtuPWNHml+JFGYQ+yh4=
+		rtV9u5Hg6Jnqy13tbQijvzQ8aRQ=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		JKO2T4YPjwQ/SIXsKY8NO5DkShw=
+		9PtKjM8aOSJ/rswQBdVgdkk996k=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		VwWWBdnoZebzC+qcSvkPeHxXpAM=
+		6xL47nvB6n595xbSNFg6fUeMmD4=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		0FgUCQcqKcCzxxQmvtse37djbNU=
+		s+dDjTju++1h80ULysHTJBbipbs=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		C45Uzc6T6k3S6CRZaKGHEgl8tA8=
+		TnIllLzcOCbt7EIMBhiQrmn+80s=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		njujN0NH+GMnx2kZSpUdhO7hTsw=
+		wFUVteamWBlV76iRKXNXrRnABsk=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		oiacEN+7Yz84hpSE+BYrsCXGYLk=
+		k4WuSRDIMWKRWkMgYD+lOPbsT2g=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		KHOFpX6XZRuqq8f9wA4GyrxlD7s=
+		/5QMwv+HtSz7szXJbwuHetcM+lA=
 		</data>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Gb0WzVaQ5Um9Hh6h8Cikk9x3ZVo=
+		/yNUCcdgRdd7NhDWiGaCfmdFFyU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -111,7 +111,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			PZCidcH42gRQScs8aoDJUxMJTUQqtyxHH8EBmDO83gc=
+			WQ4gQqemgDs2POlHZRV49hzKLKCrH9Bco+JtnWIzjRc=
 			</data>
 		</dict>
 		<key>Headers/CertifaceFacetec-Swift.h</key>
@@ -125,70 +125,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			t6JwWfj9HBdJ87arr1trybwvl9asaBRvnLPxTkjKobo=
+			li3s6A26DSL6CkOUtmr6Da83hzVLhMiiHDbzQhcTvZI=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			oJyCTFU4zQcgXbbQ3Ol56aC3E8URrEyXSin/CsnVNzQ=
+			6fKxEiKdpT21BMI3Qay8PavEm8S/FwY2Po5pRg6nJ4M=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Gyx++ShJLUoSDnVHJ0PzNs+vKSqxFpcyv+o22BZ1hKo=
+			941Iko4GRk2hW6OIYEZOO5tVzJGdFadYU6J6LRfu3gM=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hGpAEmtqvHZq2zPFLYxUmT5VhzBck1lulj52N6ogY40=
+			vBdItSQepaFYPH5NUD0KfMlo7mZjV/oZyVHfb6d23ZU=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			D+EfNC2QQMxGxLWTVefWCfEmc8G0dCI28vfYDn/oO/I=
+			tgCULScM4SVp+O2kgsAo2F3QLXoj9pYVsg7vio7k7Ng=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			t6JwWfj9HBdJ87arr1trybwvl9asaBRvnLPxTkjKobo=
+			li3s6A26DSL6CkOUtmr6Da83hzVLhMiiHDbzQhcTvZI=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Vt1p/MhME8EBDL9hHsZmVj4+aKGakLfUScZeRkVV6JQ=
+			4kVo0tpjYFieBtRX47NuhTkCHSoQULBxU4UGy64gTyk=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mqs2VTNx2N5b4UxsDnf3B+PMLHFwpUPaKyOkIrXFr7I=
+			e1a+987CtTqumhe+nZMgXMTPj6+nbR0jsXNxNbED6qA=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RQbBQL3kaxdRTWDPQeoOwQQ06ueYQ2jMhNA46XGVBns=
+			UD9F/KWmAkPINb1HfhdM+A8rinwq1AZQElQpfnEBal8=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFacetec.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CCtPC0zXD7VuBXi/+xrNFPKLWowt3zWHtey0j7cIXck=
+			0irTSxTZzVSGh8t8xROqqPytFYIHzee0oC65I5BO8iI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

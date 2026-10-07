@@ -51,7 +51,7 @@ final class CustomIProovResultView: UIView, IProovCustomResultView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func display(for resultType: IProovResultLayoutType, retryReason: String?) {
+    func display(for resultType: IProovResultLayoutType, userFeedback: [String]?) {
         switch resultType {
         case .success:
             backgroundColor = .green

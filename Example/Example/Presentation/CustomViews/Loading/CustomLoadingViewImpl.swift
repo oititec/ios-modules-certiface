@@ -1,12 +1,11 @@
 //
-//  CustomIProovLoadingView.swift
+//  CustomLoadingViewImpl.swift
 //  Example
 //
 
-import CertifaceSDK
 import UIKit
 
-final class CustomIProovLoadingView: IProovCustomLoadingView {
+final class CustomLoadingViewImpl: UIView {
     @IBOutlet weak var loadIndicator: UIActivityIndicatorView!
     @IBOutlet weak var loadLabel: UILabel!
     @IBOutlet weak var view: UIView!

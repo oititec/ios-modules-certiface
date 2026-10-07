@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
-// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name CertifaceNetwork
+// swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name CertifaceNetwork
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
 import CommonCrypto
 import Foundation
@@ -241,14 +241,16 @@ public enum SaasTokenStatusValue : Swift.String, Swift.Decodable {
 public enum SaasLivenessProvider {
   case facetec
   case fortface
-  public static func == (a: CertifaceNetwork.SaasLivenessProvider, b: CertifaceNetwork.SaasLivenessProvider) -> Swift.Bool
+}
+extension CertifaceNetwork.SaasLivenessProvider : Swift.Decodable {
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension CertifaceNetwork.SaasLivenessProvider : Swift.Hashable {
+  public static func == (lhs: CertifaceNetwork.SaasLivenessProvider, rhs: CertifaceNetwork.SaasLivenessProvider) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-}
-extension CertifaceNetwork.SaasLivenessProvider : Swift.Decodable {
-  public init(from decoder: any Swift.Decoder) throws
 }
 public struct SaasResolveModel : Swift.Decodable {
   public let provider: CertifaceNetwork.SaasLivenessProvider
@@ -389,8 +391,6 @@ extension CertifaceNetwork.Environment : Swift.RawRepresentable {}
 extension CertifaceNetwork.SaasTokenStatusValue : Swift.Equatable {}
 extension CertifaceNetwork.SaasTokenStatusValue : Swift.Hashable {}
 extension CertifaceNetwork.SaasTokenStatusValue : Swift.RawRepresentable {}
-extension CertifaceNetwork.SaasLivenessProvider : Swift.Equatable {}
-extension CertifaceNetwork.SaasLivenessProvider : Swift.Hashable {}
 extension CertifaceNetwork.SaasInitializeStatus : Swift.Equatable {}
 extension CertifaceNetwork.SaasInitializeStatus : Swift.Hashable {}
 extension CertifaceNetwork.SaasInitializeStatus : Swift.RawRepresentable {}

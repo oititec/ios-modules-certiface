@@ -17,11 +17,11 @@
 		50DE83632E141AE000A1EB8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE83622E141AE000A1EB8E /* SceneDelegate.swift */; };
 		50DE83692E141C1700A1EB8E /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE83682E141C1700A1EB8E /* ContentViewController.swift */; };
 		50DE836B2E141C4200A1EB8E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE836A2E141C4200A1EB8E /* ContentView.swift */; };
-		50DE83782E1567DE00A1EB8E /* CustomIProovLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE836D2E1567DE00A1EB8E /* CustomIProovLoadingView.swift */; };
-		50DE83792E1567DE00A1EB8E /* CustomIProovLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50DE836E2E1567DE00A1EB8E /* CustomIProovLoadingView.xib */; };
+		50DE83782E1567DE00A1EB8E /* CustomLoadingViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE836D2E1567DE00A1EB8E /* CustomLoadingViewImpl.swift */; };
+		50DE83792E1567DE00A1EB8E /* CustomLoadingViewImpl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50DE836E2E1567DE00A1EB8E /* CustomLoadingViewImpl.xib */; };
 		50DE837A2E1567DE00A1EB8E /* CustomIProovResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE83702E1567DE00A1EB8E /* CustomIProovResultView.swift */; };
-		50DE837B2E1567DE00A1EB8E /* CustomInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE83722E1567DE00A1EB8E /* CustomInstructionView.swift */; };
-		50DE837C2E1567DE00A1EB8E /* CustomInstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50DE83732E1567DE00A1EB8E /* CustomInstructionView.xib */; };
+		50DE837B2E1567DE00A1EB8E /* CustomInstructionViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE83722E1567DE00A1EB8E /* CustomInstructionViewImpl.swift */; };
+		50DE837C2E1567DE00A1EB8E /* CustomInstructionViewImpl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50DE83732E1567DE00A1EB8E /* CustomInstructionViewImpl.xib */; };
 		50DE837D2E1567DE00A1EB8E /* CustomCameraPermissionViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE83752E1567DE00A1EB8E /* CustomCameraPermissionViewImpl.swift */; };
 		50DE837E2E1567DE00A1EB8E /* CustomCameraPermissionViewImpl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50DE83762E1567DE00A1EB8E /* CustomCameraPermissionViewImpl.xib */; };
 /* End PBXBuildFile section */
@@ -38,11 +38,11 @@
 		50DE83622E141AE000A1EB8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		50DE83682E141C1700A1EB8E /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		50DE836A2E141C4200A1EB8E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		50DE836D2E1567DE00A1EB8E /* CustomIProovLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomIProovLoadingView.swift; sourceTree = "<group>"; };
-		50DE836E2E1567DE00A1EB8E /* CustomIProovLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomIProovLoadingView.xib; sourceTree = "<group>"; };
+		50DE836D2E1567DE00A1EB8E /* CustomLoadingViewImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLoadingViewImpl.swift; sourceTree = "<group>"; };
+		50DE836E2E1567DE00A1EB8E /* CustomLoadingViewImpl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomLoadingViewImpl.xib; sourceTree = "<group>"; };
 		50DE83702E1567DE00A1EB8E /* CustomIProovResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomIProovResultView.swift; sourceTree = "<group>"; };
-		50DE83722E1567DE00A1EB8E /* CustomInstructionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInstructionView.swift; sourceTree = "<group>"; };
-		50DE83732E1567DE00A1EB8E /* CustomInstructionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomInstructionView.xib; sourceTree = "<group>"; };
+		50DE83722E1567DE00A1EB8E /* CustomInstructionViewImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInstructionViewImpl.swift; sourceTree = "<group>"; };
+		50DE83732E1567DE00A1EB8E /* CustomInstructionViewImpl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomInstructionViewImpl.xib; sourceTree = "<group>"; };
 		50DE83752E1567DE00A1EB8E /* CustomCameraPermissionViewImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCameraPermissionViewImpl.swift; sourceTree = "<group>"; };
 		50DE83762E1567DE00A1EB8E /* CustomCameraPermissionViewImpl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCameraPermissionViewImpl.xib; sourceTree = "<group>"; };
 		5FB7E537A26268B249A0DCD7 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,8 +161,8 @@
 		50DE836F2E1567DE00A1EB8E /* Loading */ = {
 			isa = PBXGroup;
 			children = (
-				50DE836D2E1567DE00A1EB8E /* CustomIProovLoadingView.swift */,
-				50DE836E2E1567DE00A1EB8E /* CustomIProovLoadingView.xib */,
+				50DE836D2E1567DE00A1EB8E /* CustomLoadingViewImpl.swift */,
+				50DE836E2E1567DE00A1EB8E /* CustomLoadingViewImpl.xib */,
 			);
 			path = Loading;
 			sourceTree = "<group>";
@@ -178,8 +178,8 @@
 		50DE83742E1567DE00A1EB8E /* Instruction */ = {
 			isa = PBXGroup;
 			children = (
-				50DE83722E1567DE00A1EB8E /* CustomInstructionView.swift */,
-				50DE83732E1567DE00A1EB8E /* CustomInstructionView.xib */,
+				50DE83722E1567DE00A1EB8E /* CustomInstructionViewImpl.swift */,
+				50DE83732E1567DE00A1EB8E /* CustomInstructionViewImpl.xib */,
 			);
 			path = Instruction;
 			sourceTree = "<group>";
@@ -261,9 +261,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50DE83792E1567DE00A1EB8E /* CustomIProovLoadingView.xib in Resources */,
+				50DE83792E1567DE00A1EB8E /* CustomLoadingViewImpl.xib in Resources */,
 				50DE83582E14199100A1EB8E /* Assets.xcassets in Resources */,
-				50DE837C2E1567DE00A1EB8E /* CustomInstructionView.xib in Resources */,
+				50DE837C2E1567DE00A1EB8E /* CustomInstructionViewImpl.xib in Resources */,
 				50DE835B2E14199100A1EB8E /* Base in Resources */,
 				50DE837E2E1567DE00A1EB8E /* CustomCameraPermissionViewImpl.xib in Resources */,
 			);
@@ -318,14 +318,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50DE837B2E1567DE00A1EB8E /* CustomInstructionView.swift in Sources */,
+				50DE837B2E1567DE00A1EB8E /* CustomInstructionViewImpl.swift in Sources */,
 				50DE837D2E1567DE00A1EB8E /* CustomCameraPermissionViewImpl.swift in Sources */,
 				50DE83692E141C1700A1EB8E /* ContentViewController.swift in Sources */,
 				50DE836B2E141C4200A1EB8E /* ContentView.swift in Sources */,
 				50DE834F2E14199000A1EB8E /* AppDelegate.swift in Sources */,
 				50DE837A2E1567DE00A1EB8E /* CustomIProovResultView.swift in Sources */,
 				50DE83632E141AE000A1EB8E /* SceneDelegate.swift in Sources */,
-				50DE83782E1567DE00A1EB8E /* CustomIProovLoadingView.swift in Sources */,
+				50DE83782E1567DE00A1EB8E /* CustomLoadingViewImpl.swift in Sources */,
 				50D3BE292EA2BB060079AE8F /* IProovCustomizationExample.swift in Sources */,
 				50D3BE272EA295CA0079AE8F /* FacetecCustomizationExample.swift in Sources */,
 				D6564A1774A84C2781F5E926 /* SaasCustomizationExample.swift in Sources */,
@@ -482,7 +482,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -517,7 +517,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

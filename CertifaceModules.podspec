@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name            = 'CertifaceModules'
-  s.version         = '2.0.2'
+  s.version         = '3.0.0'
   s.summary         = 'Certiface required modules'
   s.homepage        = 'https://www.oititec.com.br/'
   s.license         = { :type => 'Copyright', :text => 'Copyright © 2025 Oiti. All rights reserved.' }
   s.author          = 'Oititec'
-  s.platform        = :ios, '13.0'
+  s.platform        = :ios, '15.0'
   s.swift_version   = '5.0'
   s.source          = { 
     :git => 'https://github.com/oititec/ios-modules-certiface.git', 

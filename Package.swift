@@ -2,12 +2,12 @@
 
 import PackageDescription
 
-let version = "3.0.2"
+let version = "4.0.0"
 
 let package = Package(
     name: "CertifaceSDK",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v15)
     ],
     products: [
         .library(
