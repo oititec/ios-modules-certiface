@@ -2,7 +2,7 @@
 
 import PackageDescription
 
-let version = "4.0.0"
+let version = "4.0.1"
 
 let package = Package(
     name: "CertifaceSDK",
@@ -26,7 +26,7 @@ let package = Package(
         ),
         .package(
             url: "https://github.com/oititec/ios-liveness3d-ft.git",
-            exact: "9.7.130"
+            exact: "9.7.142"
         ),
         .package(
             url: "https://github.com/oititec/ios-certiface-fortface.git",

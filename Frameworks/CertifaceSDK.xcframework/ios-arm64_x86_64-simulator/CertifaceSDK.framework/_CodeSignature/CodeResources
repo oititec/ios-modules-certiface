@@ -14,11 +14,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		iPdCv17ztt4fdsN4zEF3OP4N/YM=
+		VvUHoMv8RfAVvFBwAXkRtzV3nBg=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		/RoCn3PpI/Y3jvaIbX5iMKEkehY=
+		UP0Pkh/xRc9GHDabdTw7mZLaYoc=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		yjO+xJ34SFjqyW/9g6HY0KYlIZo=
+		9LM1i1BD8422VKUuZ7cNEAQOnL8=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		/RoCn3PpI/Y3jvaIbX5iMKEkehY=
+		UP0Pkh/xRc9GHDabdTw7mZLaYoc=
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		mEmxhJc0UNwUJ6nr+spvateQkE0=
+		UcMShc8nwcCJPiOIGcNvnn73nb4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -81,7 +81,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			o5lxl6euvjWrvaH85lot6w+XuL2QAWw68o1sh1OmgKM=
+			FnH7Xb1K0s1KI0DlGRmSWnwpVm2n0+yclB3WcwFquWQ=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -109,14 +109,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1U/IUgw5+HnmfaeQnw5QALzJu4H5b31YvzObCYOnpFc=
+			zg0whKqNPe7swHmZ5UAcBr/oD8OcoeKyzx23Q/pQB/8=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			o5lxl6euvjWrvaH85lot6w+XuL2QAWw68o1sh1OmgKM=
+			FnH7Xb1K0s1KI0DlGRmSWnwpVm2n0+yclB3WcwFquWQ=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -144,7 +144,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8Z33yIDkxr1O12QYLjHORbdQT5dlpp44XR7OqPtuUx4=
+			BmzBj98mTXgEbs/iovw4xmU6WT/2HzUOvYJnpooaFaA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
