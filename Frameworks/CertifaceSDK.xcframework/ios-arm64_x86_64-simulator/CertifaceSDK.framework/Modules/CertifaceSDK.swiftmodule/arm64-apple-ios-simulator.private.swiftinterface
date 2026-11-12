@@ -5,11 +5,13 @@
 import AVFoundation
 @_spi(CertifaceInternal) import CertifaceComponents
 import CertifaceFacetec
-import CertifaceFortface
+@_spi(CertifaceInternal) import CertifaceFortface
 import CertifaceIProov
 import CertifaceNetwork
 import CertifaceSecurity
 import CertifaceUtils
+import CoreText
+import CryptoKit
 import DeveloperToolsSupport
 import Foundation
 import Swift
@@ -48,13 +50,15 @@ public typealias FortfaceScreenMode = CertifaceFortface.FortfaceScreenMode
 public typealias FortfaceScreenOrientation = CertifaceFortface.FortfaceScreenOrientation
 public typealias FortfaceTextKey = CertifaceFortface.FortfaceTextKey
 public typealias FortfaceAccessibilityKey = CertifaceFortface.FortfaceAccessibilityKey
-public typealias FortfaceResultType = CertifaceFortface.FortfaceResultType
 public typealias FortfaceLivenessCustomizationBuilder = CertifaceFortface.FortfaceLivenessCustomizationBuilder
-public typealias FortfaceResultCustomization = CertifaceFortface.FortfaceResultCustomization
-public typealias FortfaceResultCustomizationBuilder = CertifaceFortface.FortfaceResultCustomizationBuilder
-public protocol FortfaceCustomResultView : CertifaceFortface.FortfaceCustomResultView {
-  override func display(for resultType: CertifaceSDK.FortfaceResultType)
-}
+@available(*, deprecated, renamed: "ResultType")
+public typealias FortfaceResultType = CertifaceSDK.ResultType
+@available(*, deprecated, renamed: "ResultCustomization")
+public typealias FortfaceResultCustomization = CertifaceSDK.ResultCustomization
+@available(*, deprecated, renamed: "ResultCustomizationBuilder")
+public typealias FortfaceResultCustomizationBuilder = CertifaceSDK.ResultCustomizationBuilder
+@available(*, deprecated, renamed: "CustomResultView")
+public typealias FortfaceCustomResultView = CertifaceSDK.CustomResultView
 @_hasMissingDesignatedInitializers final public class CameraPermissionCustomizationBuilder {
   #if compiler(>=5.3) && $NonescapableTypes
   @discardableResult
@@ -146,6 +150,12 @@ public protocol CustomInstructionView : UIKit.UIView {
   #endif
   func changeLoadingVisibility(to visibility: CertifaceSDK.Visibility)
 }
+public protocol CustomResultView : UIKit.UIView {
+  #if compiler(>=5.3) && $NonescapableTypes
+  var retryButton: UIKit.UIButton! { get }
+  #endif
+  func display(for resultType: CertifaceSDK.ResultType)
+}
 public enum Environment {
   case hml, prd
   public static func == (a: CertifaceSDK.Environment, b: CertifaceSDK.Environment) -> Swift.Bool
@@ -170,9 +180,13 @@ public struct FacetecCustomization {
   @discardableResult
   final public func setLivenessTexts(_ texts: [CertifaceSDK.FacetecTextKey : Swift.String]) -> Self
   @discardableResult
+  final public func setResultCustomization(_ builderHandler: @escaping (_ resultBuilder: CertifaceSDK.ResultCustomizationBuilder) -> CertifaceSDK.ResultCustomizationBuilder) -> Self
+  @discardableResult
   final public func setCustomInstructionView(_ customView: any CertifaceSDK.CustomInstructionView) -> Self
   @discardableResult
   final public func setCustomCameraPermissionView(_ customView: any CertifaceSDK.CustomCameraPermissionView) -> Self
+  @discardableResult
+  final public func setCustomResultView(_ customView: any CertifaceSDK.CustomResultView) -> Self
   @objc deinit
 }
 public struct FortfaceCustomization {
@@ -187,13 +201,13 @@ public struct FortfaceCustomization {
   @discardableResult
   final public func setLivenessCustomization(_ builderHandler: @escaping (_ vendorBuilder: CertifaceSDK.FortfaceLivenessCustomizationBuilder) -> CertifaceSDK.FortfaceLivenessCustomizationBuilder) -> Self
   @discardableResult
-  final public func setResultCustomization(_ builderHandler: @escaping (_ resultBuilder: CertifaceFortface.FortfaceResultCustomizationBuilder) -> CertifaceFortface.FortfaceResultCustomizationBuilder) -> Self
+  final public func setResultCustomization(_ builderHandler: @escaping (_ resultBuilder: CertifaceSDK.ResultCustomizationBuilder) -> CertifaceSDK.ResultCustomizationBuilder) -> Self
   @discardableResult
   final public func setCustomInstructionView(_ customView: any CertifaceSDK.CustomInstructionView) -> Self
   @discardableResult
   final public func setCustomCameraPermissionView(_ customView: any CertifaceSDK.CustomCameraPermissionView) -> Self
   @discardableResult
-  final public func setCustomResultView(_ customView: any CertifaceSDK.FortfaceCustomResultView) -> Self
+  final public func setCustomResultView(_ customView: any CertifaceSDK.CustomResultView) -> Self
   @objc deinit
 }
 public struct IProovCustomization {
@@ -367,6 +381,72 @@ public enum LivenessProvider : Swift.String {
     get
   }
 }
+public struct ResultCustomization {
+  @_spi(CertifaceInternal) public var messageFont: UIKit.UIFont {
+    get
+  }
+  @_spi(CertifaceInternal) public var retryButtonTextFont: UIKit.UIFont {
+    get
+  }
+  public static func builder() -> CertifaceSDK.ResultCustomizationBuilder
+}
+final public class ResultCustomizationBuilder {
+  public init()
+  final public func build() -> CertifaceSDK.ResultCustomization
+  @discardableResult
+  final public func setSuccessBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setErrorBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setRetryBackgroundColor(_ color: UIKit.UIColor) -> Self
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setSuccessImage(_ image: UIKit.UIImage?) -> Self
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setErrorImage(_ image: UIKit.UIImage?) -> Self
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func setRetryImage(_ image: UIKit.UIImage?) -> Self
+  #endif
+  @discardableResult
+  final public func setMessageFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setSuccessMessage(_ message: Swift.String) -> Self
+  @discardableResult
+  final public func setSuccessMessageColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setErrorMessage(_ message: Swift.String) -> Self
+  @discardableResult
+  final public func setErrorMessageColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setRetryMessage(_ message: Swift.String) -> Self
+  @discardableResult
+  final public func setRetryMessageColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setRetryButtonText(_ text: Swift.String) -> Self
+  @discardableResult
+  final public func setRetryButtonTextFont(_ font: UIKit.UIFont) -> Self
+  @discardableResult
+  final public func setRetryButtonTextColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setRetryButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
+  @discardableResult
+  final public func setRetryButtonBorderColor(_ color: UIKit.UIColor) -> Self
+  @objc deinit
+}
+public enum ResultType {
+  case success
+  case error
+  case retry
+  public static func == (a: CertifaceSDK.ResultType, b: CertifaceSDK.ResultType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 extension CertifaceSDK.Environment : Swift.Equatable {}
 extension CertifaceSDK.Environment : Swift.Hashable {}
 extension CertifaceSDK.LivenessError : Swift.Equatable {}
@@ -375,3 +455,5 @@ extension CertifaceSDK.LivenessError : Swift.RawRepresentable {}
 extension CertifaceSDK.LivenessProvider : Swift.Equatable {}
 extension CertifaceSDK.LivenessProvider : Swift.Hashable {}
 extension CertifaceSDK.LivenessProvider : Swift.RawRepresentable {}
+extension CertifaceSDK.ResultType : Swift.Equatable {}
+extension CertifaceSDK.ResultType : Swift.Hashable {}

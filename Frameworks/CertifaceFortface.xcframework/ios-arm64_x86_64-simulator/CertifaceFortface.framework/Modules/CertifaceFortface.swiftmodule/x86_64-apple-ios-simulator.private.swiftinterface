@@ -2,13 +2,11 @@
 // swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
 // swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name CertifaceFortface
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
-@_spi(CertifaceInternal) import CertifaceComponents
 import CertifaceSecurity
 import DeveloperToolsSupport
 import Foundation
 import Swift
 import SwiftUI
-import UIKit.UIImage
 import UIKit
 import _Concurrency
 import _StringProcessing
@@ -19,12 +17,6 @@ public enum FortfaceBootstrap {
 public protocol FortfaceCallback : AnyObject {
   func onSuccess(_ result: CertifaceFortface.FortfaceResult)
   func onError(_ error: CertifaceFortface.FortfaceError)
-}
-public protocol FortfaceCustomResultView : UIKit.UIView {
-  #if compiler(>=5.3) && $NonescapableTypes
-  var retryButton: UIKit.UIButton! { get }
-  #endif
-  func display(for resultType: CertifaceFortface.FortfaceResultType)
 }
 public enum FortfaceCancelButtonPosition {
   case left
@@ -102,6 +94,7 @@ public enum FortfaceError : Swift.Int, Swift.Error {
   case livenessNotInitialized
   case transactionNotCompleted
   case genericException
+  case timeout
   public var code: Swift.Int {
     get
   }
@@ -177,86 +170,6 @@ public struct FortfaceResult {
   public let data: Swift.String?
   public let imgData: Swift.String?
 }
-public struct FortfaceResultCustomization {
-  public static func builder() -> CertifaceFortface.FortfaceResultCustomizationBuilder
-}
-final public class FortfaceResultCustomizationBuilder {
-  public init()
-  final public func build() -> CertifaceFortface.FortfaceResultCustomization
-  @discardableResult
-  final public func setSuccessBackgroundColor(_ color: UIKit.UIColor) -> Self
-  @discardableResult
-  final public func setErrorBackgroundColor(_ color: UIKit.UIColor) -> Self
-  @discardableResult
-  final public func setRetryBackgroundColor(_ color: UIKit.UIColor) -> Self
-  #if compiler(>=5.3) && $NonescapableTypes
-  @discardableResult
-  final public func setSuccessImage(_ image: UIKit.UIImage?) -> Self
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  @discardableResult
-  final public func setErrorImage(_ image: UIKit.UIImage?) -> Self
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  @discardableResult
-  final public func setRetryImage(_ image: UIKit.UIImage?) -> Self
-  #endif
-  @discardableResult
-  final public func setMessageFont(_ font: UIKit.UIFont) -> Self
-  @discardableResult
-  final public func setSuccessMessage(_ message: Swift.String) -> Self
-  @discardableResult
-  final public func setSuccessMessageColor(_ color: UIKit.UIColor) -> Self
-  @discardableResult
-  final public func setErrorMessage(_ message: Swift.String) -> Self
-  @discardableResult
-  final public func setErrorMessageColor(_ color: UIKit.UIColor) -> Self
-  @discardableResult
-  final public func setRetryMessage(_ message: Swift.String) -> Self
-  @discardableResult
-  final public func setRetryMessageColor(_ color: UIKit.UIColor) -> Self
-  @discardableResult
-  final public func setRetryButtonText(_ text: Swift.String) -> Self
-  @discardableResult
-  final public func setRetryButtonTextFont(_ font: UIKit.UIFont) -> Self
-  @discardableResult
-  final public func setRetryButtonTextColor(_ color: UIKit.UIColor) -> Self
-  @discardableResult
-  final public func setRetryButtonBackgroundColor(_ color: UIKit.UIColor) -> Self
-  @discardableResult
-  final public func setRetryButtonBorderColor(_ color: UIKit.UIColor) -> Self
-  @objc deinit
-}
-public protocol FortfaceResultDelegate : AnyObject {
-  func didFinish(with resultType: CertifaceFortface.FortfaceResultType)
-}
-public enum FortfaceResultType {
-  case success
-  case error
-  case retry
-  public static func == (a: CertifaceFortface.FortfaceResultType, b: CertifaceFortface.FortfaceResultType) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class FortfaceResultViewController : UIKit.UIViewController {
-  @_Concurrency.MainActor @preconcurrency @objc override final public var overrideUserInterfaceStyle: UIKit.UIUserInterfaceStyle {
-    @objc get
-    @objc set
-  }
-  @_Concurrency.MainActor @preconcurrency @objc override final public var shouldAutorotate: Swift.Bool {
-    @objc get
-  }
-  @_Concurrency.MainActor @preconcurrency weak final public var delegate: (any CertifaceFortface.FortfaceResultDelegate)?
-  #if compiler(>=5.3) && $NonescapableTypes
-  @_Concurrency.MainActor @preconcurrency public init(resultType: CertifaceFortface.FortfaceResultType, customization customizationProperties: CertifaceFortface.FortfaceResultCustomization, customView: (any CertifaceFortface.FortfaceCustomResultView)?)
-  #endif
-  @_Concurrency.MainActor @preconcurrency @objc override final public func loadView()
-  @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLoad()
-  @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidAppear(_ animated: Swift.Bool)
-  @objc deinit
-}
 @_hasMissingDesignatedInitializers final public class FortfaceStarter {
   public static func start(at rootViewController: UIKit.UIViewController, with starterData: CertifaceFortface.FortfaceStarterData)
   @objc deinit
@@ -295,5 +208,3 @@ extension CertifaceFortface.FortfaceAccessibilityKey : Swift.Hashable {}
 extension CertifaceFortface.FortfaceError : Swift.Equatable {}
 extension CertifaceFortface.FortfaceError : Swift.Hashable {}
 extension CertifaceFortface.FortfaceError : Swift.RawRepresentable {}
-extension CertifaceFortface.FortfaceResultType : Swift.Equatable {}
-extension CertifaceFortface.FortfaceResultType : Swift.Hashable {}

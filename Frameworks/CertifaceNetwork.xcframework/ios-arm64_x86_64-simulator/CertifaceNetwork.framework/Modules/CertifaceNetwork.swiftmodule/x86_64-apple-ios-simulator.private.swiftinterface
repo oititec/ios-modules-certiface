@@ -203,18 +203,18 @@ final public class SaasManager : CertifaceNetwork.SaasManagerProtocol {
   public init(session: Foundation.URLSession = URLSession(configuration: .default))
   final public func getTokenStatus(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasTokenStatusModel
   final public func getTokenResult(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasTokenResultModel
-  final public func resolveLivenessProvider(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasResolveModel
+  final public func getLivenessRouter(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasRouterModel
   #if compiler(>=5.3) && $NonescapableTypes
-  final public func initializeLiveness<Payload>(tokenUuid: Swift.String, payload: Payload?, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasInitializeModel where Payload : Swift.Encodable
+  final public func initializeLiveness<Payload>(tokenUuid: Swift.String, provider: CertifaceNetwork.SaasLivenessProvider, payload: Payload?, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasInitializeModel where Payload : Swift.Encodable
   #endif
   final public func verifyLiveness<Payload>(tokenUuid: Swift.String, payload: Payload, geolocation: CertifaceNetwork.SaasGeolocation, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasVerifyModel where Payload : Swift.Encodable
   @objc deinit
 }
 public protocol SaasManagerProtocol {
   func getTokenStatus(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasTokenStatusModel
-  func resolveLivenessProvider(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasResolveModel
+  func getLivenessRouter(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasRouterModel
   #if compiler(>=5.3) && $NonescapableTypes
-  func initializeLiveness<Payload>(tokenUuid: Swift.String, payload: Payload?, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasInitializeModel where Payload : Swift.Encodable
+  func initializeLiveness<Payload>(tokenUuid: Swift.String, provider: CertifaceNetwork.SaasLivenessProvider, payload: Payload?, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasInitializeModel where Payload : Swift.Encodable
   #endif
   func verifyLiveness<Payload>(tokenUuid: Swift.String, payload: Payload, geolocation: CertifaceNetwork.SaasGeolocation, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasVerifyModel where Payload : Swift.Encodable
   func getTokenResult(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasTokenResultModel
@@ -241,6 +241,12 @@ public enum SaasTokenStatusValue : Swift.String, Swift.Decodable {
 public enum SaasLivenessProvider {
   case facetec
   case fortface
+  public var wireValue: Swift.String {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(wireValue: Swift.String)
+  #endif
 }
 extension CertifaceNetwork.SaasLivenessProvider : Swift.Decodable {
   public init(from decoder: any Swift.Decoder) throws
@@ -252,12 +258,52 @@ extension CertifaceNetwork.SaasLivenessProvider : Swift.Hashable {
     get
   }
 }
-public struct SaasResolveModel : Swift.Decodable {
-  public let provider: CertifaceNetwork.SaasLivenessProvider
+public enum SaasOnExhausted : Swift.String, Swift.Decodable {
+  case nextProvider
+  case endFlow
+  public init(from decoder: any Swift.Decoder) throws
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct SaasRouterProvider : Swift.Decodable {
+  public let provider: Swift.String
+  public let enabled: Swift.Bool
+  public let priority: Swift.Int
+  public let maxAttempts: Swift.Int?
+  public let onExhausted: CertifaceNetwork.SaasOnExhausted
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var livenessProvider: CertifaceNetwork.SaasLivenessProvider? {
+    get
+  }
+  #endif
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SaasRouterResolved : Swift.Decodable {
+  public let provider: Swift.String?
   public let sdk: Swift.String?
   public let resolvedBy: Swift.String?
   public let resolutionReason: Swift.String?
-  public let resolutionRuleId: Swift.Int?
+  public let platform: Swift.String?
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SaasRouterScreens : Swift.Decodable {
+  public let instructions: Swift.String?
+  public let loading: Swift.String?
+  public let permissions: Swift.String?
+  public let result: Swift.String?
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SaasRouterModel : Swift.Decodable {
+  public let providers: [CertifaceNetwork.SaasRouterProvider]
+  public let resolved: CertifaceNetwork.SaasRouterResolved?
+  public let channel: Swift.String?
+  public let templateVersion: Swift.Int?
+  public let screens: CertifaceNetwork.SaasRouterScreens?
   public init(from decoder: any Swift.Decoder) throws
 }
 public enum SaasInitializeStatus : Swift.String, Swift.Decodable {
@@ -279,6 +325,12 @@ public struct SaasInitializeModel : Swift.Decodable {
   public let nextStep: Swift.String?
   public let requiredFields: [Swift.String]?
   public let payload: CertifaceNetwork.SaasInitializePayload?
+  public let theme: CertifaceNetwork.SaasThemeModel?
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SaasThemeModel : Swift.Decodable {
+  public let channel: Swift.String?
+  public let payload: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct SaasInitializePayload : Swift.Decodable {
@@ -391,6 +443,9 @@ extension CertifaceNetwork.Environment : Swift.RawRepresentable {}
 extension CertifaceNetwork.SaasTokenStatusValue : Swift.Equatable {}
 extension CertifaceNetwork.SaasTokenStatusValue : Swift.Hashable {}
 extension CertifaceNetwork.SaasTokenStatusValue : Swift.RawRepresentable {}
+extension CertifaceNetwork.SaasOnExhausted : Swift.Equatable {}
+extension CertifaceNetwork.SaasOnExhausted : Swift.Hashable {}
+extension CertifaceNetwork.SaasOnExhausted : Swift.RawRepresentable {}
 extension CertifaceNetwork.SaasInitializeStatus : Swift.Equatable {}
 extension CertifaceNetwork.SaasInitializeStatus : Swift.Hashable {}
 extension CertifaceNetwork.SaasInitializeStatus : Swift.RawRepresentable {}

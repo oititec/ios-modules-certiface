@@ -281,7 +281,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
-@import UIKit;
 #endif
 
 #endif
@@ -303,20 +302,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
-
-@class NSCoder;
-@class NSString;
-@class NSBundle;
-SWIFT_CLASS("_TtC17CertifaceFortface28FortfaceResultViewController")
-@interface FortfaceResultViewController : UIViewController
-@property (nonatomic) UIUserInterfaceStyle overrideUserInterfaceStyle;
-@property (nonatomic, readonly) BOOL shouldAutorotate;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
-- (void)loadView;
-- (void)viewDidLoad;
-- (void)viewDidAppear:(BOOL)animated;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
-@end
 
 #endif
 #if __has_attribute(external_source_symbol)

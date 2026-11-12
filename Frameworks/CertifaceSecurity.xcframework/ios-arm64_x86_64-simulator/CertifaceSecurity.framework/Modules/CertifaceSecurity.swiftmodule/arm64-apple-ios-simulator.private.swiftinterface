@@ -109,9 +109,9 @@ final public class LoggingSaasManager : CertifaceNetwork.SaasManagerProtocol {
         })
   #endif
   final public func getTokenStatus(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasTokenStatusModel
-  final public func resolveLivenessProvider(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasResolveModel
+  final public func getLivenessRouter(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasRouterModel
   #if compiler(>=5.3) && $NonescapableTypes
-  final public func initializeLiveness<Payload>(tokenUuid: Swift.String, payload: Payload?, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasInitializeModel where Payload : Swift.Encodable
+  final public func initializeLiveness<Payload>(tokenUuid: Swift.String, provider: CertifaceNetwork.SaasLivenessProvider, payload: Payload?, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasInitializeModel where Payload : Swift.Encodable
   #endif
   final public func verifyLiveness<Payload>(tokenUuid: Swift.String, payload: Payload, geolocation: CertifaceNetwork.SaasGeolocation, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasVerifyModel where Payload : Swift.Encodable
   final public func getTokenResult(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasTokenResultModel
@@ -125,7 +125,7 @@ public enum NetworkStep : Swift.String {
   case iproovLiveness
   case saasGetTokenStatus
   case saasGetTokenResult
-  case saasLivenessResolve
+  case saasLivenessRouter
   case saasLivenessInitialize
   case saasLivenessVerify
   case unknown

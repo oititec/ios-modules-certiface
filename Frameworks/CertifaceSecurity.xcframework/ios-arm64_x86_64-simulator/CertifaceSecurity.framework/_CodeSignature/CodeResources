@@ -10,15 +10,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		AG4aJj9/MzWOuKEwPwKeVscKdBk=
+		6T7fYTI5IsguE3XDJBKodbClsgs=
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		6bndxFPo0OU5Ar3gIxdsvEWEZwA=
+		BOxRvl4XJQbinl3CtabRRQbnRoA=
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		n4dcHBOsLsGqnVYBjZpbmrrGNew=
+		DjpR3dhKi5BI6gUWUvxQleeuqN0=
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -26,19 +26,19 @@
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		n4dcHBOsLsGqnVYBjZpbmrrGNew=
+		DjpR3dhKi5BI6gUWUvxQleeuqN0=
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		+Vr4TPELNqHVz7MObumQDFSCHKo=
+		WvZk8cybR7BrgyXFP/gK0QqAkJA=
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		6bndxFPo0OU5Ar3gIxdsvEWEZwA=
+		BOxRvl4XJQbinl3CtabRRQbnRoA=
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		NFK4nC7N7eBRHjeKuob09WWSVGw=
+		S2B/35fM8kTHLQyweleQ/8BbZgc=
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		NFK4nC7N7eBRHjeKuob09WWSVGw=
+		S2B/35fM8kTHLQyweleQ/8BbZgc=
 		</data>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		0olS5s/5fLDguzmUfBnC8wqRfUI=
+		cKxeJB+xqXL7+ptJFhnppN+DjMw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -74,14 +74,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9aPQa356NrnzZb5Dx/8qnkMoERfzmlYGF+2L9lgr3ZQ=
+			nAwPQFlUDsEK2qXXBjUccHqHpz00bCjw3Goljs57YPI=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSecurity.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			O+ncRY6JX7nusoSDCuedj6AnBKw14C3gNI8fZF5SWO0=
+			Px0pWtY5FBvr2U4/C+jU9kGHUpCcGm51WiyU3+Aw1Yo=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSecurity.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -95,28 +95,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			O+ncRY6JX7nusoSDCuedj6AnBKw14C3gNI8fZF5SWO0=
+			Px0pWtY5FBvr2U4/C+jU9kGHUpCcGm51WiyU3+Aw1Yo=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSecurity.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tRnMfSuNpbhi2sgKYitax6MDgVLyku0ev/CyMRVD2vU=
+			fqcOPATXqNPTUqImPG+XdtO+OZrnpYuXHl9sgnUkISo=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9aPQa356NrnzZb5Dx/8qnkMoERfzmlYGF+2L9lgr3ZQ=
+			nAwPQFlUDsEK2qXXBjUccHqHpz00bCjw3Goljs57YPI=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q/9dzO0w0fJlId4TDDiAr9rRmrVV2znlUxUpauCQ59Y=
+			dw9oVvuMU5HWlsh981E4u0y9Yzc0prYY1FsZWtwUa7U=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -130,14 +130,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q/9dzO0w0fJlId4TDDiAr9rRmrVV2znlUxUpauCQ59Y=
+			dw9oVvuMU5HWlsh981E4u0y9Yzc0prYY1FsZWtwUa7U=
 			</data>
 		</dict>
 		<key>Modules/CertifaceSecurity.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/5lT9XU1HLo45GmveA3IQ0TNCMpUaQY61l0nVlynHjA=
+			3sEv86ErFTvajH+Us9+e52DB7LDCYaF73AXldN9anAI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
