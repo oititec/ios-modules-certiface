@@ -204,6 +204,8 @@ final public class SaasManager : CertifaceNetwork.SaasManagerProtocol {
   final public func getTokenStatus(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasTokenStatusModel
   final public func getTokenResult(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasTokenResultModel
   final public func getLivenessRouter(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasRouterModel
+  final public func getJourney(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasJourneyModel
+  final public func resolveLiveness(tokenUuid: Swift.String, body: CertifaceNetwork.SaasLivenessResolveRequest, timeout: Foundation.TimeInterval, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasResolveModel
   #if compiler(>=5.3) && $NonescapableTypes
   final public func initializeLiveness<Payload>(tokenUuid: Swift.String, provider: CertifaceNetwork.SaasLivenessProvider, payload: Payload?, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasInitializeModel where Payload : Swift.Encodable
   #endif
@@ -213,6 +215,8 @@ final public class SaasManager : CertifaceNetwork.SaasManagerProtocol {
 public protocol SaasManagerProtocol {
   func getTokenStatus(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasTokenStatusModel
   func getLivenessRouter(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasRouterModel
+  func getJourney(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasJourneyModel
+  func resolveLiveness(tokenUuid: Swift.String, body: CertifaceNetwork.SaasLivenessResolveRequest, timeout: Foundation.TimeInterval, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasResolveModel
   #if compiler(>=5.3) && $NonescapableTypes
   func initializeLiveness<Payload>(tokenUuid: Swift.String, provider: CertifaceNetwork.SaasLivenessProvider, payload: Payload?, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasInitializeModel where Payload : Swift.Encodable
   #endif
@@ -257,6 +261,40 @@ extension CertifaceNetwork.SaasLivenessProvider : Swift.Hashable {
   public var hashValue: Swift.Int {
     get
   }
+}
+public struct SaasJourneyModel : Swift.Decodable {
+  public let payload: Swift.String
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SaasLivenessResolveRequest : Swift.Encodable, Swift.Equatable {
+  public struct DeviceMetadata : Swift.Encodable, Swift.Equatable {
+    public let deviceIntelligence: CertifaceNetwork.SaasLivenessResolveRequest.DeviceIntelligence
+    public init(deviceIntelligence: CertifaceNetwork.SaasLivenessResolveRequest.DeviceIntelligence)
+    public static func == (a: CertifaceNetwork.SaasLivenessResolveRequest.DeviceMetadata, b: CertifaceNetwork.SaasLivenessResolveRequest.DeviceMetadata) -> Swift.Bool
+    public func encode(to encoder: any Swift.Encoder) throws
+  }
+  public struct DeviceIntelligence : Swift.Encodable, Swift.Equatable {
+    public let provider: Swift.String
+    public let sessionId: Swift.String
+    public init(provider: Swift.String, sessionId: Swift.String)
+    public static func == (a: CertifaceNetwork.SaasLivenessResolveRequest.DeviceIntelligence, b: CertifaceNetwork.SaasLivenessResolveRequest.DeviceIntelligence) -> Swift.Bool
+    public func encode(to encoder: any Swift.Encoder) throws
+  }
+  public let platform: Swift.String
+  public let deviceId: Swift.String?
+  public let deviceMetadata: CertifaceNetwork.SaasLivenessResolveRequest.DeviceMetadata?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(platform: Swift.String, deviceId: Swift.String? = nil, deviceMetadata: CertifaceNetwork.SaasLivenessResolveRequest.DeviceMetadata? = nil)
+  #endif
+  public static func == (a: CertifaceNetwork.SaasLivenessResolveRequest, b: CertifaceNetwork.SaasLivenessResolveRequest) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct SaasResolveModel : Swift.Decodable {
+  public let provider: Swift.String?
+  public let sdk: Swift.String?
+  public let resolvedBy: Swift.String?
+  public let resolutionReason: Swift.String?
+  public init(from decoder: any Swift.Decoder) throws
 }
 public enum SaasOnExhausted : Swift.String, Swift.Decodable {
   case nextProvider
