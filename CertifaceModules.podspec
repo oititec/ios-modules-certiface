@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name            = 'CertifaceModules'
-  s.version         = '3.2.0-beta.1'
+  s.version         = '3.2.0-beta.2'
   s.summary         = 'Certiface required modules'
   s.homepage        = 'https://www.oititec.com.br/'
   s.license         = { :type => 'Copyright', :text => 'Copyright © 2025 Oiti. All rights reserved.' }

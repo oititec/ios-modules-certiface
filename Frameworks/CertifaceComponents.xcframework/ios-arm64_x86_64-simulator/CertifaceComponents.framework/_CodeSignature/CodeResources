@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/CertifaceComponents.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		CZtrmb6gSX9XjfZJzdJEEdh8M3E=
+		QfEDe/iuoMlLzEJRWBFh23hBLUQ=
 		</data>
 		<key>Modules/CertifaceComponents.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/CertifaceComponents.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		f0XZvKYOru6AaT9y/DB9bsuYlOs=
+		WYwfnVl/rEABHYhzt3bxrS3S6E4=
 		</data>
 		<key>Modules/CertifaceComponents.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		CZtrmb6gSX9XjfZJzdJEEdh8M3E=
+		QfEDe/iuoMlLzEJRWBFh23hBLUQ=
 		</data>
 		<key>Modules/CertifaceComponents.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Modules/CertifaceComponents.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		XVCI1V3HmlrtMqJ+7jY9YcU+M78=
+		5pJ3gSpAvb1yYOA9vv6Q1tsMqy4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -126,7 +126,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			P3wlO72IjgIXsN6byZsck+1noGOtlZB/dmt30FErno0=
+			UO8wDkzsHvqLQ6W2Rfj/4eX6lujDQt72eUmDAKs1U+M=
 			</data>
 		</dict>
 		<key>Modules/CertifaceComponents.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -154,14 +154,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GV5wnvA1BAJl/ZUXJHdT/g8tL3KoeECXK2jsJ2Svqjk=
+			L3U0bjsGkuId//avCnSE075R1aZ0QJ6/ce3lekZLgv4=
 			</data>
 		</dict>
 		<key>Modules/CertifaceComponents.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			P3wlO72IjgIXsN6byZsck+1noGOtlZB/dmt30FErno0=
+			UO8wDkzsHvqLQ6W2Rfj/4eX6lujDQt72eUmDAKs1U+M=
 			</data>
 		</dict>
 		<key>Modules/CertifaceComponents.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -189,7 +189,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Vt5GRdEt+L5/8xSR4aCxSkMss3ArM4tRev3PH9FN374=
+			X6L6xM6mq/eCIGU7MHsrZVxVoW74LDXBYhZ1cHag22g=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
