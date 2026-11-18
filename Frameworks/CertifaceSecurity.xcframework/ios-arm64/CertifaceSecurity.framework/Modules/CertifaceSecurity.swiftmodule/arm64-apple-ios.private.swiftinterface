@@ -110,6 +110,8 @@ final public class LoggingSaasManager : CertifaceNetwork.SaasManagerProtocol {
   #endif
   final public func getTokenStatus(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasTokenStatusModel
   final public func getLivenessRouter(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasRouterModel
+  final public func getJourney(tokenUuid: Swift.String, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasJourneyModel
+  final public func resolveLiveness(tokenUuid: Swift.String, body: CertifaceNetwork.SaasLivenessResolveRequest, timeout: Foundation.TimeInterval, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasResolveModel
   #if compiler(>=5.3) && $NonescapableTypes
   final public func initializeLiveness<Payload>(tokenUuid: Swift.String, provider: CertifaceNetwork.SaasLivenessProvider, payload: Payload?, baseUrl: Swift.String) async throws -> CertifaceNetwork.SaasInitializeModel where Payload : Swift.Encodable
   #endif
@@ -126,6 +128,8 @@ public enum NetworkStep : Swift.String {
   case saasGetTokenStatus
   case saasGetTokenResult
   case saasLivenessRouter
+  case saasJourney
+  case saasLivenessResolve
   case saasLivenessInitialize
   case saasLivenessVerify
   case unknown

@@ -316,26 +316,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layer
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
-@class UIViewController;
-@class NSString;
-@class NSBundle;
-SWIFT_CLASS("_TtC15CertifaceDocSDK21DocCoreViewController")
-@interface DocCoreViewController : UINavigationController
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
-- (nonnull instancetype)initWithNavigationBarClass:(Class _Nullable)navigationBarClass toolbarClass:(Class _Nullable)toolbarClass SWIFT_UNAVAILABLE;
-- (nonnull instancetype)initWithRootViewController:(UIViewController * _Nonnull)rootViewController SWIFT_UNAVAILABLE;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
-@end
-
-@class UIGestureRecognizer;
-@interface DocCoreViewController (SWIFT_EXTENSION(CertifaceDocSDK)) <UIGestureRecognizerDelegate>
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer * _Nonnull)gestureRecognizer SWIFT_WARN_UNUSED_RESULT;
-@end
-
-SWIFT_CLASS("_TtC15CertifaceDocSDK27HybridDocCoreViewController")
-@interface HybridDocCoreViewController : DocCoreViewController
-@end
-
 #endif
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

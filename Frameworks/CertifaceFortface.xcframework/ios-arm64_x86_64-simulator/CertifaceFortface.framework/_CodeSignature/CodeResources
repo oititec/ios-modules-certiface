@@ -14,11 +14,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		9+BqV/4D3YEns/Xm3jUqg4fAyOU=
+		t6mJQSuvDJPr/uJSEEtH5C4QQlY=
 		</data>
 		<key>Modules/CertifaceFortface.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		Jfai609IK8EvcGvT1EA+d6D4hN4=
+		K8mgLZSxXqIy5vuaYpHAW7aQIBM=
 		</data>
 		<key>Modules/CertifaceFortface.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/CertifaceFortface.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		VMqIcR6sYyqlcZm5K8YqcTHyRHY=
+		YgddrBHAFJ9PjVLGxdALpFOAfoo=
 		</data>
 		<key>Modules/CertifaceFortface.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		Jfai609IK8EvcGvT1EA+d6D4hN4=
+		K8mgLZSxXqIy5vuaYpHAW7aQIBM=
 		</data>
 		<key>Modules/CertifaceFortface.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/CertifaceFortface.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		MGC/D0CAi5IOqP4l4JB4n4wW988=
+		Of1Zyq0iuqS9dS5nFqjDWAVhQ9E=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -81,7 +81,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2ig1C/PHOABB0vdGs+QI8CtvEsxFSJomFr8Le6xI3zM=
+			w1wClWlOXkaRC1RurA9qd/9o+3l2BSRdglYySsvAsdo=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFortface.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -109,14 +109,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			eGMkewTiTlP3u7IagQ7SrIOZ9QDazH5wE4kcV8Ofc7o=
+			qLPATZQzkZPCwt8SjwxMan2vdiBPEhU2l7Dy1z276HY=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFortface.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2ig1C/PHOABB0vdGs+QI8CtvEsxFSJomFr8Le6xI3zM=
+			w1wClWlOXkaRC1RurA9qd/9o+3l2BSRdglYySsvAsdo=
 			</data>
 		</dict>
 		<key>Modules/CertifaceFortface.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -144,7 +144,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Lvx22AGH8ikjwSc6tViNAr1por5OTX160I3OPFL8An0=
+			0HHlBF59l5WDcKWcdtuVeqDIrfyEt8tbsYfiIjUxyt0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

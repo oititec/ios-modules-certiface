@@ -403,25 +403,6 @@ extension CertifaceDocSDK.DocCoreCustomization {
     @objc deinit
   }
 }
-public protocol DocCoreDelegate : AnyObject {
-  func handleCompleted()
-  func handleError(_ error: CertifaceDocSDK.DocCoreError)
-  func handleCanceled()
-}
-public enum DocCoreError : Swift.Error {
-  case invalidAppKey
-  case certifaceOff
-  case cameraSetupFailed
-  case noCameraPermission
-  case errorCapturePicture
-  case noInternetConnection
-  case validationError
-  public static func == (a: CertifaceDocSDK.DocCoreError, b: CertifaceDocSDK.DocCoreError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
 @_hasMissingDesignatedInitializers final public class DocCoreInstructionCustomizationBuilder {
   #if compiler(>=5.3) && $NonescapableTypes
   @discardableResult
@@ -643,7 +624,7 @@ public enum DocCoreError : Swift.Error {
 public enum DocCoreResultType {
   case success
   case retry
-  case error(CertifaceDocSDK.DocCoreError)
+  case error(CertifaceDocSDK.DocumentError)
 }
 @_hasMissingDesignatedInitializers final public class DocCoreUploadCustomizationBuilder {
   @discardableResult
@@ -759,17 +740,9 @@ public enum AdditionalDocumentOption : Swift.Hashable {
     get
   }
 }
-@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class DocCoreViewController : UIKit.UINavigationController {
-  #if compiler(>=5.3) && $NonescapableTypes
-  @_Concurrency.MainActor @preconcurrency convenience public init(appKey: Swift.String, environment: CertifaceDocSDK.Environment, delegate: any CertifaceDocSDK.DocCoreDelegate, additionalOptions: Swift.Set<CertifaceDocSDK.AdditionalDocumentOption> = .init(), showFeedback: Swift.Bool = true, customViews: CertifaceDocSDK.DocCoreCustomViews? = nil, customization: CertifaceDocSDK.DocCoreCustomization? = nil)
-  #endif
-  @objc deinit
-}
-extension CertifaceDocSDK.DocCoreViewController : UIKit.UIGestureRecognizerDelegate {
-  @_Concurrency.MainActor @preconcurrency @objc dynamic public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
-}
 public enum DocumentError : Swift.Int, Swift.Error {
   case invalidAppKey
+  case invalidToken
   case certifaceOff
   case cameraSetupFailed
   case noCameraPermission
@@ -795,6 +768,7 @@ public struct DocumentManagerOptions {
 }
 extension CertifaceDocSDK.DocumentManagerOptions {
   public static func builder(appKey: Swift.String, environment: CertifaceDocSDK.Environment) -> CertifaceDocSDK.DocumentManagerOptions.Builder
+  public static func builder(token: Swift.String, environment: CertifaceDocSDK.Environment) -> CertifaceDocSDK.DocumentManagerOptions.Builder
   @_hasMissingDesignatedInitializers final public class Builder {
     final public func setAdditionalOptions(_ options: Swift.Set<CertifaceDocSDK.AdditionalDocumentOption>) -> Self
     final public func setShowFeedback(_ enabled: Swift.Bool) -> Self
@@ -813,27 +787,21 @@ public enum FocusIndicator {
     get
   }
 }
-public struct HybridDocCoreCustomization {
-  public static func builder() -> CertifaceDocSDK.HybridDocCoreCustomizationBuilder
+public struct TokenStatusModel : Swift.Decodable {
+  public let valid: Swift.Bool
+  public let status: CertifaceNetwork.SaasTokenStatusValue
+  public let expiresAt: Swift.String?
+  public init(from decoder: any Swift.Decoder) throws
 }
-@_hasMissingDesignatedInitializers final public class HybridDocCoreCustomizationBuilder {
-  @discardableResult
-  final public func setLoadingCustomization(_ builderHandler: @escaping (_ loadingBuilder: CertifaceDocSDK.DocCoreLoadingCustomizationBuilder) -> CertifaceDocSDK.DocCoreLoadingCustomizationBuilder) -> Self
-  @discardableResult
-  final public func setNativeCustomization(_ customization: CertifaceDocSDK.DocCoreCustomization) -> Self
-  final public func build() -> CertifaceDocSDK.HybridDocCoreCustomization
-  @objc deinit
-}
-@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class HybridDocCoreViewController : CertifaceDocSDK.DocCoreViewController {
-  #if compiler(>=5.3) && $NonescapableTypes
-  @_Concurrency.MainActor @preconcurrency public init(appKey: Swift.String, environment: CertifaceDocSDK.Environment, delegate: any CertifaceDocSDK.DocCoreDelegate, showFeedback: Swift.Bool = true, customization hybridCustomization: CertifaceDocSDK.HybridDocCoreCustomization? = nil)
-  #endif
-  @objc deinit
+public struct AppKeyModel : Swift.Decodable {
+  public let appKey: Swift.String
+  public let provider: Swift.String?
+  public let status: Swift.String?
+  public let createdAt: Swift.String?
+  public init(from decoder: any Swift.Decoder) throws
 }
 extension CertifaceDocSDK.CameraPosition : Swift.Equatable {}
 extension CertifaceDocSDK.CameraPosition : Swift.Hashable {}
-extension CertifaceDocSDK.DocCoreError : Swift.Equatable {}
-extension CertifaceDocSDK.DocCoreError : Swift.Hashable {}
 extension CertifaceDocSDK.DocumentError : Swift.Equatable {}
 extension CertifaceDocSDK.DocumentError : Swift.Hashable {}
 extension CertifaceDocSDK.DocumentError : Swift.RawRepresentable {}

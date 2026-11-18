@@ -10,6 +10,7 @@ import CertifaceIProov
 import CertifaceNetwork
 import CertifaceSecurity
 import CertifaceUtils
+import CoreLocation
 import CoreText
 import CryptoKit
 import DeveloperToolsSupport
